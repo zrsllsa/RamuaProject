@@ -1,12 +1,12 @@
 import { api } from '@/lib/api';
+import { getFallbackImage, macroBarPercent } from '@/lib/resep';
 import { supabase } from '@/lib/supabase';
 import { BAR_H, BottomBar } from '@/components/bottom-bar';
 import { Ionicons } from '@expo/vector-icons';
 import { Image } from 'expo-image';
-import { LinearGradient } from 'expo-linear-gradient';
-import { useRouter } from 'expo-router';
+import { useFocusEffect, useRouter } from 'expo-router';
 import { StatusBar } from 'expo-status-bar';
-import { useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import {
   Pressable,
   ScrollView,
@@ -76,7 +76,7 @@ const GREEN = '#8DB84A';
 const ROUTE_SEARCH = '/search';
 const ROUTE_SCAN = '/scan'; // halaman kamera pindai bahan
 const ROUTE_SAVED = '/save'; // save.tsx
-const ROUTE_COOK = '/ayomasak'; // ayomasak.tsx
+const ROUTE_DETAIL = '/detail-resep'; // detail-resep.tsx
 // ==================================================================
 
 type Feature = {
@@ -118,35 +118,81 @@ const FEATURES: Feature[] = [
 // Kartu yang paling depan saat halaman home dibuka (0 = pertama, 1 = tengah, dst.)
 const DEFAULT_FEATURE_INDEX = 1; // "Pindai Otomatis"
 
+type RawSavedRecipe = Record<string, any>;
+
 type SavedRecipe = {
   id: string;
   title: string;
-  image_url?: string | null;
+  imageUrl: string;
   protein: number;
   fat: number;
   carbs: number;
-  kcal?: number; // kalau kosong, dihitung dari protein/lemak/karbo
-  summary?: string; // teks "Rangkuman"
-  time?: string; // contoh: "50 Menit"
-  servings?: string; // contoh: "4-5 Orang"
+  kcal: number;
+  summary: string;
+  time: string;
+  servings: string;
+  raw: RawSavedRecipe;
 };
 
-// Data contoh kalau belum ada resep tersimpan / API belum siap
-const SAMPLE_SAVED: SavedRecipe[] = [
-  {
-    id: 'sample',
-    title: 'Steak',
-    image_url: null,
-    protein: 32,
-    fat: 24,
-    carbs: 20,
-    kcal: 990,
-    summary:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et',
-    time: '50 Menit',
-    servings: '4-5 Orang',
-  },
-];
+function numberFrom(value: unknown, fallback = 0): number {
+  if (typeof value === 'number' && Number.isFinite(value)) return Math.round(value);
+  if (typeof value === 'string') {
+    const match = value.match(/(\d+(?:[.,]\d+)?)/);
+    if (match) {
+      const n = Number(match[1].replace(',', '.'));
+      if (Number.isFinite(n)) return Math.round(n);
+    }
+  }
+  return fallback;
+}
+
+function formatTime(value: unknown): string {
+  if (typeof value === 'number' && Number.isFinite(value) && value > 0) {
+    return `${Math.round(value)} Menit`;
+  }
+  const text = typeof value === 'string' ? value.trim() : '';
+  if (!text || text === '-') return '-';
+  return /^\d+$/.test(text) ? `${text} Menit` : text;
+}
+
+function formatServings(value: unknown): string {
+  if (typeof value === 'number' && Number.isFinite(value) && value > 0) {
+    return `${Math.round(value)} Orang`;
+  }
+  const text = typeof value === 'string' ? value.trim() : '';
+  if (!text || text === '-') return '2 Orang';
+  return /^\d+$/.test(text) ? `${text} Orang` : text;
+}
+
+function mapSavedRecipe(raw: RawSavedRecipe, index: number): SavedRecipe {
+  const title = String(raw?.nama || raw?.title || raw?.name || raw?.judul || `Resep ${index + 1}`).trim();
+  const id = String(raw?.id || title || index);
+  const imageUrl = String(raw?.image_url || raw?.gambar || raw?.image || '').trim() || getFallbackImage(index);
+  const protein = numberFrom(raw?.protein);
+  const fat = numberFrom(raw?.fats ?? raw?.fat);
+  const carbs = numberFrom(raw?.carbs);
+  const kcal = numberFrom(
+    raw?.kalori ?? raw?.kcal,
+    Math.round(protein * 4 + carbs * 4 + fat * 9)
+  );
+  const summary =
+    String(raw?.rangkuman || raw?.summary || '').trim() ||
+    `Resep ${title} siap dimasak kapan saja.`;
+
+  return {
+    id,
+    title,
+    imageUrl,
+    protein,
+    fat,
+    carbs,
+    kcal,
+    summary,
+    time: formatTime(raw?.waktu_masak ?? raw?.waktu ?? raw?.time),
+    servings: formatServings(raw?.porsi ?? raw?.servings),
+    raw,
+  };
+}
 
 // ====== kartu "Fitur Kami": persegi 1:1, panel bawah memanjang di kartu depan ======
 function FeatureCard({
@@ -236,15 +282,20 @@ function FeatureCard({
 }
 
 // ====== batang nutrisi (protein / lemak / karbo) ======
-function Nutri({ value, max, label }: { value: number; max: number; label: string }) {
-  const pct = Math.max(0.08, Math.min(1, value / max));
+function Nutri({
+  kind,
+  value,
+  label,
+}: {
+  kind: 'protein' | 'fats' | 'carbs';
+  value: number;
+  label: string;
+}) {
+  const pct = macroBarPercent(kind, value);
   return (
     <View style={styles.nutri}>
       <View style={styles.nutriTrack}>
-        <LinearGradient
-          colors={['#1F9D55', '#7ED69A']}
-          style={[styles.nutriFill, { height: `${pct * 100}%` as any }]}
-        />
+        <View style={[styles.nutriFill, { height: `${pct}%` }]} />
       </View>
       <View>
         <Text style={styles.nutriVal}>{value} g</Text>
@@ -261,7 +312,8 @@ export default function Home() {
   const s = width / 375;
 
   const [name, setName] = useState('');
-  const [saved, setSaved] = useState<SavedRecipe[]>(SAMPLE_SAVED);
+  const [savedRecipes, setSavedRecipes] = useState<SavedRecipe[]>([]);
+  const [failedImages, setFailedImages] = useState<Record<string, boolean>>({});
 
   // ---- nama panggilan user (dari data saat daftar) ----
   useEffect(() => {
@@ -276,14 +328,24 @@ export default function Home() {
     });
   }, []);
 
-  // ---- resep tersimpan dari FastAPI (kalau gagal, pakai contoh) ----
-  useEffect(() => {
-    api<SavedRecipe[]>('/api/recipes/saved')
-      .then((list) => {
-        if (Array.isArray(list) && list.length > 0) setSaved(list);
-      })
-      .catch(() => {});
-  }, []);
+  // ---- resep tersimpan dari FastAPI (sinkron saat halaman fokus) ----
+  useFocusEffect(
+    useCallback(() => {
+      let active = true;
+      api<RawSavedRecipe[]>('/api/recipes/saved')
+        .then((list) => {
+          if (!active) return;
+          setSavedRecipes(Array.isArray(list) ? list.map(mapSavedRecipe) : []);
+        })
+        .catch(() => {
+          if (!active) return;
+          setSavedRecipes([]);
+        });
+      return () => {
+        active = false;
+      };
+    }, [])
+  );
 
   // ---- carousel "Fitur Kami" (kartu persegi) ----
   const cardW = width * 0.62;
@@ -317,17 +379,21 @@ export default function Home() {
     return () => clearTimeout(t);
   }, [step]);
 
-  // ---- kartu "Resep yang anda Simpan": satu kartu, pas selebar layar ----
-  const featured = saved[0];
+  // ---- kartu "Resep yang anda Simpan": maks 3 kartu terbaru ----
+  const visibleSaved = savedRecipes.slice(0, 3);
   const savedBoxW = width - 40 * s; // lebar total (kartu utama + rangkuman)
   const savedOverlap = 26; // rangkuman menyelip di balik kartu utama
-  const savedMainW = savedBoxW * 0.7;
-  const savedMainH = savedMainW * 0.5;
+  const savedMainW = savedBoxW * 0.68;
+  const savedMainH = Math.max(126, savedMainW * 0.54);
   const savedSumW = savedBoxW - savedMainW + savedOverlap;
-  const savedImgSize = savedMainH * 0.82; // gambar resep persegi 1:1
-  const kcal = featured
-    ? featured.kcal ?? Math.round(featured.protein * 4 + featured.carbs * 4 + featured.fat * 9)
-    : 0;
+  const savedImgSize = savedMainH * 0.72; // gambar resep persegi 1:1 agar area makro lega
+
+  const openSavedDetail = (item: SavedRecipe, imageUri: string) => {
+    router.push({
+      pathname: ROUTE_DETAIL,
+      params: { resep: JSON.stringify({ ...item.raw, image_url: imageUri }) },
+    } as any);
+  };
 
   return (
     <View style={styles.container}>
@@ -472,75 +538,132 @@ export default function Home() {
               ))}
             </Animated.ScrollView>
 
-            {/* Resep yang Anda Simpan — satu kartu, tidak bisa digeser */}
-            <Text style={[styles.sectionTitle, { marginTop: 20 * s }]}>Resep yang anda Simpan</Text>
-            {featured && (
-              <View
-                style={{
-                  width: savedBoxW,
-                  marginHorizontal: 20 * s,
-                  marginTop: 10 * s,
-                  marginBottom: 18,
-                  height: savedMainH,
-                }}>
-                {/* Panel Rangkuman: menyembul di balik kartu utama, tidak melebihi layar */}
-                <View
-                  style={[
-                    styles.summary,
-                    {
-                      width: savedSumW,
-                      height: savedMainH - 18 * s,
-                      top: 10 * s,
-                      paddingLeft: savedOverlap + 8,
-                    },
-                  ]}>
-                  <Text style={styles.summaryTitle}>Rangkuman</Text>
-                  <Text style={styles.summaryDesc} numberOfLines={3}>
-                    {featured.summary ||
-                      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et'}
-                  </Text>
-                  <View style={styles.summaryRow}>
-                    <Ionicons name="time-outline" size={14} color="#2F3E8F" />
-                    <Text style={styles.summaryText}>{featured.time || '50 Menit'}</Text>
-                  </View>
-                  <View style={styles.summaryRow}>
-                    <Ionicons name="people" size={14} color="#2F3E8F" />
-                    <Text style={styles.summaryText}>{featured.servings || '4-5 Orang'}</Text>
-                  </View>
+            {/* Resep yang Anda Simpan */}
+            <View style={[styles.savedHeaderRow, { marginTop: 20 * s, marginHorizontal: 20 * s }]}>
+              <Text style={[styles.sectionTitle, { marginHorizontal: 0 }]}>
+                Resep yang anda Simpan
+              </Text>
+              {savedRecipes.length > 3 ? (
+                <Pressable onPress={() => router.push(ROUTE_SAVED as any)} hitSlop={8}>
+                  <Text style={styles.seeAllText}>Lihat Semua ({savedRecipes.length})</Text>
+                </Pressable>
+              ) : null}
+            </View>
 
-                  <TouchableOpacity
-                    style={styles.cookBtn}
-                    activeOpacity={0.85}
-                    onPress={() =>
-                      router.push({ pathname: ROUTE_COOK, params: { id: featured.id } } as any)
-                    }>
-                    <Text style={styles.cookBtnText}>Ayo Masak!</Text>
-                  </TouchableOpacity>
+            {savedRecipes.length === 0 ? (
+              <View style={[styles.savedEmptyCard, { marginHorizontal: 20 * s, marginTop: 10 * s }]}>
+                <View style={styles.savedEmptyIcon}>
+                  <Ionicons name="bookmark-outline" size={26} color={GREEN} />
                 </View>
-
-                {/* Kartu utama: foto 1:1, nama, kcal, protein / fats / carbs */}
-                <View style={[styles.savedMain, { width: savedMainW, height: savedMainH }]}>
-                  <Image
-                    source={featured.image_url ? { uri: featured.image_url } : IMG.home7}
-                    style={[styles.savedImg, { width: savedImgSize, height: savedImgSize }]}
-                    contentFit="cover"
-                  />
-                  <View style={styles.savedInfo}>
-                    <Text style={styles.savedTitle} numberOfLines={1}>
-                      {featured.title}
-                    </Text>
-                    <View style={styles.kcalPill}>
-                      <Ionicons name="flame" size={10} color="#E2552F" />
-                      <Text style={styles.kcalText}>{kcal} kcal</Text>
-                    </View>
-                    <View style={styles.nutriRow}>
-                      <Nutri value={featured.protein} max={90} label="Proteins" />
-                      <Nutri value={featured.fat} max={70} label="Fats" />
-                      <Nutri value={featured.carbs} max={300} label="Carbs" />
-                    </View>
-                  </View>
-                </View>
+                <Text style={styles.savedEmptyTitle}>Belum ada resep yang disimpan</Text>
+                <Text style={styles.savedEmptyDesc}>
+                  Simpan resep favoritmu dari hasil pindai atau pencarian agar mudah dimasak kapan saja.
+                </Text>
+                <TouchableOpacity
+                  style={styles.savedEmptyBtn}
+                  activeOpacity={0.85}
+                  onPress={() => router.push(ROUTE_SEARCH as any)}>
+                  <Text style={styles.savedEmptyBtnText}>Jelajahi Resep</Text>
+                </TouchableOpacity>
               </View>
+            ) : (
+              <>
+                {visibleSaved.map((item, idx) => {
+                  const imageKey = `${item.id}:${item.imageUrl}`;
+                  const imageFailed = Boolean(failedImages[imageKey]);
+                  const imageUri = imageFailed ? getFallbackImage(idx) : item.imageUrl;
+                  return (
+                    <View
+                      key={item.id}
+                      style={{
+                        width: savedBoxW,
+                        marginHorizontal: 20 * s,
+                        marginTop: idx === 0 ? 10 * s : 4,
+                        marginBottom: 16,
+                        height: savedMainH,
+                      }}>
+                      {/* Panel Rangkuman: menyembul di balik kartu utama, tidak melebihi layar */}
+                      <View
+                        style={[
+                          styles.summary,
+                          {
+                            width: savedSumW,
+                            height: savedMainH,
+                            paddingLeft: savedOverlap + 8,
+                          },
+                        ]}>
+                        <View>
+                          <Text style={styles.summaryTitle}>Rangkuman</Text>
+                          <Text style={styles.summaryDesc} numberOfLines={2}>
+                            {item.summary}
+                          </Text>
+                        </View>
+
+                        <View>
+                          <View style={styles.summaryRow}>
+                            <Ionicons name="time-outline" size={11} color="#222222" />
+                            <Text style={styles.summaryText} numberOfLines={1}>
+                              {item.time}
+                            </Text>
+                          </View>
+                          <View style={styles.summaryRow}>
+                            <Ionicons name="people-outline" size={11} color="#222222" />
+                            <Text style={styles.summaryText} numberOfLines={1}>
+                              {item.servings}
+                            </Text>
+                          </View>
+                        </View>
+
+                        <TouchableOpacity
+                          style={styles.cookBtn}
+                          activeOpacity={0.85}
+                          onPress={() => openSavedDetail(item, imageUri)}>
+                          <Text style={styles.cookBtnText} numberOfLines={1}>
+                            Ayo Masak!
+                          </Text>
+                        </TouchableOpacity>
+                      </View>
+
+                      {/* Kartu utama: foto 1:1, nama, kkal, protein / fats / carbs */}
+                      <View style={[styles.savedMain, { width: savedMainW, height: savedMainH }]}>
+                        <Image
+                          source={{ uri: imageUri }}
+                          style={[styles.savedImg, { width: savedImgSize, height: savedImgSize }]}
+                          contentFit="cover"
+                          onError={() => {
+                            if (!imageFailed) {
+                              setFailedImages((prev) => ({ ...prev, [imageKey]: true }));
+                            }
+                          }}
+                        />
+                        <View style={styles.savedInfo}>
+                          <Text style={styles.savedTitle} numberOfLines={1}>
+                            {item.title}
+                          </Text>
+                          <View style={styles.kcalPill}>
+                            <Ionicons name="flame" size={9} color="#E8590C" />
+                            <Text style={styles.kcalText}>{item.kcal} kkal</Text>
+                          </View>
+                          <View style={styles.nutriRow}>
+                            <Nutri kind="protein" value={item.protein} label="Protein" />
+                            <Nutri kind="fats" value={item.fat} label="Fats" />
+                            <Nutri kind="carbs" value={item.carbs} label="Carbs" />
+                          </View>
+                        </View>
+                      </View>
+                    </View>
+                  );
+                })}
+
+                {savedRecipes.length > 3 ? (
+                  <Pressable
+                    style={[styles.seeAllOutlineBtn, { marginHorizontal: 20 * s }]}
+                    onPress={() => router.push(ROUTE_SAVED as any)}>
+                    <Text style={styles.seeAllOutlineText}>Lihat Semua Resep Tersimpan</Text>
+                    <Ionicons name="chevron-forward" size={15} color={GREEN} />
+                  </Pressable>
+                ) : null}
+              </>
             )}
           </View>
         </View>
@@ -645,74 +768,144 @@ const styles = StyleSheet.create({
   savedMain: {
     flexDirection: 'row',
     alignItems: 'center',
-    padding: 7,
+    paddingHorizontal: 8,
     backgroundColor: '#FFFFFF',
-    borderRadius: 22,
-    borderWidth: 3,
-    borderColor: '#D8E68A',
+    borderRadius: 18,
+    borderWidth: 2,
+    borderColor: '#D5E58F',
     zIndex: 2,
     shadowColor: '#000',
-    shadowOpacity: 0.06,
-    shadowRadius: 6,
+    shadowOpacity: 0.08,
+    shadowRadius: 4,
     shadowOffset: { width: 0, height: 2 },
     elevation: 3,
   },
-  savedImg: { borderRadius: 14 },
-  savedInfo: { flex: 1, paddingLeft: 10, justifyContent: 'center' },
-  savedTitle: { fontSize: 18, fontWeight: '800', color: '#111111' },
+  savedImg: { borderRadius: 10 },
+  savedInfo: { flex: 1, marginLeft: 8, justifyContent: 'center' },
+  savedTitle: { fontSize: 15, fontWeight: '700', color: '#111111' },
   kcalPill: {
     alignSelf: 'flex-start',
     flexDirection: 'row',
     alignItems: 'center',
     gap: 3,
-    marginTop: 2,
-    backgroundColor: '#FCE08B',
-    borderRadius: 999,
-    paddingHorizontal: 7,
-    paddingVertical: 2,
+    marginTop: 3,
+    backgroundColor: '#FFE7C2',
+    borderRadius: 4,
+    paddingHorizontal: 4,
+    paddingVertical: 1,
   },
-  kcalText: { fontSize: 9, fontWeight: '800', color: '#D9532D' },
-  nutriRow: { flexDirection: 'row', gap: 4, marginTop: 7 },
-  nutri: { flexDirection: 'row', alignItems: 'flex-end', gap: 3 },
+  kcalText: { fontSize: 7.5, fontWeight: '600', color: '#B45309' },
+  nutriRow: { flexDirection: 'row', gap: 5, marginTop: 8 },
+  nutri: { flexDirection: 'row', alignItems: 'center', gap: 3 },
   nutriTrack: {
-    width: 5,
-    height: 38,
-    borderRadius: 3,
-    backgroundColor: '#E4E4E4',
+    width: 4,
+    height: 28,
+    borderRadius: 999,
+    backgroundColor: '#E5E7EB',
     justifyContent: 'flex-end',
     overflow: 'hidden',
   },
-  nutriFill: { width: '100%', borderRadius: 3 },
-  nutriVal: { fontSize: 11.5, fontWeight: '800', color: '#111111' },
-  nutriLabel: { fontSize: 7.5, color: '#555555' },
+  nutriFill: { width: '100%', borderRadius: 999, backgroundColor: '#84CC16' },
+  nutriVal: { fontSize: 10.5, fontWeight: '700', color: '#111111' },
+  nutriLabel: { fontSize: 7, color: '#6B6B6B' },
 
   // Resep tersimpan — panel rangkuman
   summary: {
     position: 'absolute',
     right: 0,
+    top: 0,
+    flexDirection: 'column',
+    justifyContent: 'space-between',
+    paddingVertical: 10,
     paddingRight: 8,
-    paddingTop: 9,
-    backgroundColor: '#B9C1E8',
-    borderRadius: 22,
+    backgroundColor: '#B9BDE8',
+    borderRadius: 18,
     zIndex: 1,
   },
-  summaryTitle: { fontSize: 14, fontWeight: '800', color: '#2F3E8F' },
-  summaryDesc: { fontSize: 8.5, lineHeight: 11, color: '#111111', marginTop: 2 },
+  summaryTitle: { fontSize: 10, fontWeight: '700', color: '#2B2F77' },
+  summaryDesc: { fontSize: 6.5, lineHeight: 9, color: '#2B2F77', marginTop: 2 },
   summaryRow: { flexDirection: 'row', alignItems: 'center', gap: 4, marginTop: 3 },
-  summaryText: { fontSize: 10, color: '#111111' },
+  summaryText: { fontSize: 7.5, color: '#222222', flexShrink: 1 },
   cookBtn: {
-    position: 'absolute',
-    right: 8,
-    bottom: -14,
+    alignSelf: 'flex-start',
     backgroundColor: GREEN,
     borderRadius: 999,
-    paddingVertical: 7,
-    paddingHorizontal: 16,
-    shadowColor: '#000',
-    shadowOpacity: 0.15,
-    shadowRadius: 4,
-    shadowOffset: { width: 0, height: 2 },
-    elevation: 4,
+    paddingVertical: 6,
+    paddingHorizontal: 14,
   },
-  cookBtnText: { color: '#FFFFFF', fontSize: 10, fontWeight: '800' },
+  cookBtnText: { color: '#FFFFFF', fontSize: 8.5, fontWeight: '700' },
+
+  // Empty state & header resep tersimpan
+  savedHeaderRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+  },
+  seeAllText: {
+    fontSize: 12,
+    fontWeight: '700',
+    color: GREEN,
+  },
+  seeAllOutlineBtn: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    gap: 4,
+    borderWidth: 1.5,
+    borderColor: GREEN,
+    borderRadius: 999,
+    paddingVertical: 10,
+    marginBottom: 16,
+    backgroundColor: '#FFFFFF',
+  },
+  seeAllOutlineText: {
+    fontSize: 12.5,
+    fontWeight: '800',
+    color: GREEN,
+  },
+  savedEmptyCard: {
+    alignItems: 'center',
+    backgroundColor: '#F8FBF3',
+    borderRadius: 20,
+    borderWidth: 1.5,
+    borderColor: '#D8E68A',
+    paddingHorizontal: 20,
+    paddingVertical: 20,
+    marginBottom: 16,
+  },
+  savedEmptyIcon: {
+    width: 48,
+    height: 48,
+    borderRadius: 24,
+    backgroundColor: '#EAF5D4',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  savedEmptyTitle: {
+    marginTop: 10,
+    fontSize: 14,
+    fontWeight: '800',
+    color: '#161616',
+    textAlign: 'center',
+  },
+  savedEmptyDesc: {
+    marginTop: 4,
+    fontSize: 11.5,
+    lineHeight: 16,
+    color: '#6E6E6E',
+    textAlign: 'center',
+    maxWidth: 270,
+  },
+  savedEmptyBtn: {
+    marginTop: 14,
+    backgroundColor: GREEN,
+    borderRadius: 999,
+    paddingHorizontal: 18,
+    paddingVertical: 9,
+  },
+  savedEmptyBtnText: {
+    color: '#FFFFFF',
+    fontSize: 12,
+    fontWeight: '800',
+  },
 });

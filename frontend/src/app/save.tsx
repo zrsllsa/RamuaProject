@@ -1,7 +1,9 @@
 
-import React, { useState } from 'react';
+import React, { useCallback, useState } from 'react';
 import {
+  ActivityIndicator,
   Alert,
+  Modal,
   Pressable,
   ScrollView,
   StyleSheet,
@@ -12,45 +14,94 @@ import {
 import { Image } from 'expo-image';
 import { StatusBar } from 'expo-status-bar';
 import { Ionicons } from '@expo/vector-icons';
-import { useRouter } from 'expo-router';
+import { useFocusEffect, useRouter } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 import { BottomBar, BAR_H } from '@/components/bottom-bar';
+import { api } from '@/lib/api';
+import { getFallbackImage, macroBarPercent } from '@/lib/resep';
 
 // ---- route ----
 const ROUTE_SEARCH = '/search';
-const ROUTE_AYO_MASAK = '/ayomasak';
+const ROUTE_DETAIL = '/detail-resep';
 
-// ---- tipe data (nanti sama dengan response API resep tersimpan) ----
+// ---- tipe data ----
+type RawSavedRecipe = Record<string, any>;
+
 type SavedRecipe = {
   id: string;
   title: string;
-  image: any;
-  protein: number;
-  fat: number;
-  carbs: number;
+  imageUrl: string;
+  protein: string;
+  fat: string;
+  carbs: string;
   kcal: number;
   summary: string;
   time: string;
   servings: string;
+  raw: RawSavedRecipe;
 };
 
-// Data contoh kalau belum ada resep tersimpan / API belum siap
-const SAMPLE_SAVED: SavedRecipe[] = [
-  {
-    id: 'steak',
-    title: 'Steak',
-    image: require('@/assets/images/home/home7.jpg'),
-    protein: 32,
-    fat: 24,
-    carbs: 20,
-    kcal: 990,
-    summary:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et',
-    time: '50 Menit',
-    servings: '4-5 Orang',
-  },
-];
+function numberFrom(value: unknown, fallback = 0): number {
+  if (typeof value === 'number' && Number.isFinite(value)) return Math.round(value);
+  if (typeof value === 'string') {
+    const match = value.match(/(\d+(?:[.,]\d+)?)/);
+    if (match) {
+      const n = Number(match[1].replace(',', '.'));
+      if (Number.isFinite(n)) return Math.round(n);
+    }
+  }
+  return fallback;
+}
+
+function formatMacro(value: unknown): string {
+  if (value === null || value === undefined || value === '' || value === '-') return '-';
+  if (typeof value === 'number' && Number.isFinite(value)) return `${Math.round(value)} g`;
+  const text = String(value).trim();
+  if (!text || text === '-') return '-';
+  return text.toLowerCase().includes('g') ? text : `${text} g`;
+}
+
+function formatTime(value: unknown): string {
+  if (typeof value === 'number' && Number.isFinite(value) && value > 0) {
+    return `${Math.round(value)} Menit`;
+  }
+  const text = typeof value === 'string' ? value.trim() : '';
+  if (!text || text === '-') return '-';
+  return /^\d+$/.test(text) ? `${text} Menit` : text;
+}
+
+function formatServings(value: unknown): string {
+  if (typeof value === 'number' && Number.isFinite(value) && value > 0) {
+    return `${Math.round(value)} Orang`;
+  }
+  const text = typeof value === 'string' ? value.trim() : '';
+  if (!text || text === '-') return '2 Orang';
+  return /^\d+$/.test(text) ? `${text} Orang` : text;
+}
+
+function mapSavedRecipe(raw: RawSavedRecipe, index: number): SavedRecipe {
+  const title = String(raw?.nama || raw?.title || raw?.name || raw?.judul || `Resep ${index + 1}`).trim();
+  const id = String(raw?.id || title || index);
+  const imageUrl = String(raw?.image_url || raw?.gambar || raw?.image || '').trim() || getFallbackImage(index);
+  const summary =
+    String(raw?.rangkuman || raw?.summary || '').trim() ||
+    `Resep ${title} siap dimasak kapan saja.`;
+
+  return {
+    id,
+    title,
+    imageUrl,
+    protein: formatMacro(raw?.protein),
+    fat: formatMacro(raw?.fats ?? raw?.fat),
+    carbs: formatMacro(raw?.carbs),
+    kcal: numberFrom(raw?.kalori ?? raw?.kcal),
+    summary,
+    time: formatTime(raw?.waktu_masak ?? raw?.waktu ?? raw?.time),
+    servings: formatServings(raw?.porsi ?? raw?.servings),
+    raw,
+  };
+}
 
 export default function SaveScreen() {
   const router = useRouter();
@@ -58,7 +109,30 @@ export default function SaveScreen() {
   const { width } = useWindowDimensions();
   const s = width / 390; // skala layar, samakan dengan home & search
 
-  const [saved, setSaved] = useState<SavedRecipe[]>(SAMPLE_SAVED);
+  const [savedRecipes, setSavedRecipes] = useState<SavedRecipe[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const [failedImages, setFailedImages] = useState<Record<string, boolean>>({});
+  const [deleteTarget, setDeleteTarget] = useState<SavedRecipe | null>(null);
+  const [deleting, setDeleting] = useState(false);
+
+  const loadSaved = useCallback(async () => {
+    setIsLoading(true);
+    try {
+      const list = await api<RawSavedRecipe[]>('/api/recipes/saved');
+      const items = Array.isArray(list) ? list.map(mapSavedRecipe) : [];
+      setSavedRecipes(items);
+    } catch {
+      // Biarkan daftar terakhir jika fetch gagal sementara
+    } finally {
+      setIsLoading(false);
+    }
+  }, []);
+
+  useFocusEffect(
+    useCallback(() => {
+      loadSaved();
+    }, [loadSaved])
+  );
 
   // ---- ukuran kartu: kartu utama + rangkuman yang menyelip di baliknya ----
   const boxW = width - 40 * s; // lebar total
@@ -69,19 +143,32 @@ export default function SaveScreen() {
   const imgSize = mainH * 0.82; // gambar persegi 1:1
 
   const confirmDelete = (item: SavedRecipe) => {
-    Alert.alert('Hapus resep', `Hapus "${item.title}" dari daftar simpanan?`, [
-      { text: 'Batal', style: 'cancel' },
-      {
-        text: 'Hapus',
-        style: 'destructive',
-        // TODO: nanti panggil API hapus resep tersimpan (DELETE /saved-recipes/{id})
-        onPress: () => setSaved((prev) => prev.filter((r) => r.id !== item.id)),
-      },
-    ]);
+    setDeleteTarget(item);
   };
 
-  const goAyoMasak = (id: string) =>
-    router.push({ pathname: ROUTE_AYO_MASAK, params: { id } } as any);
+  const handleDelete = async () => {
+    if (!deleteTarget || deleting) return;
+    const target = deleteTarget;
+    try {
+      setDeleting(true);
+      await api(`/api/recipes/saved/${encodeURIComponent(target.id)}`, {
+        method: 'DELETE',
+      });
+      setSavedRecipes((prev) => prev.filter((r) => r.id !== target.id));
+      setDeleteTarget(null);
+    } catch (error: any) {
+      Alert.alert('Gagal menghapus', error?.message || 'Coba lagi ya.');
+    } finally {
+      setDeleting(false);
+    }
+  };
+
+  const openDetail = (item: SavedRecipe, imageUri: string) => {
+    router.push({
+      pathname: ROUTE_DETAIL,
+      params: { resep: JSON.stringify({ ...item.raw, image_url: imageUri }) },
+    } as any);
+  };
 
   return (
     <View style={styles.container}>
@@ -99,86 +186,158 @@ export default function SaveScreen() {
       <ScrollView
         showsVerticalScrollIndicator={false}
         contentContainerStyle={{
+          flexGrow: 1,
           paddingTop: 24 * s,
           paddingBottom: BAR_H + insets.bottom + 40 * s,
         }}>
-        {/* Daftar resep tersimpan */}
-        {saved.map((r) => (
-          <View key={r.id} style={[styles.cardBox, { width: boxW, marginHorizontal: 20 * s }]}>
-            {/* Rangkuman (di belakang kartu utama, nempel kanan) */}
-            <View style={[styles.summary, { width: sumW, height: mainH }]}>
-              <View style={{ paddingLeft: overlap + 6 }}>
-                <Text style={styles.summaryTitle}>Rangkuman</Text>
-                <Text style={styles.summaryText} numberOfLines={4}>
-                  {r.summary}
+        {isLoading ? (
+          <View style={styles.centerBox}>
+            <ActivityIndicator size="large" color="#8DB63C" />
+          </View>
+        ) : (
+          <>
+            {savedRecipes.length === 0 ? (
+              <View style={styles.emptyState}>
+                <Ionicons name="bookmark-outline" size={64} color="#C7C7CC" />
+                <Text style={styles.emptyTitle}>Belum Ada Resep Tersimpan</Text>
+                <Text style={styles.emptySubtitle}>
+                  Yuk, simpan resep favoritmu dari hasil pindai bahan atau halaman pencarian biar gampang dimasak kapan saja!
                 </Text>
-
-                <View style={styles.metaRow}>
-                  <Ionicons name="time-outline" size={11} color="#222" />
-                  <Text style={styles.metaText}>{r.time}</Text>
-                </View>
-                <View style={styles.metaRow}>
-                  <Ionicons name="people-outline" size={11} color="#222" />
-                  <Text style={styles.metaText}>{r.servings}</Text>
-                </View>
               </View>
+            ) : (
+              savedRecipes.map((r, index) => {
+                const imageKey = `${r.id}:${r.imageUrl}`;
+                const imageFailed = Boolean(failedImages[imageKey]);
+                const imageUri = imageFailed ? getFallbackImage(index) : r.imageUrl;
+                return (
+                  <View key={r.id} style={[styles.cardBox, { width: boxW, marginHorizontal: 20 * s }]}>
+                    {/* Rangkuman (di belakang kartu utama, nempel kanan) */}
+                    <View style={[styles.summary, { width: sumW, height: mainH }]}>
+                      <View style={{ paddingLeft: overlap + 6 }}>
+                        <Text style={styles.summaryTitle}>Rangkuman</Text>
+                        <Text style={styles.summaryText} numberOfLines={4}>
+                          {r.summary}
+                        </Text>
 
-              <Pressable style={styles.cookBtn} onPress={() => goAyoMasak(r.id)}>
-                <Text style={styles.cookBtnText}>Ayo Masak!</Text>
+                        <View style={styles.metaRow}>
+                          <Ionicons name="time-outline" size={11} color="#222" />
+                          <Text style={styles.metaText}>{r.time}</Text>
+                        </View>
+                        <View style={styles.metaRow}>
+                          <Ionicons name="people-outline" size={11} color="#222" />
+                          <Text style={styles.metaText}>{r.servings}</Text>
+                        </View>
+                      </View>
+
+                      <Pressable style={styles.cookBtn} onPress={() => openDetail(r, imageUri)}>
+                        <Text style={styles.cookBtnText}>Ayo Masak!</Text>
+                      </Pressable>
+                    </View>
+
+                    {/* Kartu utama */}
+                    <View style={[styles.mainCard, { width: mainW, height: mainH }]}>
+                      <Image
+                        source={{ uri: imageUri }}
+                        style={{ width: imgSize, height: imgSize, borderRadius: 10 }}
+                        contentFit="cover"
+                        onError={() => {
+                          if (!imageFailed) {
+                            setFailedImages((prev) => ({ ...prev, [imageKey]: true }));
+                          }
+                        }}
+                      />
+                      <View style={styles.mainInfo}>
+                        <Text style={styles.recipeTitle} numberOfLines={1}>
+                          {r.title}
+                        </Text>
+                        <View style={styles.kcalBadge}>
+                          <Ionicons name="flame" size={9} color="#E8590C" />
+                          <Text style={styles.kcalText}>{r.kcal} kkal</Text>
+                        </View>
+
+                        <View style={styles.macroRow}>
+                          <Macro kind="protein" value={r.protein} label="Protein" />
+                          <Macro kind="fats" value={r.fat} label="Fats" />
+                          <Macro kind="carbs" value={r.carbs} label="Carbs" />
+                        </View>
+                      </View>
+
+                      {/* Tombol hapus */}
+                      <Pressable style={styles.trashBtn} onPress={() => confirmDelete(r)} hitSlop={8}>
+                        <Ionicons name="trash" size={16} color="#111111" />
+                      </Pressable>
+                    </View>
+                  </View>
+                );
+              })
+            )}
+
+            {/* Tombol tambah resep -> Search */}
+            <Pressable
+              style={[styles.addBtn, { marginHorizontal: 20 * s, height: 48 * s }]}
+              onPress={() => router.push(ROUTE_SEARCH as any)}>
+              <Ionicons name="add" size={16} color="#B5B5B5" />
+              <Text style={styles.addText}>Tambah Resep</Text>
+            </Pressable>
+          </>
+        )}
+      </ScrollView>
+
+      <Modal
+        visible={deleteTarget !== null}
+        transparent
+        animationType="fade"
+        onRequestClose={() => {
+          if (!deleting) setDeleteTarget(null);
+        }}>
+        <View style={styles.modalBackdrop}>
+          <View style={styles.modalCard}>
+            <Text style={styles.modalTitle}>Hapus dari Resepmu</Text>
+            <Text style={styles.modalSubtitle}>
+              Yakin ingin menghapus &quot;{deleteTarget?.title}&quot; dari daftar resep tersimpan?
+            </Text>
+            <View style={styles.modalActions}>
+              <Pressable
+                style={styles.modalCancelBtn}
+                disabled={deleting}
+                onPress={() => setDeleteTarget(null)}>
+                <Text style={styles.modalCancelText}>Batal</Text>
               </Pressable>
-            </View>
-
-            {/* Kartu utama */}
-            <View style={[styles.mainCard, { width: mainW, height: mainH }]}>
-              <Image
-                source={r.image}
-                style={{ width: imgSize, height: imgSize, borderRadius: 10 }}
-                contentFit="cover"
-              />
-              <View style={styles.mainInfo}>
-                <Text style={styles.recipeTitle} numberOfLines={1}>
-                  {r.title}
+              <Pressable
+                style={styles.modalDeleteBtn}
+                disabled={deleting}
+                onPress={handleDelete}>
+                <Text style={styles.modalDeleteText}>
+                  {deleting ? 'Menghapus...' : 'Hapus'}
                 </Text>
-                <View style={styles.kcalBadge}>
-                  <Ionicons name="flame" size={9} color="#E8590C" />
-                  <Text style={styles.kcalText}>{r.kcal} kcal</Text>
-                </View>
-
-                <View style={styles.macroRow}>
-                  <Macro value={r.protein} label="Protein" />
-                  <Macro value={r.fat} label="Fats" />
-                  <Macro value={r.carbs} label="Carbs" />
-                </View>
-              </View>
-
-              {/* Tombol hapus */}
-              <Pressable style={styles.trashBtn} onPress={() => confirmDelete(r)} hitSlop={8}>
-                <Ionicons name="trash" size={16} color="#111111" />
               </Pressable>
             </View>
           </View>
-        ))}
-
-        {/* Tombol tambah resep -> Search */}
-        <Pressable
-          style={[styles.addBtn, { marginHorizontal: 20 * s, height: 48 * s }]}
-          onPress={() => router.push(ROUTE_SEARCH as any)}>
-          <Ionicons name="add" size={16} color="#B5B5B5" />
-          <Text style={styles.addText}>Tambah Resep</Text>
-        </Pressable>
-      </ScrollView>
+        </View>
+      </Modal>
 
       <BottomBar current="save" />
     </View>
   );
 }
 
-function Macro({ value, label }: { value: number; label: string }) {
+function Macro({
+  kind,
+  value,
+  label,
+}: {
+  kind: 'protein' | 'fats' | 'carbs';
+  value: string;
+  label: string;
+}) {
+  const pct = macroBarPercent(kind, value);
   return (
     <View style={styles.macro}>
-      <View style={styles.macroBar} />
+      <View style={styles.macroTrack}>
+        <View style={[styles.macroBar, { height: `${pct}%` }]} />
+      </View>
       <View>
-        <Text style={styles.macroValue}>{value} g</Text>
+        <Text style={styles.macroValue}>{value}</Text>
         <Text style={styles.macroLabel}>{label}</Text>
       </View>
     </View>
@@ -231,8 +390,16 @@ const styles = StyleSheet.create({
   },
   kcalText: { fontSize: 7, fontWeight: '600', color: '#B45309' },
   macroRow: { flexDirection: 'row', marginTop: 8, gap: 8 },
-  macro: { flexDirection: 'row', alignItems: 'center', gap: 3 },
-  macroBar: { width: 2, height: 22, borderRadius: 1, backgroundColor: '#8DB63C' },
+  macro: { flexDirection: 'row', alignItems: 'center', gap: 4 },
+  macroTrack: {
+    width: 4,
+    height: 28,
+    borderRadius: 999,
+    backgroundColor: '#E5E7EB',
+    justifyContent: 'flex-end',
+    overflow: 'hidden',
+  },
+  macroBar: { width: '100%', borderRadius: 999, backgroundColor: '#84CC16' },
   macroValue: { fontSize: 11, fontWeight: '700', color: '#111' },
   macroLabel: { fontSize: 7, color: '#6B6B6B' },
   trashBtn: { position: 'absolute', top: 10, right: 10 },
@@ -276,4 +443,94 @@ const styles = StyleSheet.create({
     marginTop: 4,
   },
   addText: { fontSize: 13, color: '#B5B5B5' },
+
+  // State loading / kosong
+  centerBox: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    paddingVertical: 48,
+  },
+  emptyState: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    paddingHorizontal: 24,
+    paddingVertical: 32,
+  },
+  emptyTitle: {
+    marginTop: 14,
+    fontSize: 17,
+    fontWeight: '800',
+    color: '#161616',
+    textAlign: 'center',
+  },
+  emptySubtitle: {
+    marginTop: 8,
+    maxWidth: 280,
+    fontSize: 13,
+    lineHeight: 19,
+    color: '#8E8E93',
+    textAlign: 'center',
+  },
+
+  // Modal hapus
+  modalBackdrop: {
+    flex: 1,
+    backgroundColor: 'rgba(0,0,0,0.45)',
+    alignItems: 'center',
+    justifyContent: 'center',
+    padding: 24,
+  },
+  modalCard: {
+    width: '100%',
+    maxWidth: 340,
+    backgroundColor: '#FFFFFF',
+    borderRadius: 22,
+    paddingHorizontal: 22,
+    paddingVertical: 24,
+    shadowColor: '#000',
+    shadowOpacity: 0.14,
+    shadowRadius: 12,
+    shadowOffset: { width: 0, height: 6 },
+    elevation: 6,
+  },
+  modalTitle: {
+    fontSize: 18,
+    fontWeight: '800',
+    color: '#161616',
+    textAlign: 'center',
+  },
+  modalSubtitle: {
+    marginTop: 8,
+    fontSize: 13,
+    lineHeight: 19,
+    color: '#6E6E6E',
+    textAlign: 'center',
+  },
+  modalActions: {
+    flexDirection: 'row',
+    gap: 10,
+    marginTop: 20,
+  },
+  modalCancelBtn: {
+    flex: 1,
+    height: 44,
+    borderRadius: 999,
+    borderWidth: 1.5,
+    borderColor: '#8DB63C',
+    backgroundColor: '#FFFFFF',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  modalCancelText: { fontSize: 14, fontWeight: '800', color: '#8DB63C' },
+  modalDeleteBtn: {
+    flex: 1,
+    height: 44,
+    borderRadius: 999,
+    backgroundColor: '#E23B3B',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  modalDeleteText: { fontSize: 14, fontWeight: '800', color: '#FFFFFF' },
 });

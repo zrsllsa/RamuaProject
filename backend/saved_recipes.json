@@ -1,0 +1,187 @@
+[
+    {
+        "nama": "Omelet Kentang Udang",
+        "image_query": "resep omelet kentang",
+        "kalori": 550,
+        "waktu_masak": 20,
+        "kecocokan": 100,
+        "porsi": "2 Orang",
+        "alat_masak": [
+            "Kompor",
+            "Teflon",
+            "Pisau & Talenan"
+        ],
+        "bahan": [
+            {
+                "nama": "Kentang",
+                "takaran": "200 gram",
+                "status": "Ada"
+            },
+            {
+                "nama": "Udang",
+                "takaran": "150 gram",
+                "status": "Ada"
+            },
+            {
+                "nama": "Telur",
+                "takaran": "4 butir",
+                "status": "Ada"
+            }
+        ],
+        "bumbu_dasar": [
+            "Minyak goreng 2 sdm",
+            "Garam 1/2 sdt",
+            "Merica bubuk 1/2 sdt",
+            "Kaldu bubuk 1/2 sdt"
+        ],
+        "langkah": [
+            {
+                "judul": "Potong dan Kukus/Rebus Kentang",
+                "durasi": "6 menit",
+                "deskripsi": "Kupas kentang, potong dadu sangat kecil agar cepat matang saat dimasak nantinya. Rebus atau kukus sebentar selama empat menit hingga setengah empuk, lalu tiriskan airnya.",
+                "bahan_terkait": [
+                    "Kentang"
+                ]
+            },
+            {
+                "judul": "Tumis Udang Cepat",
+                "durasi": "4 menit",
+                "deskripsi": "Cincang kasar udang yang sudah dikupas, lalu tumis sebentar di teflon dengan sedikit minyak sampai berubah warna menjadi kemerahan. Angkat dan sisihkan ke dalam mangkuk.",
+                "bahan_terkait": [
+                    "Udang"
+                ]
+            },
+            {
+                "judul": "Kocok Telur dan Campur Bahan",
+                "durasi": "3 menit",
+                "deskripsi": "Pecahkan telur ke dalam mangkuk berisi udang dan kentang, lalu masukkan garam, merica, dan kaldu bubuk. Kocok lepas semua bahan menggunakan garpu hingga tercampur merata.",
+                "bahan_terkait": [
+                    "Telur",
+                    "Kentang",
+                    "Udang"
+                ]
+            },
+            {
+                "judul": "Panggang Omelet di Teflon",
+                "durasi": "5 menit",
+                "deskripsi": "Panaskan teflon dengan sedikit minyak menggunakan api kecil agar bagian bawah tidak gosong. Tuangkan adonan telur secara merata ke seluruh permukaan teflon dan tutup.",
+                "bahan_terkait": [
+                    "Telur",
+                    "Kentang",
+                    "Udang"
+                ]
+            },
+            {
+                "judul": "Balik dan Matangkan Sempurna",
+                "durasi": "2 menit",
+                "deskripsi": "Setelah bagian bawah mengeras dan pinggirannya kecokelatan, balik omelet secara perlahan menggunakan spatula. Masak sisi sebelahnya selama dua menit hingga matang sempurna, lalu potong.",
+                "bahan_terkait": [
+                    "Telur"
+                ]
+            }
+        ],
+        "bahan_cocok": 3,
+        "bahan_total": 3,
+        "jumlah_kurang": 0,
+        "bahan_kurang": [],
+        "image_url": "https://ts1.mm.bing.net/th?id=OIP.gf5I-EvFOm25BhMoUaRR2QHaD4&pid=15.1",
+        "id": "Omelet Kentang Udang-0",
+        "protein": "-",
+        "fats": "-",
+        "carbs": "-",
+        "rangkuman": "Olahan Omelet Kentang Udang berbahan Kentang, Udang, Telur dengan Kompor, Teflon, Pisau & Talenan."
+    },
+    {
+        "nama": "Tumis Udang Kembang Kol Gurih",
+        "image_query": "resep tumis udang kembang kol",
+        "kalori": 650,
+        "waktu_masak": 20,
+        "kecocokan": 100,
+        "porsi": "2 Orang",
+        "alat_masak": [
+            "Wajan",
+            "Kompor",
+            "Pisau & Talenan"
+        ],
+        "bahan": [
+            {
+                "nama": "Kembang Kol",
+                "takaran": "250 gram",
+                "status": "Ada"
+            },
+            {
+                "nama": "Udang",
+                "takaran": "250 gram",
+                "status": "Ada"
+            },
+            {
+                "nama": "Telur",
+                "takaran": "2 butir",
+                "status": "Ada"
+            }
+        ],
+        "bumbu_dasar": [
+            "Minyak goreng 2 sdm",
+            "Garam 1/2 sdt",
+            "Lada bubuk 1/2 sdt",
+            "Kaldu bubuk 1/2 sdt",
+            "Air 50 ml",
+            "Saus tiram 1 sdm"
+        ],
+        "langkah": [
+            {
+                "judul": "Persiapan Bahan",
+                "durasi": "5 menit",
+                "deskripsi": "Kupas kulit udang dan buang kotoran di punggungnya, lalu bilas hingga bersih dengan air mengalir. Potong kembang kol per kuntum kecil dan rendam sebentar dengan air garam untuk membersihkannya.",
+                "bahan_terkait": [
+                    "Udang",
+                    "Kembang Kol"
+                ]
+            },
+            {
+                "judul": "Membuat Orak-Arik Telur",
+                "durasi": "3 menit",
+                "deskripsi": "Panaskan satu sendok makan minyak di wajan dengan api sedang. Pecahkan telur langsung ke wajan, orak-arik hingga berbutir kasar dan matang kecokelatan, lalu angkat dan sisihkan.",
+                "bahan_terkait": [
+                    "Telur"
+                ]
+            },
+            {
+                "judul": "Menumis Udang",
+                "durasi": "4 menit",
+                "deskripsi": "Tambahkan sisa minyak ke dalam wajan yang sama, gunakan api sedang cenderung besar. Masukkan udang, tumis cepat hingga udang berubah warna menjadi kemerahan dan mengeluarkan aroma gurih.",
+                "bahan_terkait": [
+                    "Udang"
+                ]
+            },
+            {
+                "judul": "Memasak Kembang Kol dan Bumbu",
+                "durasi": "5 menit",
+                "deskripsi": "Masukkan kuntum kembang kol ke dalam wajan bersama udang, lalu tuangkan air. Bumbui dengan saus tiram, garam, lada, dan kaldu bubuk, lalu aduk merata hingga kembang kol mulai empuk.",
+                "bahan_terkait": [
+                    "Kembang Kol"
+                ]
+            },
+            {
+                "judul": "Penyatuan Bahan dan Penyajian",
+                "durasi": "3 menit",
+                "deskripsi": "Masukkan kembali telur orak-arik ke wajan, aduk cepat dengan api besar hingga air menyusut dan bumbu meresap sempurna. Cicipi untuk koreksi rasa, lalu matikan api dan sajikan hangat di atas piring saji.",
+                "bahan_terkait": [
+                    "Telur",
+                    "Udang",
+                    "Kembang Kol"
+                ]
+            }
+        ],
+        "bahan_cocok": 3,
+        "bahan_total": 3,
+        "jumlah_kurang": 0,
+        "bahan_kurang": [],
+        "image_url": "https://ts2.mm.bing.net/th?id=OIP.L-GcR3z4t7h_ZIUEuDYTrgAAAA&pid=15.1",
+        "id": "Tumis Udang Kembang Kol Gurih-0",
+        "protein": "-",
+        "fats": "-",
+        "carbs": "-",
+        "rangkuman": "Olahan Tumis Udang Kembang Kol Gurih berbahan Kembang Kol, Udang, Telur dengan Wajan, Kompor, Pisau & Talenan."
+    }
+]

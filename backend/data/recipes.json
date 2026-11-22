@@ -1,0 +1,5853 @@
+[
+  {
+    "id": "recipe-001",
+    "nama": "Tumis Kangkung Belacan",
+    "kategori": "Menu Satset",
+    "rangkuman": "Tumis kangkung segar dengan aroma terasi khas nusantara yang gurih, pedas, dan menggugah selera makan.",
+    "kalori": "155 kkal",
+    "protein": "4 g",
+    "fats": "10 g",
+    "carbs": "12 g",
+    "waktu_masak": "10 Menit",
+    "porsi": "2 Orang",
+    "alat_masak": "Kompor, Wajan, Spatula",
+    "image_url": "https://ts2.mm.bing.net/th?id=OIP.KFrgcTi0m98l8DmV-rFe-wHaEK&pid=15.1",
+    "bumbu_dasar": "Minyak goreng • Garam • Gula • Kaldu bubuk • Air",
+    "bahan": [
+      {
+        "nama": "Kangkung",
+        "status": "Ada",
+        "takaran": "2 ikat"
+      },
+      {
+        "nama": "Bawang merah",
+        "status": "Ada",
+        "takaran": "5 siung"
+      },
+      {
+        "nama": "Bawang putih",
+        "status": "Ada",
+        "takaran": "3 siung"
+      },
+      {
+        "nama": "Cabai merah keriting",
+        "status": "Ada",
+        "takaran": "4 buah"
+      },
+      {
+        "nama": "Terasi bakar",
+        "status": "Ada",
+        "takaran": "1 sendok teh"
+      }
+    ],
+    "langkah": [
+      {
+        "judul": "Persiapan Bahan",
+        "durasi": "3 Menit",
+        "deskripsi": "Cuci bersih kangkung lalu petik daunnya. Iris tipis bawang merah, bawang putih, dan cabai merah.",
+        "bahan_terkait": [
+          "Kangkung",
+          "Bawang merah",
+          "Bawang putih",
+          "Cabai merah keriting"
+        ]
+      },
+      {
+        "judul": "Tumis Bumbu Aromatik",
+        "durasi": "3 Menit",
+        "deskripsi": "Panaskan minyak goreng di wajan, masukkan irisan bawang merah, bawang putih, cabai, dan terasi. Tumis hingga harum dengan api sedang.",
+        "bahan_terkait": [
+          "Minyak goreng",
+          "Bawang merah",
+          "Bawang putih",
+          "Cabai merah keriting",
+          "Terasi bakar"
+        ]
+      },
+      {
+        "judul": "Memasak Kangkung",
+        "durasi": "3 Menit",
+        "deskripsi": "Besarkan api, masukkan kangkung ke dalam wajan. Tambahkan air, garam, gula, dan kaldu bubuk. Aduk cepat hingga kangkung layu tapi masih renyah.",
+        "bahan_terkait": [
+          "Kangkung",
+          "Air",
+          "Garam",
+          "Gula",
+          "Kaldu bubuk"
+        ]
+      },
+      {
+        "judul": "Penyajian",
+        "durasi": "1 Menit",
+        "deskripsi": "Koreksi rasa, matikan api, dan segera angkat tumis kangkung belacan ke piring saji agar warnanya tetap hijau segar.",
+        "bahan_terkait": []
+      }
+    ]
+  },
+  {
+    "id": "recipe-002",
+    "nama": "Telur Dadar Padang",
+    "kategori": "Menu Satset",
+    "rangkuman": "Telur dadar tebal khas Minang yang kaya rempah, bertekstur padat di luar namun lembut di dalam.",
+    "kalori": "280 kkal",
+    "protein": "16 g",
+    "fats": "22 g",
+    "carbs": "4 g",
+    "waktu_masak": "12 Menit",
+    "porsi": "3 Orang",
+    "alat_masak": "Kompor, Wajan, Mangkuk, Spatula",
+    "image_url": "https://ts1.mm.bing.net/th?id=OIP.MW3Z7bYHwKlU_x3LelW_MAHaEr&pid=15.1",
+    "bumbu_dasar": "Minyak goreng • Garam • Merica • Kaldu bubuk",
+    "bahan": [
+      {
+        "nama": "Telur bebek",
+        "status": "Ada",
+        "takaran": "3 butir"
+      },
+      {
+        "nama": "Daun bawang",
+        "status": "Ada",
+        "takaran": "2 batang"
+      },
+      {
+        "nama": "Bawang merah",
+        "status": "Ada",
+        "takaran": "4 siung"
+      },
+      {
+        "nama": "Cabai merah besar",
+        "status": "Ada",
+        "takaran": "3 buah"
+      },
+      {
+        "nama": "Tepung beras",
+        "status": "Ada",
+        "takaran": "1 sendok makan"
+      }
+    ],
+    "langkah": [
+      {
+        "judul": "Persiapan Adonan",
+        "durasi": "4 Menit",
+        "deskripsi": "Iris tipis daun bawang dan bawang merah. Haluskan kasar cabai merah. Campurkan semua bahan ke dalam mangkuk.",
+        "bahan_terkait": [
+          "Telur bebek",
+          "Daun bawang",
+          "Bawang merah",
+          "Cabai merah besar",
+          "Tepung beras"
+        ]
+      },
+      {
+        "judul": "Pemberian Bumbu",
+        "durasi": "2 Menit",
+        "deskripsi": "Masukkan garam, merica, dan kaldu bubuk ke dalam mangkuk adonan telur. Kocok lepas hingga seluruh bahan tercampur rata.",
+        "bahan_terkait": [
+          "Garam",
+          "Merica",
+          "Kaldu bubuk"
+        ]
+      },
+      {
+        "judul": "Proses Menggoreng",
+        "durasi": "4 Menit",
+        "deskripsi": "Panaskan minyak agak banyak di wajan dengan api sedang. Tuang adonan telur, kecilkan api sedikit, tutup wajan agar matang merata ke bagian dalam.",
+        "bahan_terkait": [
+          "Minyak goreng"
+        ]
+      },
+      {
+        "judul": "Membalik dan Penyajian",
+        "durasi": "2 Menit",
+        "deskripsi": "Balik telur dadar dengan hati-hati setelah bagian bawahnya kecokelatan. Masak sebentar hingga matang sempurna, lalu angkat dan potong.",
+        "bahan_terkait": []
+      }
+    ]
+  },
+  {
+    "id": "recipe-003",
+    "nama": "Nasi Goreng Kampung",
+    "kategori": "Menu Satset",
+    "rangkuman": "Nasi goreng tradisional beraroma terasi dan kencur tipis dengan rasa gurih yang autentik.",
+    "kalori": "355 kkal",
+    "protein": "9 g",
+    "fats": "14 g",
+    "carbs": "48 g",
+    "waktu_masak": "15 Menit",
+    "porsi": "2 Orang",
+    "alat_masak": "Kompor, Wajan, Spatula",
+    "image_url": "https://ts4.mm.bing.net/th?id=OIP.lkp4Rn2omIuOd8nvccwcCwHaFf&pid=15.1",
+    "bumbu_dasar": "Minyak goreng • Garam • Kecap manis • Kaldu bubuk",
+    "bahan": [
+      {
+        "nama": "Nasi putih dingin",
+        "status": "Ada",
+        "takaran": "2 piring"
+      },
+      {
+        "nama": "Bawang merah",
+        "status": "Ada",
+        "takaran": "5 siung"
+      },
+      {
+        "nama": "Bawang putih",
+        "status": "Ada",
+        "takaran": "2 siung"
+      },
+      {
+        "nama": "Cabai rawit merah",
+        "status": "Ada",
+        "takaran": "5 buah"
+      },
+      {
+        "nama": "Teri medan",
+        "status": "Ada",
+        "takaran": "2 sendok makan"
+      }
+    ],
+    "langkah": [
+      {
+        "judul": "Persiapan Bumbu",
+        "durasi": "4 Menit",
+        "deskripsi": "Haluskan bawang merah, bawang putih, dan cabai rawit. Cuci bersih teri medan lalu tiriskan.",
+        "bahan_terkait": [
+          "Bawang merah",
+          "Bawang putih",
+          "Cabai rawit merah",
+          "Teri medan"
+        ]
+      },
+      {
+        "judul": "Menumis Bumbu dan Teri",
+        "durasi": "4 Menit",
+        "deskripsi": "Panaskan minyak goreng, goreng teri medan hingga kering. Masukkan bumbu halus, tumis dengan api sedang hingga matang dan harum.",
+        "bahan_terkait": [
+          "Minyak goreng",
+          "Teri medan",
+          "Bawang merah",
+          "Bawang putih",
+          "Cabai rawit merah"
+        ]
+      },
+      {
+        "judul": "Memasukkan Nasi",
+        "durasi": "5 Menit",
+        "deskripsi": "Masukkan nasi putih ke dalam wajan. Tambahkan kecap manis, garam, dan kaldu bubuk. Besarkan api sedikit dan aduk rata.",
+        "bahan_terkait": [
+          "Nasi putih dingin",
+          "Kecap manis",
+          "Garam",
+          "Kaldu bubuk"
+        ]
+      },
+      {
+        "judul": "Penyajian",
+        "durasi": "2 Menit",
+        "deskripsi": "Aduk terus hingga nasi panas merata dan sedikit berasap khas aroma bakaran wajan. Angkat dan sajikan.",
+        "bahan_terkait": []
+      }
+    ]
+  },
+  {
+    "id": "recipe-004",
+    "nama": "Oseng Buncis Tahu",
+    "kategori": "Menu Satset",
+    "rangkuman": "Tumis buncis renyah berpadu dengan potongan tahu goreng yang lembut dan bumbu kecap gurih.",
+    "kalori": "195 kkal",
+    "protein": "10 g",
+    "fats": "11 g",
+    "carbs": "14 g",
+    "waktu_masak": "12 Menit",
+    "porsi": "2 Orang",
+    "alat_masak": "Kompor, Wajan, Spatula",
+    "image_url": "https://img-global.cpcdn.com/recipes/d4dd987cd430433f/680x482cq70/oseng-tahu-buncis-foto-resep-utama.jpg",
+    "bumbu_dasar": "Minyak goreng • Kecap manis • Saus tiram • Garam • Air",
+    "bahan": [
+      {
+        "nama": "Buncis",
+        "status": "Ada",
+        "takaran": "150 gram"
+      },
+      {
+        "nama": "Tahu putih",
+        "status": "Ada",
+        "takaran": "4 buah"
+      },
+      {
+        "nama": "Bawang merah",
+        "status": "Ada",
+        "takaran": "4 siung"
+      },
+      {
+        "nama": "Bawang putih",
+        "status": "Ada",
+        "takaran": "2 siung"
+      },
+      {
+        "nama": "Cabai hijau besar",
+        "status": "Ada",
+        "takaran": "2 buah"
+      }
+    ],
+    "langkah": [
+      {
+        "judul": "Persiapan Bahan",
+        "durasi": "4 Menit",
+        "deskripsi": "Potong tahu kotak-kotak lalu goreng setengah matang. Iris serong buncis dan cabai hijau, serta iris tipis bawang.",
+        "bahan_terkait": [
+          "Tahu putih",
+          "Buncis",
+          "Cabai hijau besar",
+          "Bawang merah",
+          "Bawang putih"
+        ]
+      },
+      {
+        "judul": "Menumis Bumbu",
+        "durasi": "3 Menit",
+        "deskripsi": "Panaskan sedikit minyak, tumis bawang merah, bawang putih, dan cabai hijau hingga harum dengan api sedang.",
+        "bahan_terkait": [
+          "Minyak goreng",
+          "Bawang merah",
+          "Bawang putih",
+          "Cabai hijau besar"
+        ]
+      },
+      {
+        "judul": "Memasak Sayur dan Tahu",
+        "durasi": "4 Menit",
+        "deskripsi": "Masukkan buncis dan tahu. Tambahkan air, kecap manis, saus tiram, dan garam. Aduk rata dan masak hingga buncis matang pas.",
+        "bahan_terkait": [
+          "Buncis",
+          "Tahu putih",
+          "Air",
+          "Kecap manis",
+          "Saus tiram",
+          "Garam"
+        ]
+      },
+      {
+        "judul": "Penyajian",
+        "durasi": "1 Menit",
+        "deskripsi": "Koreksi rasa, angkat, dan sajikan selagi hangat sebagai pendamping nasi putih.",
+        "bahan_terkait": []
+      }
+    ]
+  },
+  {
+    "id": "recipe-005",
+    "nama": "Orak-Arik Telur Kol",
+    "kategori": "Menu Satset",
+    "rangkuman": "Menu satset praktis perpaduan orak-arik telur dan renyahnya irisan kol segar bertabur lada.",
+    "kalori": "205 kkal",
+    "protein": "12 g",
+    "fats": "15 g",
+    "carbs": "6 g",
+    "waktu_masak": "10 Menit",
+    "porsi": "2 Orang",
+    "alat_masak": "Kompor, Wajan, Spatula",
+    "image_url": "https://ts3.mm.bing.net/th?id=OIP.uFLUveg0tU0X47Iz0yeAWwHaD4&pid=15.1",
+    "bumbu_dasar": "Minyak goreng • Garam • Merica • Kaldu bubuk",
+    "bahan": [
+      {
+        "nama": "Telur ayam",
+        "status": "Ada",
+        "takaran": "3 butir"
+      },
+      {
+        "nama": "Kol",
+        "status": "Ada",
+        "takaran": "100 gram"
+      },
+      {
+        "nama": "Wartel",
+        "status": "Ada",
+        "takaran": "1 buah"
+      },
+      {
+        "nama": "Bawang putih",
+        "status": "Ada",
+        "takaran": "3 siung"
+      },
+      {
+        "nama": "Daun bawang",
+        "status": "Ada",
+        "takaran": "1 batang"
+      }
+    ],
+    "langkah": [
+      {
+        "judul": "Persiapan Bahan",
+        "durasi": "3 Menit",
+        "deskripsi": "Iris tipis kol, serut kasar wortel, cincang bawang putih, dan iris daun bawang.",
+        "bahan_terkait": [
+          "Kol",
+          "Wartel",
+          "Bawang putih",
+          "Daun bawang"
+        ]
+      },
+      {
+        "judul": "Membuat Orak-Arik Telur",
+        "durasi": "3 Menit",
+        "deskripsi": "Panaskan minyak di wajan, masukkan telur ayam lalu orak-arik dengan spatula hingga matang kecokelatan, sisihkan di pinggir wajan.",
+        "bahan_terkait": [
+          "Minyak goreng",
+          "Telur ayam"
+        ]
+      },
+      {
+        "judul": "Menumis Sayuran",
+        "durasi": "3 Menit",
+        "deskripsi": "Masukkan bawang putih cincang ke area kosong wajan, tumis hingga harum. Masukkan kol, wortel, dan daun bawang, aduk rata.",
+        "bahan_terkait": [
+          "Bawang putih",
+          "Kol",
+          "Wartel",
+          "Daun bawang"
+        ]
+      },
+      {
+        "judul": "Bumbu dan Penyajian",
+        "durasi": "1 Menit",
+        "deskripsi": "Tambahkan garam, merica, dan kaldu bubuk. Aduk cepat hingga semua bahan menyatu dan matang, lalu angkat.",
+        "bahan_terkait": [
+          "Garam",
+          "Merica",
+          "Kaldu bubuk"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "recipe-006",
+    "nama": "Mi Goreng Tek-Tek",
+    "kategori": "Menu Satset",
+    "rangkuman": "Mi goreng gerobakan legendaris yang lezat dimasak cepat dengan tambahan kol dan telur.",
+    "kalori": "340 kkal",
+    "protein": "11 g",
+    "fats": "13 g",
+    "carbs": "45 g",
+    "waktu_masak": "12 Menit",
+    "porsi": "1 Orang",
+    "alat_masak": "Kompor, Wajan, Panci Rebus, Spatula",
+    "image_url": "https://ts4.mm.bing.net/th?id=OIP.FAtWSOSiOCa2fFtiNP9K7gHaHa&pid=15.1",
+    "bumbu_dasar": "Minyak goreng • Kecap manis • Saus tiram • Garam • Merica",
+    "bahan": [
+      {
+        "nama": "Mi telur kering",
+        "status": "Ada",
+        "takaran": "1 keping"
+      },
+      {
+        "nama": "Telur ayam",
+        "status": "Ada",
+        "takaran": "1 butir"
+      },
+      {
+        "nama": "Kol",
+        "status": "Ada",
+        "takaran": "50 gram"
+      },
+      {
+        "nama": "Bawang putih",
+        "status": "Ada",
+        "takaran": "2 siung"
+      },
+      {
+        "nama": "Kemiri",
+        "status": "Ada",
+        "takaran": "1 butir"
+      }
+    ],
+    "langkah": [
+      {
+        "judul": "Merebus Mi",
+        "durasi": "3 Menit",
+        "deskripsi": "Rebus mi telur dalam air mendidih hingga setengah matang, tiriskan lalu beri sedikit minyak agar tidak lengket.",
+        "bahan_terkait": [
+          "Mi telur kering"
+        ]
+      },
+      {
+        "judul": "Menumis Bumbu dan Telur",
+        "durasi": "3 Menit",
+        "deskripsi": "Haluskan bawang putih dan kemiri. Tumis bumbu halus dengan minyak panas, geser ke pinggir lalu masukkan telur dan buat orak-arik.",
+        "bahan_terkait": [
+          "Bawang putih",
+          "Kemiri",
+          "Minyak goreng",
+          "Telur ayam"
+        ]
+      },
+      {
+        "judul": "Memasak Mi",
+        "durasi": "4 Menit",
+        "deskripsi": "Masukkan irisan kol, lalu masukkan mi yang sudah direbus. Tambahkan kecap manis, saus tiram, garam, dan merica.",
+        "bahan_terkait": [
+          "Kol",
+          "Mi telur kering",
+          "Kecap manis",
+          "Saus tiram",
+          "Garam",
+          "Merica"
+        ]
+      },
+      {
+        "judul": "Penyajian",
+        "durasi": "2 Menit",
+        "deskripsi": "Aduk dengan api besar sampai bumbu meresap sempurna ke dalam mi. Angkat dan sajikan hangat.",
+        "bahan_terkait": []
+      }
+    ]
+  },
+  {
+    "id": "recipe-007",
+    "nama": "Tumis Tempe Kecap Cabai Hijau",
+    "kategori": "Menu Satset",
+    "rangkuman": "Potongan tempe goreng empuk dengan balutan kecap manis legit dan segaranya irisan cabai hijau.",
+    "kalori": "235 kkal",
+    "protein": "14 g",
+    "fats": "12 g",
+    "carbs": "18 g",
+    "waktu_masak": "12 Menit",
+    "porsi": "2 Orang",
+    "alat_masak": "Kompor, Wajan, Spatula",
+    "image_url": "https://ts4.mm.bing.net/th?id=OIP.r73uUH5kTCsfkQqRpAbJ-gHaEN&pid=15.1",
+    "bumbu_dasar": "Minyak goreng • Kecap manis • Garam • Air",
+    "bahan": [
+      {
+        "nama": "Tempe",
+        "status": "Ada",
+        "takaran": "1 papan"
+      },
+      {
+        "nama": "Bawang merah",
+        "status": "Ada",
+        "takaran": "4 siung"
+      },
+      {
+        "nama": "Bawang putih",
+        "status": "Ada",
+        "takaran": "2 siung"
+      },
+      {
+        "nama": "Cabai hijau besar",
+        "status": "Ada",
+        "takaran": "3 buah"
+      },
+      {
+        "nama": "Lengkuas",
+        "status": "Ada",
+        "takaran": "1 ruas"
+      }
+    ],
+    "langkah": [
+      {
+        "judul": "Persiapan Bahan",
+        "durasi": "4 Menit",
+        "deskripsi": "Potong tempe bentuk dadu kecil, lalu goreng setengah matang. Iris tipis bawang merah, bawang putih, cabai hijau, dan memarkan lengkuas.",
+        "bahan_terkait": [
+          "Tempe",
+          "Bawang merah",
+          "Bawang putih",
+          "Cabai hijau besar",
+          "Lengkuas"
+        ]
+      },
+      {
+        "judul": "Menumis",
+        "durasi": "3 Menit",
+        "deskripsi": "Panaskan sedikit minyak, tumis bawang merah, bawang putih, cabai hijau, dan lengkuas hingga harum dengan api sedang.",
+        "bahan_terkait": [
+          "Minyak goreng",
+          "Bawang merah",
+          "Bawang putih",
+          "Cabai hijau besar",
+          "Lengkuas"
+        ]
+      },
+      {
+        "judul": "Memasukkan Tempe",
+        "durasi": "4 Menit",
+        "deskripsi": "Masukkan tempe goreng, tambahkan air secukupnya dan kecap manis serta garam. Masak hingga air menyusut dan meresap.",
+        "bahan_terkait": [
+          "Tempe",
+          "Air",
+          "Kecap manis",
+          "Garam"
+        ]
+      },
+      {
+        "judul": "Penyajian",
+        "durasi": "1 Menit",
+        "deskripsi": "Aduk sebentar, pastikan rasa sudah pas, matikan api dan sajikan di piring.",
+        "bahan_terkait": []
+      }
+    ]
+  },
+  {
+    "id": "recipe-008",
+    "nama": "Sarden Kaleng Tumis Tomat",
+    "kategori": "Menu Satset",
+    "rangkuman": "Olahan ikan sarden kalengan praktis yang ditumis ekstra bawang dan tomat segar agar makin lezat.",
+    "kalori": "240 kkal",
+    "protein": "18 g",
+    "fats": "12 g",
+    "carbs": "15 g",
+    "waktu_masak": "10 Menit",
+    "porsi": "2 Orang",
+    "alat_masak": "Kompor, Wajan, Spatula",
+    "image_url": "https://ts3.mm.bing.net/th?id=OIP.ZbE1cFbKzaYuZYyOVuC8aQHaHa&pid=15.1",
+    "bumbu_dasar": "Minyak goreng • Garam • Gula • Kaldu bubuk",
+    "bahan": [
+      {
+        "nama": "Sarden kaleng ukuran sedang",
+        "status": "Ada",
+        "takaran": "1 kaleng"
+      },
+      {
+        "nama": "Tomat merah",
+        "status": "Ada",
+        "takaran": "1 buah"
+      },
+      {
+        "nama": "Bawang merah",
+        "status": "Ada",
+        "takaran": "4 siung"
+      },
+      {
+        "nama": "Bawang putih",
+        "status": "Ada",
+        "takaran": "2 siung"
+      },
+      {
+        "nama": "Cabai rawit",
+        "status": "Ada",
+        "takaran": "5 buah"
+      }
+    ],
+    "langkah": [
+      {
+        "judul": "Persiapan Bahan",
+        "durasi": "3 Menit",
+        "deskripsi": "Iris tipis bawang merah, bawang putih, potong dadu tomat, dan biarkan cabai rawit utuh.",
+        "bahan_terkait": [
+          "Tomat merah",
+          "Bawang merah",
+          "Bawang putih",
+          "Cabai rawit"
+        ]
+      },
+      {
+        "judul": "Menumis Bumbu",
+        "durasi": "3 Menit",
+        "deskripsi": "Panaskan sedikit minyak, tumis bawang merah, bawang putih, dan cabai rawit hingga harum dengan api sedang.",
+        "bahan_terkait": [
+          "Minyak goreng",
+          "Bawang merah",
+          "Bawang putih",
+          "Cabai rawit"
+        ]
+      },
+      {
+        "judul": "Memasukkan Sarden",
+        "durasi": "3 Menit",
+        "deskripsi": "Masukkan tomat dan sarden kaleng beserta sausnya. Bumbui dengan garam, gula, dan kaldu bubuk. Masak perlahan hingga mendidih.",
+        "bahan_terkait": [
+          "Tomat merah",
+          "Sarden kaleng ukuran sedang",
+          "Garam",
+          "Gula",
+          "Kaldu bubuk"
+        ]
+      },
+      {
+        "judul": "Penyajian",
+        "durasi": "1 Menit",
+        "deskripsi": "Aduk sesekali agar ikan tidak hancur. Setelah kuah mengental dan matang, angkat dan sajikan.",
+        "bahan_terkait": []
+      }
+    ]
+  },
+  {
+    "id": "recipe-009",
+    "nama": "Tumis Bayam Jagung Manis",
+    "kategori": "Menu Satset",
+    "rangkuman": "Sayur bening tumis bayam dengan pipilan jagung manis segar yang menyegarkan tubuh.",
+    "kalori": "125 kkal",
+    "protein": "4 g",
+    "fats": "4 g",
+    "carbs": "18 g",
+    "waktu_masak": "10 Menit",
+    "porsi": "2 Orang",
+    "alat_masak": "Kompor, Panci, Sendok Sayur",
+    "image_url": "https://img-global.cpcdn.com/recipes/5b117808f8f054f1/680x482cq70/tumis-bayam-jagung-manis-simple-foto-resep-utama.jpg",
+    "bumbu_dasar": "Minyak goreng • Garam • Gula • Air",
+    "bahan": [
+      {
+        "nama": "Bayam",
+        "status": "Ada",
+        "takaran": "1 ikat"
+      },
+      {
+        "nama": "Jagung manis",
+        "status": "Ada",
+        "takaran": "1 buah"
+      },
+      {
+        "nama": "Bawang merah",
+        "status": "Ada",
+        "takaran": "3 siung"
+      },
+      {
+        "nama": "Bawang putih",
+        "status": "Ada",
+        "takaran": "2 siung"
+      },
+      {
+        "nama": "Temu kunci",
+        "status": "Ada",
+        "takaran": "1 ruas"
+      }
+    ],
+    "langkah": [
+      {
+        "judul": "Persiapan Bahan",
+        "durasi": "3 Menit",
+        "deskripsi": "Petik daun bayam, pipil jagung manis, iris tipis bawang merah dan bawang putih, serta memarkan temu kunci.",
+        "bahan_terkait": [
+          "Bayam",
+          "Jagung manis",
+          "Bawang merah",
+          "Bawang putih",
+          "Temu kunci"
+        ]
+      },
+      {
+        "judul": "Merebus Air dan Bumbu",
+        "durasi": "4 Menit",
+        "deskripsi": "Didihkan air dalam panci. Masukkan irisan bawang dan temu kunci, lalu masukkan pipilan jagung manis. Masak hingga jagung empuk.",
+        "bahan_terkait": [
+          "Air",
+          "Bawang merah",
+          "Bawang putih",
+          "Temu kunci",
+          "Jagung manis"
+        ]
+      },
+      {
+        "judul": "Memasukkan Bayam",
+        "durasi": "2 Menit",
+        "deskripsi": "Masukkan daun bayam ke dalam air mendidih. Tambahkan garam dan sedikit gula. Aduk cepat dan masak sebentar saja.",
+        "bahan_terkait": [
+          "Bayam",
+          "Garam",
+          "Gula"
+        ]
+      },
+      {
+        "judul": "Penyajian",
+        "durasi": "1 Menit",
+        "deskripsi": "Matikan api saat bayam baru saja layu agar nutrisinya tetap terjaga. Sajikan di mangkuk.",
+        "bahan_terkait": []
+      }
+    ]
+  },
+  {
+    "id": "recipe-010",
+    "nama": "Oseng Tauge Ikan Asin",
+    "kategori": "Menu Satset",
+    "rangkuman": "Tumis tauge renyah dipadu potongan ikan asin jambal yang gurih asin menggugah selera.",
+    "kalori": "160 kkal",
+    "protein": "9 g",
+    "fats": "10 g",
+    "carbs": "8 g",
+    "waktu_masak": "8 Menit",
+    "porsi": "2 Orang",
+    "alat_masak": "Kompor, Wajan, Spatula",
+    "image_url": "https://img-global.cpcdn.com/recipes/058ae2200c25816f/300x426f0.5_0.534484_1.0q80/623-oseng-tauge-ikan-asin-jambal-foto-resep-utama.jpg",
+    "bumbu_dasar": "Minyak goreng • Gula • Kaldu bubuk • Air",
+    "bahan": [
+      {
+        "nama": "Tauge",
+        "status": "Ada",
+        "takaran": "200 gram"
+      },
+      {
+        "nama": "Ikan asin",
+        "status": "Ada",
+        "takaran": "50 gram"
+      },
+      {
+        "nama": "Bawang merah",
+        "status": "Ada",
+        "takaran": "4 siung"
+      },
+      {
+        "nama": "Bawang putih",
+        "status": "Ada",
+        "takaran": "2 siung"
+      },
+      {
+        "nama": "Cabai merah keriting",
+        "status": "Ada",
+        "takaran": "3 buah"
+      }
+    ],
+    "langkah": [
+      {
+        "judul": "Persiapan Bahan",
+        "durasi": "3 Menit",
+        "deskripsi": "Potong dadu kecil ikan asin, rendam sebentar lalu goreng hingga kering. Iris tipis bawang merah, bawang putih, dan cabai.",
+        "bahan_terkait": [
+          "Ikan asin",
+          "Bawang merah",
+          "Bawang putih",
+          "Cabai merah keriting"
+        ]
+      },
+      {
+        "judul": "Menumis Bumbu",
+        "durasi": "2 Menit",
+        "deskripsi": "Panaskan sedikit minyak, tumis bawang merah, bawang putih, dan cabai merah hingga harum dengan api sedang.",
+        "bahan_terkait": [
+          "Minyak goreng",
+          "Bawang merah",
+          "Bawang putih",
+          "Cabai merah keriting"
+        ]
+      },
+      {
+        "judul": "Memasak Tauge",
+        "durasi": "2 Menit",
+        "deskripsi": "Masukkan tauge dan ikan asin goreng. Tambahkan sedikit air, gula, dan kaldu bubuk. Aduk cepat dengan api besar.",
+        "bahan_terkait": [
+          "Tauge",
+          "Ikan asin",
+          "Air",
+          "Gula",
+          "Kaldu bubuk"
+        ]
+      },
+      {
+        "judul": "Penyajian",
+        "durasi": "1 Menit",
+        "deskripsi": "Masak hanya 1-2 menit agar tauge tetap renyah. Angkat dan sajikan segera.",
+        "bahan_terkait": []
+      }
+    ]
+  },
+  {
+    "id": "recipe-011",
+    "nama": "Tumis Jamur Tiram Saus Tiram",
+    "kategori": "Menu Satset",
+    "rangkuman": "Jamur tiram kenyal dimasak cepat dengan saus tiram gurih dan aroma bawang putih yang kuat.",
+    "kalori": "135 kkal",
+    "protein": "6 g",
+    "fats": "8 g",
+    "carbs": "10 g",
+    "waktu_masak": "10 Menit",
+    "porsi": "2 Orang",
+    "alat_masak": "Kompor, Wajan, Spatula",
+    "image_url": "https://ts2.mm.bing.net/th?id=OIP.Ta4-7MhRZstnTxPS2btG7gHaE7&pid=15.1",
+    "bumbu_dasar": "Minyak goreng • Saus tiram • Kecap manis • Garam • Merica • Air",
+    "bahan": [
+      {
+        "nama": "Jamur tiram",
+        "status": "Ada",
+        "takaran": "200 gram"
+      },
+      {
+        "nama": "Bawang putih",
+        "status": "Ada",
+        "takaran": "3 siung"
+      },
+      {
+        "nama": "Bawang bombay",
+        "status": "Ada",
+        "takaran": "1/2 buah"
+      },
+      {
+        "nama": "Cabai merah besar",
+        "status": "Ada",
+        "takaran": "2 buah"
+      },
+      {
+        "nama": "Daun bawang",
+        "status": "Ada",
+        "takaran": "1 batang"
+      }
+    ],
+    "langkah": [
+      {
+        "judul": "Persiapan Jamur",
+        "durasi": "3 Menit",
+        "deskripsi": "Suwir-suwir jamur tiram, cuci bersih lalu peras airnya perlahan. Iris bawang putih, bawang bombay, cabai, dan daun bawang.",
+        "bahan_terkait": [
+          "Jamur tiram",
+          "Bawang putih",
+          "Bawang bombay",
+          "Cabai merah besar",
+          "Daun bawang"
+        ]
+      },
+      {
+        "judul": "Menumis Aromatik",
+        "durasi": "3 Menit",
+        "deskripsi": "Panaskan minyak goreng, tumis bawang putih dan bawang bombay hingga harum dan layu dengan api sedang.",
+        "bahan_terkait": [
+          "Minyak goreng",
+          "Bawang putih",
+          "Bawang bombay"
+        ]
+      },
+      {
+        "judul": "Memasak Jamur",
+        "durasi": "3 Menit",
+        "deskripsi": "Masukkan jamur tiram dan cabai. Tambahkan air, saus tiram, kecap manis, garam, dan merica. Aduk rata hingga jamur mengeluarkan air alami.",
+        "bahan_terkait": [
+          "Jamur tiram",
+          "Cabai merah besar",
+          "Air",
+          "Saus tiram",
+          "Kecap manis",
+          "Garam",
+          "Merica"
+        ]
+      },
+      {
+        "judul": "Penyajian",
+        "durasi": "1 Menit",
+        "deskripsi": "Masukkan daun bawang sesaat sebelum api dimatikan. Aduk sebentar lalu angkat ke piring saji.",
+        "bahan_terkait": [
+          "Daun bawang"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "recipe-012",
+    "nama": "Telur Balado Satset",
+    "kategori": "Menu Satset",
+    "rangkuman": "Telur rebus goreng dengan balutan sambal balado merah merona yang pedas gurih menggugah selera.",
+    "kalori": "220 kkal",
+    "protein": "14 g",
+    "fats": "16 g",
+    "carbs": "5 g",
+    "waktu_masak": "15 Menit",
+    "porsi": "3 Orang",
+    "alat_masak": "Kompor, Wajan, Panci Rebus, Spatula",
+    "image_url": "https://i0.wp.com/resepkoki.id/wp-content/uploads/2019/11/Telur-Balado.jpg?fit=500,667&ssl=1",
+    "bumbu_dasar": "Minyak goreng • Garam • Gula • Kaldu bubuk",
+    "bahan": [
+      {
+        "nama": "Telur ayam rebus",
+        "status": "Ada",
+        "takaran": "5 butir"
+      },
+      {
+        "nama": "Cabai merah keriting",
+        "status": "Ada",
+        "takaran": "10 buah"
+      },
+      {
+        "nama": "Bawang merah",
+        "status": "Ada",
+        "takaran": "5 siung"
+      },
+      {
+        "nama": "Bawang putih",
+        "status": "Ada",
+        "takaran": "2 siung"
+      },
+      {
+        "nama": "Tomat",
+        "status": "Ada",
+        "takaran": "1 buah"
+      }
+    ],
+    "langkah": [
+      {
+        "judul": "Persiapan Telur",
+        "durasi": "5 Menit",
+        "deskripsi": "Rebus telur hingga matang, kupas kulitnya. Goreng sebentar dalam minyak panas hingga berkulit kecokelatan, lalu tiriskan.",
+        "bahan_terkait": [
+          "Telur ayam rebus",
+          "Minyak goreng"
+        ]
+      },
+      {
+        "judul": "Menyiapkan Bumbu Balado",
+        "durasi": "4 Menit",
+        "deskripsi": "Rebus sebentar cabai merah, bawang merah, bawang putih, dan tomat, lalu haluskan kasar.",
+        "bahan_terkait": [
+          "Cabai merah keriting",
+          "Bawang merah",
+          "Bawang putih",
+          "Tomat"
+        ]
+      },
+      {
+        "judul": "Menumis Sambal",
+        "durasi": "4 Menit",
+        "deskripsi": "Tumis bumbu halus dengan minyak secukupnya hingga matang dan bau langunya hilang dengan api sedang.",
+        "bahan_terkait": [
+          "Minyak goreng"
+        ]
+      },
+      {
+        "judul": "Penyajian",
+        "durasi": "2 Menit",
+        "deskripsi": "Masukkan telur goreng ke dalam tumisan sambal, bumbui garam, gula, dan kaldu bubuk. Aduk rata lalu angkat.",
+        "bahan_terkait": [
+          "Telur ayam rebus",
+          "Garam",
+          "Gula",
+          "Kaldu bubuk"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "recipe-013",
+    "nama": "Tumis Soun Udang Pedas",
+    "kategori": "Menu Satset",
+    "rangkuman": "Soun lembut berpadu dengan udang gurih dan potongan cabai rawit pedas yang lezat.",
+    "kalori": "225 kkal",
+    "protein": "12 g",
+    "fats": "8 g",
+    "carbs": "26 g",
+    "waktu_masak": "12 Menit",
+    "porsi": "2 Orang",
+    "alat_masak": "Kompor, Wajan, Panci Rebus, Spatula",
+    "image_url": "https://img-global.cpcdn.com/recipes/449eb7b7d2768789/680x964f0.566023_0.5_1.0q90/tumis-udang-pedassss-foto-resep-utama.jpg",
+    "bumbu_dasar": "Minyak goreng • Kecap manis • Saus tiram • Garam • Merica • Air",
+    "bahan": [
+      {
+        "nama": "Soun",
+        "status": "Ada",
+        "takaran": "1 bungkus kecil"
+      },
+      {
+        "nama": "Udang kupas",
+        "status": "Ada",
+        "takaran": "100 gram"
+      },
+      {
+        "nama": "Bawang merah",
+        "status": "Ada",
+        "takaran": "4 siung"
+      },
+      {
+        "nama": "Bawang putih",
+        "status": "Ada",
+        "takaran": "2 siung"
+      },
+      {
+        "nama": "Cabai rawit",
+        "status": "Ada",
+        "takaran": "6 buah"
+      }
+    ],
+    "langkah": [
+      {
+        "judul": "Persiapan Soun",
+        "durasi": "4 Menit",
+        "deskripsi": "Rendam soun dalam air biasa hingga lunak, tiriskan. Iris tipis bawang merah, bawang putih, dan cabai rawit.",
+        "bahan_terkait": [
+          "Soun",
+          "Bawang merah",
+          "Bawang putih",
+          "Cabai rawit"
+        ]
+      },
+      {
+        "judul": "Menumis Udang",
+        "durasi": "3 Menit",
+        "deskripsi": "Panaskan minyak, tumis bawang dan cabai hingga harum. Masukkan udang kupas, masak hingga berubah warna.",
+        "bahan_terkait": [
+          "Minyak goreng",
+          "Bawang merah",
+          "Bawang putih",
+          "Cabai rawit",
+          "Udang kupas"
+        ]
+      },
+      {
+        "judul": "Memasukkan Soun",
+        "durasi": "4 Menit",
+        "deskripsi": "Masukkan soun, tambahkan air, kecap manis, saus tiram, garam, dan merica. Aduk cepat dengan api sedang.",
+        "bahan_terkait": [
+          "Soun",
+          "Air",
+          "Kecap manis",
+          "Saus tiram",
+          "Garam",
+          "Merica"
+        ]
+      },
+      {
+        "judul": "Penyajian",
+        "durasi": "1 Menit",
+        "deskripsi": "Aduk hingga bumbu merata dan meresap ke soun. Matikan api dan sajikan.",
+        "bahan_terkait": []
+      }
+    ]
+  },
+  {
+    "id": "recipe-014",
+    "nama": "Rendang Daging Sapi Minang",
+    "kategori": "Makan Besar",
+    "rangkuman": "Rendang daging sapi empuk dengan bumbu rempah kaya dan santan kental yang dimasak perlahan hingga karamelisasi sempurna.",
+    "kalori": "530 kkal",
+    "protein": "32 g",
+    "fats": "40 g",
+    "carbs": "10 g",
+    "waktu_masak": "120 Menit",
+    "porsi": "6 Orang",
+    "alat_masak": "Kompor, Wajan Besar, Spatula",
+    "image_url": "https://cdn.idntimes.com/content-images/community/2022/04/resep-rendang-filosofi-rendang-makna-rendang-arti-rendang-rendang-dari-mana-makanan-indonesia-filosofi-9cde86371d7fc78c91ae80a6ffab250e-e0b9344da253b8e653bd42c7df03d6d9_600x400.jpg",
+    "bumbu_dasar": "garam • gula • minyak goreng • air",
+    "bahan": [
+      {
+        "nama": "daging sapi",
+        "status": "Ada",
+        "takaran": "1 kg"
+      },
+      {
+        "nama": "santan kental",
+        "status": "Ada",
+        "takaran": "1000 ml"
+      },
+      {
+        "nama": "bawang merah",
+        "status": "Ada",
+        "takaran": "10 siung"
+      },
+      {
+        "nama": "bawang putih",
+        "status": "Ada",
+        "takaran": "5 siung"
+      },
+      {
+        "nama": "cabai merah besar",
+        "status": "Ada",
+        "takaran": "15 buah"
+      },
+      {
+        "nama": "jahe",
+        "status": "Ada",
+        "takaran": "2 cm"
+      },
+      {
+        "nama": "lengkuas",
+        "status": "Ada",
+        "takaran": "3 cm"
+      },
+      {
+        "nama": "serai",
+        "status": "Ada",
+        "takaran": "2 batang"
+      },
+      {
+        "nama": "daun jeruk",
+        "status": "Ada",
+        "takaran": "4 lembar"
+      },
+      {
+        "nama": "daun kunyit",
+        "status": "Ada",
+        "takaran": "1 lembar"
+      }
+    ],
+    "langkah": [
+      {
+        "judul": "Persiapan Bumbu dan Daging",
+        "durasi": "15 Menit",
+        "deskripsi": "Haluskan bawang merah, bawang putih, cabai merah, dan jahe. Potong daging sapi menjadi 20 bagian.",
+        "bahan_terkait": [
+          "daging sapi",
+          "bawang merah",
+          "bawang putih",
+          "cabai merah besar",
+          "jahe"
+        ]
+      },
+      {
+        "judul": "Memasak Santan dan Bumbu",
+        "durasi": "30 Menit",
+        "deskripsi": "Rebus santan bersama bumbu halus, lengkuas, serai, daun jeruk, dan daun kunyit dengan api sedang sambil diaduk.",
+        "bahan_terkait": [
+          "santan kental",
+          "lengkuas",
+          "serai",
+          "daun jeruk",
+          "daun kunyit"
+        ]
+      },
+      {
+        "judul": "Memasukkan Daging",
+        "durasi": "10 Menit",
+        "deskripsi": "Masukkan potongan daging sapi ke dalam rebusan santan. Aduk rata hingga santan mendidih.",
+        "bahan_terkait": [
+          "daging sapi"
+        ]
+      },
+      {
+        "judul": "Proses Reduksi",
+        "durasi": "60 Menit",
+        "deskripsi": "Kecilkan api, masak terus sambil diaduk sesekali hingga santan mengering, berminyak, dan berwarna cokelat gelap.",
+        "bahan_terkait": []
+      },
+      {
+        "judul": "Penyajian",
+        "durasi": "5 Menit",
+        "deskripsi": "Koreksi rasa dengan garam dan gula, angkat lalu sajikan rendang hangat.",
+        "bahan_terkait": [
+          "garam",
+          "gula"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "recipe-015",
+    "nama": "Ayam Bakar Taliwang",
+    "kategori": "Makan Besar",
+    "rangkuman": "Ayam bakar pedas gurih khas Lombok dengan olesan bumbu kencur yang menggugah selera.",
+    "kalori": "370 kkal",
+    "protein": "35 g",
+    "fats": "22 g",
+    "carbs": "8 g",
+    "waktu_masak": "45 Menit",
+    "porsi": "4 Orang",
+    "alat_masak": "Kompor, Panggangan, Wajan",
+    "image_url": "https://ts2.mm.bing.net/th?id=OIP.3bsyO9TCVbBtp1MOpMpsdQHaEK&pid=15.1",
+    "bumbu_dasar": "garam • gula • kaldu bubuk • minyak goreng • air",
+    "bahan": [
+      {
+        "nama": "ayam kampung",
+        "status": "Ada",
+        "takaran": "1 ekor"
+      },
+      {
+        "nama": "bawang merah",
+        "status": "Ada",
+        "takaran": "8 siung"
+      },
+      {
+        "nama": "bawang putih",
+        "status": "Ada",
+        "takaran": "4 siung"
+      },
+      {
+        "nama": "cabai merah keriting",
+        "status": "Ada",
+        "takaran": "10 buah"
+      },
+      {
+        "nama": "kencur",
+        "status": "Ada",
+        "takaran": "3 cm"
+      },
+      {
+        "nama": "terasi",
+        "status": "Ada",
+        "takaran": "1 sendok teh"
+      },
+      {
+        "nama": "tomat",
+        "status": "Ada",
+        "takaran": "1 buah"
+      }
+    ],
+    "langkah": [
+      {
+        "judul": "Persiapan Bahan",
+        "durasi": "10 Menit",
+        "deskripsi": "Belah dada ayam tanpa putus, cuci bersih. Haluskan bawang merah, bawang putih, cabai, kencur, terasi, dan tomat.",
+        "bahan_terkait": [
+          "ayam kampung",
+          "bawang merah",
+          "bawang putih",
+          "cabai merah keriting",
+          "kencur",
+          "terasi",
+          "tomat"
+        ]
+      },
+      {
+        "judul": "Unjuk Rasa Bumbu",
+        "durasi": "10 Menit",
+        "deskripsi": "Tumis bumbu halus dengan sedikit minyak hingga harum dan matang.",
+        "bahan_terkait": []
+      },
+      {
+        "judul": "Merebus Ayam",
+        "durasi": "20 Menit",
+        "deskripsi": "Masukkan ayam, tambahkan air, garam, gula, dan kaldu bubuk. Masak dengan api sedang hingga air menyusut dan bumbu meresap.",
+        "bahan_terkait": [
+          "garam",
+          "gula",
+          "kaldu bubuk"
+        ]
+      },
+      {
+        "judul": "Membakar Ayam",
+        "durasi": "10 Menit",
+        "deskripsi": "Bakar ayam di atas bara api atau panggangan sambil diolesi sisa bumbu hingga harum berkaramel.",
+        "bahan_terkait": []
+      },
+      {
+        "judul": "Penyajian",
+        "durasi": "5 Menit",
+        "deskripsi": "Sajikan ayam bakar taliwang selagi hangat dengan sisa bumbu olesan.",
+        "bahan_terkait": []
+      }
+    ]
+  },
+  {
+    "id": "recipe-016",
+    "nama": "Ikan Mas Pesmol Sunda",
+    "kategori": "Makan Besar",
+    "rangkuman": "Olahan ikan mas goreng berkuah kuning kental dengan rasa asam, manis, dan pedas yang menyegarkan.",
+    "kalori": "320 kkal",
+    "protein": "28 g",
+    "fats": "18 g",
+    "carbs": "12 g",
+    "waktu_masak": "35 Menit",
+    "porsi": "3 Orang",
+    "alat_masak": "Kompor, Wajan",
+    "image_url": "https://resepkoki.id/wp-content/uploads/2021/11/Resep-Ikan-Mas-Pesmol.jpg",
+    "bumbu_dasar": "garam • gula • merica • kaldu bubuk • minyak goreng • air",
+    "bahan": [
+      {
+        "nama": "ikan mas",
+        "status": "Ada",
+        "takaran": "2 ekor"
+      },
+      {
+        "nama": "bawang merah",
+        "status": "Ada",
+        "takaran": "6 siung"
+      },
+      {
+        "nama": "bawang putih",
+        "status": "Ada",
+        "takaran": "3 siung"
+      },
+      {
+        "nama": "kemiri",
+        "status": "Ada",
+        "takaran": "4 butir"
+      },
+      {
+        "nama": "kunyit",
+        "status": "Ada",
+        "takaran": "2 cm"
+      },
+      {
+        "nama": "jahe",
+        "status": "Ada",
+        "takaran": "1 cm"
+      },
+      {
+        "nama": "cabai rawit utuh",
+        "status": "Ada",
+        "takaran": "10 buah"
+      },
+      {
+        "nama": "serai",
+        "status": "Ada",
+        "takaran": "1 batang"
+      },
+      {
+        "nama": "daun salam",
+        "status": "Ada",
+        "takaran": "2 lembar"
+      },
+      {
+        "nama": "cuka",
+        "status": "Ada",
+        "takaran": "1 sendok teh"
+      }
+    ],
+    "langkah": [
+      {
+        "judul": "Persiapan Ikan",
+        "durasi": "15 Menit",
+        "deskripsi": "Bersihkan ikan mas, lumuri sedikit garam, lalu goreng hingga kering. Sisihkan.",
+        "bahan_terkait": [
+          "ikan mas",
+          "garam"
+        ]
+      },
+      {
+        "judul": "Menumis Bumbu",
+        "durasi": "10 Menit",
+        "deskripsi": "Haluskan bawang merah, bawang putih, kemiri, kunyit, dan jahe. Tumis dengan minyak secukupnya bersama serai dan daun salam.",
+        "bahan_terkait": [
+          "bawang merah",
+          "bawang putih",
+          "kemiri",
+          "kunyit",
+          "jahe",
+          "serai",
+          "daun salam"
+        ]
+      },
+      {
+        "judul": "Membuat Kuah Pesmol",
+        "durasi": "5 Menit",
+        "deskripsi": "Tuang air, masukkan cabai rawit utuh, garam, gula, merica, dan kaldu bubuk. Didihkan.",
+        "bahan_terkait": [
+          "garam",
+          "gula",
+          "merica",
+          "kaldu bubuk"
+        ]
+      },
+      {
+        "judul": "Memasukkan Ikan",
+        "durasi": "5 Menit",
+        "deskripsi": "Masukkan ikan goreng dan cuka. Masak dengan api kecil hingga kuah mengental dan meresap.",
+        "bahan_terkait": [
+          "cuka"
+        ]
+      },
+      {
+        "judul": "Penyajian",
+        "durasi": "5 Menit",
+        "deskripsi": "Angkat dan sajikan pesmol ikan mas selagi hangat.",
+        "bahan_terkait": []
+      }
+    ]
+  },
+  {
+    "id": "recipe-017",
+    "nama": "Semur Daging Betawi",
+    "kategori": "Makan Besar",
+    "rangkuman": "Daging sapi empuk berkuah cokelat kaya rempah pala dan manisnya kecap khas Betawi.",
+    "kalori": "360 kkal",
+    "protein": "30 g",
+    "fats": "20 g",
+    "carbs": "15 g",
+    "waktu_masak": "60 Menit",
+    "porsi": "4 Orang",
+    "alat_masak": "Kompor, Panci",
+    "image_url": "https://ts3.mm.bing.net/th?id=OIP.XTTPLYCDGTVptqRWIggbOgHaEu&pid=15.1",
+    "bumbu_dasar": "garam • gula • merica • kecap manis • minyak goreng • air",
+    "bahan": [
+      {
+        "nama": "daging sapi",
+        "status": "Ada",
+        "takaran": "500 gram"
+      },
+      {
+        "nama": "kentang",
+        "status": "Ada",
+        "takaran": "2 buah"
+      },
+      {
+        "nama": "bawang merah",
+        "status": "Ada",
+        "takaran": "8 siung"
+      },
+      {
+        "nama": "bawang putih",
+        "status": "Ada",
+        "takaran": "4 siung"
+      },
+      {
+        "nama": "pala bubuk",
+        "status": "Ada",
+        "takaran": "1/2 sendok teh"
+      },
+      {
+        "nama": "cengkih",
+        "status": "Ada",
+        "takaran": "3 butir"
+      },
+      {
+        "nama": "kayu manis",
+        "status": "Ada",
+        "takaran": "2 cm"
+      },
+      {
+        "nama": "tomat",
+        "status": "Ada",
+        "takaran": "1 buah"
+      }
+    ],
+    "langkah": [
+      {
+        "judul": "Persiapan Bahan",
+        "durasi": "10 Menit",
+        "deskripsi": "Potong daging dan kentang sesuai selera. Haluskan bawang merah dan bawang putih.",
+        "bahan_terkait": [
+          "daging sapi",
+          "kentang",
+          "bawang merah",
+          "bawang putih"
+        ]
+      },
+      {
+        "judul": "Menumis Bumbu",
+        "durasi": "5 Menit",
+        "deskripsi": "Tumis bumbu halus bersama pala bubuk, cengkih, dan kayu manis hingga harum.",
+        "bahan_terkait": [
+          "pala bubuk",
+          "cengkih",
+          "kayu manis"
+        ]
+      },
+      {
+        "judul": "Merebus Daging",
+        "durasi": "10 Menit",
+        "deskripsi": "Masukkan daging sapi, aduk hingga berubah warna. Tuang air, kecap manis, garam, gula, dan merica.",
+        "bahan_terkait": [
+          "daging sapi",
+          "kecap manis",
+          "garam",
+          "gula",
+          "merica"
+        ]
+      },
+      {
+        "judul": "Memasak Empuk",
+        "durasi": "30 Menit",
+        "deskripsi": "Masukkan kentang dan potongan tomat. Masak dengan api kecil tertutup hingga daging empuk dan kuah menyusut.",
+        "bahan_terkait": [
+          "kentang",
+          "tomat"
+        ]
+      },
+      {
+        "judul": "Penyajian",
+        "durasi": "5 Menit",
+        "deskripsi": "Angkat dan sajikan semur daging hangat dengan taburan bawang goreng.",
+        "bahan_terkait": []
+      }
+    ]
+  },
+  {
+    "id": "recipe-018",
+    "nama": "Opor Ayam Kuning",
+    "kategori": "Makan Besar",
+    "rangkuman": "Ayam empuk berkuah santan gurih beraroma kunyit dan rempah aromatik yang lezat.",
+    "kalori": "405 kkal",
+    "protein": "32 g",
+    "fats": "28 g",
+    "carbs": "6 g",
+    "waktu_masak": "40 Menit",
+    "porsi": "5 Orang",
+    "alat_masak": "Kompor, Panci",
+    "image_url": "https://i1.wp.com/resepkoki.id/wp-content/uploads/2017/03/Resep-Opor-ayam-kuning-e1510721429577.jpg?fit=1069,1300&ssl=1",
+    "bumbu_dasar": "garam • gula • merica • kaldu bubuk • minyak goreng • air",
+    "bahan": [
+      {
+        "nama": "ayam",
+        "status": "Ada",
+        "takaran": "1 ekor"
+      },
+      {
+        "nama": "santan",
+        "status": "Ada",
+        "takaran": "800 ml"
+      },
+      {
+        "nama": "bawang merah",
+        "status": "Ada",
+        "takaran": "8 siung"
+      },
+      {
+        "nama": "bawang putih",
+        "status": "Ada",
+        "takaran": "4 siung"
+      },
+      {
+        "nama": "kemiri",
+        "status": "Ada",
+        "takaran": "4 butir"
+      },
+      {
+        "nama": "kunyit",
+        "status": "Ada",
+        "takaran": "3 cm"
+      },
+      {
+        "nama": "ketumbar",
+        "status": "Ada",
+        "takaran": "1 sendok teh"
+      },
+      {
+        "nama": "serai",
+        "status": "Ada",
+        "takaran": "2 batang"
+      },
+      {
+        "nama": "lengkuas",
+        "status": "Ada",
+        "takaran": "2 cm"
+      },
+      {
+        "nama": "daun jeruk",
+        "status": "Ada",
+        "takaran": "3 lembar"
+      }
+    ],
+    "langkah": [
+      {
+        "judul": "Persiapan Bumbu",
+        "durasi": "10 Menit",
+        "deskripsi": "Haluskan bawang merah, bawang putih, kemiri, kunyit, dan ketumbar.",
+        "bahan_terkait": [
+          "bawang merah",
+          "bawang putih",
+          "kemiri",
+          "kunyit",
+          "ketumbar"
+        ]
+      },
+      {
+        "judul": "Menumis Bumbu",
+        "durasi": "10 Menit",
+        "deskripsi": "Tumis bumbu halus bersama serai, lengkuas, dan daun jeruk hingga harum matang.",
+        "bahan_terkait": [
+          "serai",
+          "lengkuas",
+          "daun jeruk"
+        ]
+      },
+      {
+        "judul": "Memasak Ayam",
+        "durasi": "10 Menit",
+        "deskripsi": "Masukkan potongan ayam, aduk hingga berubah warna. Tuang santan encer, garam, gula, dan merica.",
+        "bahan_terkait": [
+          "ayam",
+          "santan",
+          "garam",
+          "gula",
+          "merica"
+        ]
+      },
+      {
+        "judul": "Pematangan",
+        "durasi": "10 Menit",
+        "deskripsi": "Masak dengan api sedang hingga ayam empuk dan kuah meresap sempurna.",
+        "bahan_terkait": []
+      },
+      {
+        "judul": "Penyajian",
+        "durasi": "5 Menit",
+        "deskripsi": "Opor ayam kuning siap disajikan hangat.",
+        "bahan_terkait": []
+      }
+    ]
+  },
+  {
+    "id": "recipe-019",
+    "nama": "Gulai Kambing Padang",
+    "kategori": "Makan Besar",
+    "rangkuman": "Gulai daging kambing empuk dengan kuah santan kaya rempah khas Minang yang menggoda.",
+    "kalori": "455 kkal",
+    "protein": "34 g",
+    "fats": "32 g",
+    "carbs": "8 g",
+    "waktu_masak": "60 Menit",
+    "porsi": "5 Orang",
+    "alat_masak": "Kompor, Panci",
+    "image_url": "https://asset-2.tstatic.net/priangan/foto/bank/images/Gulai-Kambing-Khas-Padang.jpg",
+    "bumbu_dasar": "garam • gula • kaldu bubuk • minyak goreng • air",
+    "bahan": [
+      {
+        "nama": "daging kambing",
+        "status": "Ada",
+        "takaran": "750 gram"
+      },
+      {
+        "nama": "santan",
+        "status": "Ada",
+        "takaran": "1000 ml"
+      },
+      {
+        "nama": "bawang merah",
+        "status": "Ada",
+        "takaran": "10 siung"
+      },
+      {
+        "nama": "bawang putih",
+        "status": "Ada",
+        "takaran": "5 siung"
+      },
+      {
+        "nama": "cabai merah",
+        "status": "Ada",
+        "takaran": "10 buah"
+      },
+      {
+        "nama": "jahe",
+        "status": "Ada",
+        "takaran": "2 cm"
+      },
+      {
+        "nama": "kunyit",
+        "status": "Ada",
+        "takaran": "3 cm"
+      },
+      {
+        "nama": "lengkuas",
+        "status": "Ada",
+        "takaran": "2 cm"
+      },
+      {
+        "nama": "serai",
+        "status": "Ada",
+        "takaran": "2 batang"
+      },
+      {
+        "nama": "kapulaga",
+        "status": "Ada",
+        "takaran": "3 butir"
+      }
+    ],
+    "langkah": [
+      {
+        "judul": "Persiapan Daging dan Bumbu",
+        "durasi": "15 Menit",
+        "deskripsi": "Potong daging kambing sesuai selera. Haluskan bawang merah, bawang putih, cabai, jahe, dan kunyit.",
+        "bahan_terkait": [
+          "daging kambing",
+          "bawang merah",
+          "bawang putih",
+          "cabai merah",
+          "jahe",
+          "kunyit"
+        ]
+      },
+      {
+        "judul": "Menumis Rempah",
+        "durasi": "10 Menit",
+        "deskripsi": "Tumis bumbu halus bersama lengkuas, serai, dan kapulaga hingga harum.",
+        "bahan_terkait": [
+          "lengkuas",
+          "serai",
+          "kapulaga"
+        ]
+      },
+      {
+        "judul": "Memasak Daging",
+        "durasi": "10 Menit",
+        "deskripsi": "Masukkan daging kambing, aduk hingga berubah warna. Tuang santan, garam, gula, dan kaldu bubuk.",
+        "bahan_terkait": [
+          "daging kambing",
+          "santan",
+          "garam",
+          "gula",
+          "kaldu bubuk"
+        ]
+      },
+      {
+        "judul": "Merebus Empuk",
+        "durasi": "25 Menit",
+        "deskripsi": "Masak dengan api kecil hingga daging kambing benar-benar empuk dan kuah mengental.",
+        "bahan_terkait": []
+      },
+      {
+        "judul": "Penyajian",
+        "durasi": "5 Menit",
+        "deskripsi": "Angkat dan sajikan gulai kambing hangat.",
+        "bahan_terkait": []
+      }
+    ]
+  },
+  {
+    "id": "recipe-020",
+    "nama": "Empal Gepuk Daging Sapi",
+    "kategori": "Makan Besar",
+    "rangkuman": "Daging sapi manis gurih khas Sunda yang direbus, digepuk, lalu digoreng garing.",
+    "kalori": "350 kkal",
+    "protein": "30 g",
+    "fats": "20 g",
+    "carbs": "12 g",
+    "waktu_masak": "50 Menit",
+    "porsi": "4 Orang",
+    "alat_masak": "Kompor, Wajan, Ulekan",
+    "image_url": "https://cdn-brilio-net.akamaized.net/news/2020/07/29/189151/1278237-1000xauto-resep-empal-daging.jpg",
+    "bumbu_dasar": "garam • gula • kecap manis • minyak goreng • air",
+    "bahan": [
+      {
+        "nama": "daging sapi",
+        "status": "Ada",
+        "takaran": "500 gram"
+      },
+      {
+        "nama": "air kelapa",
+        "status": "Ada",
+        "takaran": "500 ml"
+      },
+      {
+        "nama": "bawang merah",
+        "status": "Ada",
+        "takaran": "6 siung"
+      },
+      {
+        "nama": "bawang putih",
+        "status": "Ada",
+        "takaran": "3 siung"
+      },
+      {
+        "nama": "ketumbar",
+        "status": "Ada",
+        "takaran": "1 sendok makan"
+      },
+      {
+        "nama": "asam jawa",
+        "status": "Ada",
+        "takaran": "1 sendok teh"
+      },
+      {
+        "nama": "lengkuas",
+        "status": "Ada",
+        "takaran": "3 cm"
+      }
+    ],
+    "langkah": [
+      {
+        "judul": "Persiapan Rebus",
+        "durasi": "10 Menit",
+        "deskripsi": "Potong daging searah serat. Haluskan bawang merah, bawang putih, ketumbar, dan lengkuas.",
+        "bahan_terkait": [
+          "daging sapi",
+          "bawang merah",
+          "bawang putih",
+          "ketumbar",
+          "lengkuas"
+        ]
+      },
+      {
+        "judul": "Merebus Daging",
+        "durasi": "30 Menit",
+        "deskripsi": "Rebus daging bersama bumbu halus, air kelapa, asam jawa, garam, dan gula dengan api kecil hingga air menyusut dan daging empuk.",
+        "bahan_terkait": [
+          "air kelapa",
+          "asam jawa",
+          "garam",
+          "gula"
+        ]
+      },
+      {
+        "judul": "Menggepuk Daging",
+        "durasi": "5 Menit",
+        "deskripsi": "Angkat daging, memarkan atau gepuk perlahan menggunakan ulekan tanpa sampai hancur.",
+        "bahan_terkait": []
+      },
+      {
+        "judul": "Menggoreng Sesaat",
+        "durasi": "5 Menit",
+        "deskripsi": "Goreng sebentar daging dalam minyak panas hingga kecokelatan.",
+        "bahan_terkait": []
+      },
+      {
+        "judul": "Penyajian",
+        "durasi": "5 Menit",
+        "deskripsi": "Sajikan empal gepuk selagi hangat bersama sambal terasi.",
+        "bahan_terkait": []
+      }
+    ]
+  },
+  {
+    "id": "recipe-021",
+    "nama": "Sate Ayam Madura",
+    "kategori": "Makan Besar",
+    "rangkuman": "Sate ayam berlumur bumbu kacang gurih manis dengan siraman kecap dan irisan cabai bawang.",
+    "kalori": "390 kkal",
+    "protein": "34 g",
+    "fats": "20 g",
+    "carbs": "18 g",
+    "waktu_masak": "40 Menit",
+    "porsi": "4 Orang",
+    "alat_masak": "Kompor, Panggangan, Tusuk Sate",
+    "image_url": "https://i0.wp.com/resepkoki.id/wp-content/uploads/2018/01/Resep-Sate-Ayam-Madura-1.jpg?fit=1300,1221&ssl=1",
+    "bumbu_dasar": "garam • gula • kecap manis • minyak goreng • air",
+    "bahan": [
+      {
+        "nama": "daging dada ayam",
+        "status": "Ada",
+        "takaran": "500 gram"
+      },
+      {
+        "nama": "kacang tanah",
+        "status": "Ada",
+        "takaran": "150 gram"
+      },
+      {
+        "nama": "bawang merah",
+        "status": "Ada",
+        "takaran": "5 siung"
+      },
+      {
+        "nama": "bawang putih",
+        "status": "Ada",
+        "takaran": "3 siung"
+      },
+      {
+        "nama": "kemiri",
+        "status": "Ada",
+        "takaran": "2 butir"
+      },
+      {
+        "nama": "gula merah",
+        "status": "Ada",
+        "takaran": "2 sendok makan"
+      }
+    ],
+    "langkah": [
+      {
+        "judul": "Persiapan Sate",
+        "durasi": "15 Menit",
+        "deskripsi": "Potong dadu daging ayam, lalu tusuk menggunakan tusuk sate. Sisihkan.",
+        "bahan_terkait": [
+          "daging dada ayam"
+        ]
+      },
+      {
+        "judul": "Membuat Bumbu Kacang",
+        "durasi": "15 Menit",
+        "deskripsi": "Goreng kacang tanah, bawang merah, bawang putih, dan kemiri. Haluskan, lalu masak dengan air, gula merah, garam, dan sedikit kecap manis.",
+        "bahan_terkait": [
+          "kacang tanah",
+          "bawang merah",
+          "bawang putih",
+          "kemiri",
+          "gula merah",
+          "garam",
+          "kecap manis"
+        ]
+      },
+      {
+        "judul": "Membakar Sate",
+        "durasi": "10 Menit",
+        "deskripsi": "Bakar sate di atas bara api sambil diolesi sedikit bumbu kacang dan kecap manis hingga matang.",
+        "bahan_terkait": []
+      },
+      {
+        "judul": "Penyajian",
+        "durasi": "5 Menit",
+        "deskripsi": "Siram sate dengan sisa bumbu kacang dan kecap manis, sajikan.",
+        "bahan_terkait": []
+      }
+    ]
+  },
+  {
+    "id": "recipe-022",
+    "nama": "Nasi Uduk Betawi",
+    "kategori": "Makan Besar",
+    "rangkuman": "Nasi gurih beraroma santan dan rempah daun yang lezat disajikan dengan berbagai lauk.",
+    "kalori": "360 kkal",
+    "protein": "8 g",
+    "fats": "14 g",
+    "carbs": "50 g",
+    "waktu_masak": "30 Menit",
+    "porsi": "5 Orang",
+    "alat_masak": "Rice Cooker, Kompor",
+    "image_url": "https://i2.wp.com/resepkoki.id/wp-content/uploads/2016/10/Resep-Nasi-Uduk-Betawi.jpg?fit=1440,1920&ssl=1",
+    "bumbu_dasar": "garam • minyak goreng",
+    "bahan": [
+      {
+        "nama": "beras",
+        "status": "Ada",
+        "takaran": "3 cup"
+      },
+      {
+        "nama": "santan encer",
+        "status": "Ada",
+        "takaran": "600 ml"
+      },
+      {
+        "nama": "serai",
+        "status": "Ada",
+        "takaran": "2 batang"
+      },
+      {
+        "nama": "daun salam",
+        "status": "Ada",
+        "takaran": "3 lembar"
+      },
+      {
+        "nama": "daun jeruk",
+        "status": "Ada",
+        "takaran": "2 lembar"
+      },
+      {
+        "nama": "lengkuas",
+        "status": "Ada",
+        "takaran": "2 cm"
+      }
+    ],
+    "langkah": [
+      {
+        "judul": "Persiapan Beras",
+        "durasi": "5 Menit",
+        "deskripsi": "Cuci bersih beras, masukkan ke dalam rice cooker.",
+        "bahan_terkait": [
+          "beras"
+        ]
+      },
+      {
+        "judul": "Mencampur Santan",
+        "durasi": "5 Menit",
+        "deskripsi": "Campurkan santan dengan garam, serai, daun salam, daun jeruk, dan lengkuas.",
+        "bahan_terkait": [
+          "santan encer",
+          "garam",
+          "serai",
+          "daun salam",
+          "daun jeruk",
+          "lengkuas"
+        ]
+      },
+      {
+        "judul": "Memasak Nasi",
+        "durasi": "20 Menit",
+        "deskripsi": "Tuang campuran santan ke dalam beras. Masak dengan rice cooker hingga matang.",
+        "bahan_terkait": []
+      },
+      {
+        "judul": "Mengaduk Nasi",
+        "durasi": "5 Menit",
+        "deskripsi": "Aduk nasi uduk perlahan saat matang agar bumbu merata.",
+        "bahan_terkait": []
+      },
+      {
+        "judul": "Penyajian",
+        "durasi": "5 Menit",
+        "deskripsi": "Sajikan nasi uduk hangat dengan taburan bawang goreng.",
+        "bahan_terkait": []
+      }
+    ]
+  },
+  {
+    "id": "recipe-023",
+    "nama": "Nasi Liwet Sunda",
+    "kategori": "Makan Besar",
+    "rangkuman": "Nasi gurih khas Sunda yang dimasak dengan teri, cabai, dan rempah daun aromatik.",
+    "kalori": "355 kkal",
+    "protein": "10 g",
+    "fats": "12 g",
+    "carbs": "52 g",
+    "waktu_masak": "30 Menit",
+    "porsi": "5 Orang",
+    "alat_masak": "Kompor, Panci",
+    "image_url": "https://ts1.mm.bing.net/th?id=OIP.udGB3KpJ1HVocUtBhPckAwHaE5&pid=15.1",
+    "bumbu_dasar": "garam • kaldu bubuk • minyak goreng",
+    "bahan": [
+      {
+        "nama": "beras",
+        "status": "Ada",
+        "takaran": "3 cup"
+      },
+      {
+        "nama": "ikan teri medan",
+        "status": "Ada",
+        "takaran": "50 gram"
+      },
+      {
+        "nama": "bawang merah",
+        "status": "Ada",
+        "takaran": "6 siung"
+      },
+      {
+        "nama": "bawang putih",
+        "status": "Ada",
+        "takaran": "3 siung"
+      },
+      {
+        "nama": "cabai rawit",
+        "status": "Ada",
+        "takaran": "10 buah"
+      },
+      {
+        "nama": "serai",
+        "status": "Ada",
+        "takaran": "2 batang"
+      },
+      {
+        "nama": "daun salam",
+        "status": "Ada",
+        "takaran": "4 lembar"
+      }
+    ],
+    "langkah": [
+      {
+        "judul": "Persiapan Bahan",
+        "durasi": "10 Menit",
+        "deskripsi": "Cuci beras, iris tipis bawang merah dan bawang putih. Goreng sebentar teri medan.",
+        "bahan_terkait": [
+          "beras",
+          "ikan teri medan",
+          "bawang merah",
+          "bawang putih"
+        ]
+      },
+      {
+        "judul": "Menumis Aromatik",
+        "durasi": "5 Menit",
+        "deskripsi": "Tumis irisan bawang, serai, dan daun salam hingga harum.",
+        "bahan_terkait": [
+          "serai",
+          "daun salam"
+        ]
+      },
+      {
+        "judul": "Memasak Nasi",
+        "durasi": "15 Menit",
+        "deskripsi": "Masukkan beras ke dalam panci, tambahkan air secukupnya, tumisan bumbu, teri, cabai rawit utuh, garam, dan kaldu bubuk.",
+        "bahan_terkait": [
+          "cabai rawit",
+          "garam",
+          "kaldu bubuk"
+        ]
+      },
+      {
+        "judul": "Pematangan",
+        "durasi": "10 Menit",
+        "deskripsi": "Masak dengan api kecil hingga air menyusut, lalu tutup rapat dan biarkan matang sempurna.",
+        "bahan_terkait": []
+      },
+      {
+        "judul": "Penyajian",
+        "durasi": "5 Menit",
+        "deskripsi": "Aduk rata nasi liwet dan sajikan hangat.",
+        "bahan_terkait": []
+      }
+    ]
+  },
+  {
+    "id": "recipe-024",
+    "nama": "Soto Betawi Daging",
+    "kategori": "Makan Besar",
+    "rangkuman": "Soto daging sapi berkuah santan susu yang gurih kaya rempah khas Jakarta.",
+    "kalori": "420 kkal",
+    "protein": "28 g",
+    "fats": "30 g",
+    "carbs": "10 g",
+    "waktu_masak": "50 Menit",
+    "porsi": "4 Orang",
+    "alat_masak": "Kompor, Panci",
+    "image_url": "https://ts4.mm.bing.net/th?id=OIP.k-1QqN0fZeOWujX7UhoQAwHaD4&pid=15.1",
+    "bumbu_dasar": "garam • gula • merica • kaldu bubuk • minyak goreng • air",
+    "bahan": [
+      {
+        "nama": "daging sapi",
+        "status": "Ada",
+        "takaran": "500 gram"
+      },
+      {
+        "nama": "santan",
+        "status": "Ada",
+        "takaran": "500 ml"
+      },
+      {
+        "nama": "susu cair",
+        "status": "Ada",
+        "takaran": "200 ml"
+      },
+      {
+        "nama": "bawang merah",
+        "status": "Ada",
+        "takaran": "8 siung"
+      },
+      {
+        "nama": "bawang putih",
+        "status": "Ada",
+        "takaran": "4 siung"
+      },
+      {
+        "nama": "jahe",
+        "status": "Ada",
+        "takaran": "2 cm"
+      },
+      {
+        "nama": "lengkuas",
+        "status": "Ada",
+        "takaran": "2 cm"
+      },
+      {
+        "nama": "serai",
+        "status": "Ada",
+        "takaran": "2 batang"
+      },
+      {
+        "nama": "daun jeruk",
+        "status": "Ada",
+        "takaran": "4 lembar"
+      }
+    ],
+    "langkah": [
+      {
+        "judul": "Persiapan Daging",
+        "durasi": "20 Menit",
+        "deskripsi": "Rebus daging sapi hingga empuk, potong dadu. Haluskan bawang merah, bawang putih, dan jahe.",
+        "bahan_terkait": [
+          "daging sapi",
+          "bawang merah",
+          "bawang putih",
+          "jahe"
+        ]
+      },
+      {
+        "judul": "Menumis Bumbu",
+        "durasi": "10 Menit",
+        "deskripsi": "Tumis bumbu halus bersama lengkuas, serai, dan daun jeruk hingga harum.",
+        "bahan_terkait": [
+          "lengkuas",
+          "serai",
+          "daun jeruk"
+        ]
+      },
+      {
+        "judul": "Membuat Kuah",
+        "durasi": "10 Menit",
+        "deskripsi": "Masukkan tumisan bumbu ke dalam air kaldu daging. Tuang santan dan susu cair.",
+        "bahan_terkait": [
+          "santan",
+          "susu cair"
+        ]
+      },
+      {
+        "judul": "Penyempurnaan Rasa",
+        "durasi": "5 Menit",
+        "deskripsi": "Tambahkan garam, gula, merica, dan kaldu bubuk. Didihkan sambil diaduk.",
+        "bahan_terkait": [
+          "garam",
+          "gula",
+          "merica",
+          "kaldu bubuk"
+        ]
+      },
+      {
+        "judul": "Penyajian",
+        "durasi": "5 Menit",
+        "deskripsi": "Sajikan soto betawi panas dengan emping dan tomat.",
+        "bahan_terkait": []
+      }
+    ]
+  },
+  {
+    "id": "recipe-025",
+    "nama": "Rawon Daging Sapi",
+    "kategori": "Makan Besar",
+    "rangkuman": "Sup daging sapi khas Jawa Timur berkuah hitam legam dari kluwek dengan rasa gurih pekat.",
+    "kalori": "340 kkal",
+    "protein": "30 g",
+    "fats": "20 g",
+    "carbs": "10 g",
+    "waktu_masak": "60 Menit",
+    "porsi": "4 Orang",
+    "alat_masak": "Kompor, Panci",
+    "image_url": "https://ts2.mm.bing.net/th?id=OIP.LnqnDoVb6L7V49kEoLi7kQHaJQ&pid=15.1",
+    "bumbu_dasar": "garam • gula • merica • kaldu bubuk • minyak goreng • air",
+    "bahan": [
+      {
+        "nama": "daging sapi",
+        "status": "Ada",
+        "takaran": "500 gram"
+      },
+      {
+        "nama": "kluwek",
+        "status": "Ada",
+        "takaran": "4 buah"
+      },
+      {
+        "nama": "bawang merah",
+        "status": "Ada",
+        "takaran": "6 siung"
+      },
+      {
+        "nama": "bawang putih",
+        "status": "Ada",
+        "takaran": "3 siung"
+      },
+      {
+        "nama": "ketumbar",
+        "status": "Ada",
+        "takaran": "1 sendok teh"
+      },
+      {
+        "nama": "kunyit",
+        "status": "Ada",
+        "takaran": "2 cm"
+      },
+      {
+        "nama": "jahe",
+        "status": "Ada",
+        "takaran": "2 cm"
+      },
+      {
+        "nama": "serai",
+        "status": "Ada",
+        "takaran": "2 batang"
+      },
+      {
+        "nama": "daun jeruk",
+        "status": "Ada",
+        "takaran": "4 lembar"
+      }
+    ],
+    "langkah": [
+      {
+        "judul": "Persiapan Kluwek",
+        "durasi": "15 Menit",
+        "deskripsi": "Ambil isi kluwek, rendam air panas. Haluskan bersama bawang merah, bawang putih, ketumbar, kunyit, dan jahe.",
+        "bahan_terkait": [
+          "kluwek",
+          "bawang merah",
+          "bawang putih",
+          "ketumbar",
+          "kunyit",
+          "jahe"
+        ]
+      },
+      {
+        "judul": "Menumis Bumbu",
+        "durasi": "10 Menit",
+        "deskripsi": "Tumis bumbu halus bersama serai dan daun jeruk hingga harum matang.",
+        "bahan_terkait": [
+          "serai",
+          "daun jeruk"
+        ]
+      },
+      {
+        "judul": "Merebus Daging",
+        "durasi": "15 Menit",
+        "deskripsi": "Masukkan potongan daging sapi, aduk rata. Tuang air, masak hingga daging setengah empuk.",
+        "bahan_terkait": [
+          "daging sapi"
+        ]
+      },
+      {
+        "judul": "Pematangan",
+        "durasi": "15 Menit",
+        "deskripsi": "Tambahkan garam, gula, merica, dan kaldu bubuk. Masak terus hingga daging empuk dan kuah meresap.",
+        "bahan_terkait": [
+          "garam",
+          "gula",
+          "merica",
+          "kaldu bubuk"
+        ]
+      },
+      {
+        "judul": "Penyajian",
+        "durasi": "5 Menit",
+        "deskripsi": "Sajikan rawon hangat dengan tauge pendek dan sambal terasi.",
+        "bahan_terkait": []
+      }
+    ]
+  },
+  {
+    "id": "recipe-026",
+    "nama": "Ayam Rica-Rica Manado",
+    "kategori": "Makan Besar",
+    "rangkuman": "Olahan ayam pedas menyegarkan khas Manado berlimpah cabai, kemangi, dan daun jeruk.",
+    "kalori": "330 kkal",
+    "protein": "33 g",
+    "fats": "18 g",
+    "carbs": "9 g",
+    "waktu_masak": "35 Menit",
+    "porsi": "4 Orang",
+    "alat_masak": "Kompor, Wajan",
+    "image_url": "https://ts1.mm.bing.net/th?id=OIP.arYhdqtdn_IuEctXB24sigHaHa&pid=15.1",
+    "bumbu_dasar": "garam • gula • kaldu bubuk • minyak goreng • air",
+    "bahan": [
+      {
+        "nama": "ayam",
+        "status": "Ada",
+        "takaran": "500 gram"
+      },
+      {
+        "nama": "cabai merah keriting",
+        "status": "Ada",
+        "takaran": "10 buah"
+      },
+      {
+        "nama": "cabai rawit",
+        "status": "Ada",
+        "takaran": "15 buah"
+      },
+      {
+        "nama": "bawang merah",
+        "status": "Ada",
+        "takaran": "8 siung"
+      },
+      {
+        "nama": "bawang putih",
+        "status": "Ada",
+        "takaran": "4 siung"
+      },
+      {
+        "nama": "jahe",
+        "status": "Ada",
+        "takaran": "2 cm"
+      },
+      {
+        "nama": "serai",
+        "status": "Ada",
+        "takaran": "2 batang"
+      },
+      {
+        "nama": "daun jeruk",
+        "status": "Ada",
+        "takaran": "5 lembar"
+      },
+      {
+        "nama": "daun kemangi",
+        "status": "Ada",
+        "takaran": "2 genggam"
+      }
+    ],
+    "langkah": [
+      {
+        "judul": "Persiapan Ayam",
+        "durasi": "10 Menit",
+        "deskripsi": "Goreng sebentar ayam hingga setengah matang. Tiriskan.",
+        "bahan_terkait": [
+          "ayam"
+        ]
+      },
+      {
+        "judul": "Menumis Bumbu",
+        "durasi": "10 Menit",
+        "deskripsi": "Ulek kasar cabai, bawang merah, bawang putih, dan jahe. Tumis bersama serai dan daun jeruk hingga harum.",
+        "bahan_terkait": [
+          "cabai merah keriting",
+          "cabai rawit",
+          "bawang merah",
+          "bawang putih",
+          "jahe",
+          "serai",
+          "daun jeruk"
+        ]
+      },
+      {
+        "judul": "Memasak Ayam",
+        "durasi": "10 Menit",
+        "deskripsi": "Masukkan ayam ke dalam tumisan bumbu. Tambahkan sedikit air, garam, gula, dan kaldu bubuk.",
+        "bahan_terkait": [
+          "garam",
+          "gula",
+          "kaldu bubuk"
+        ]
+      },
+      {
+        "judul": "Menambahkan Kemangi",
+        "durasi": "5 Menit",
+        "deskripsi": "Menjelang diangkat, masukkan daun kemangi, aduk cepat hingga layu.",
+        "bahan_terkait": [
+          "daun kemangi"
+        ]
+      },
+      {
+        "judul": "Penyajian",
+        "durasi": "5 Menit",
+        "deskripsi": "Sajikan ayam rica-rica selagi hangat.",
+        "bahan_terkait": []
+      }
+    ]
+  },
+  {
+    "id": "recipe-027",
+    "nama": "Soto Kudus",
+    "kategori": "Sup & Kuah",
+    "rangkuman": "Soto ayam berkuah bening gurih khas Kudus yang disajikan dengan suwiran ayam kampung dan tauge segar di atas mangkuk kecil.",
+    "kalori": "315 kkal",
+    "protein": "24 g",
+    "fats": "12 g",
+    "carbs": "28 g",
+    "waktu_masak": "45 Menit",
+    "porsi": "4 Orang",
+    "alat_masak": "Kompor, Panci, Pisau, Talenan, Blender",
+    "image_url": "https://asset-a.grid.id/crop/0x0:0x0/700x465/photo/2022/02/03/resep-soto-kudus-hidangan-super-20220203110750.jpg",
+    "bumbu_dasar": "Garam • Gula • Merica • Minyak Goreng • Air",
+    "bahan": [
+      {
+        "nama": "Ayam kampung",
+        "status": "Ada",
+        "takaran": "500 gram"
+      },
+      {
+        "nama": "Bawang merah",
+        "status": "Ada",
+        "takaran": "6 siung"
+      },
+      {
+        "nama": "Bawang putih",
+        "status": "Ada",
+        "takaran": "4 siung"
+      },
+      {
+        "nama": "Kemiri",
+        "status": "Ada",
+        "takaran": "3 butir"
+      },
+      {
+        "nama": "Jahe",
+        "status": "Ada",
+        "takaran": "2 cm"
+      },
+      {
+        "nama": "Kunyit",
+        "status": "Ada",
+        "takaran": "2 cm"
+      },
+      {
+        "nama": "Lengkuas",
+        "status": "Ada",
+        "takaran": "2 cm"
+      },
+      {
+        "nama": "Serai",
+        "status": "Ada",
+        "takaran": "2 batang"
+      },
+      {
+        "nama": "Daun jeruk",
+        "status": "Ada",
+        "takaran": "4 lembar"
+      },
+      {
+        "nama": "Daun salam",
+        "status": "Ada",
+        "takaran": "2 lembar"
+      },
+      {
+        "nama": "Tauge pendek",
+        "status": "Ada",
+        "takaran": "100 gram"
+      },
+      {
+        "nama": "Seledri",
+        "status": "Ada",
+        "takaran": "2 batang"
+      },
+      {
+        "nama": "Bawang goreng",
+        "status": "Ada",
+        "takaran": "2 sendok makan"
+      }
+    ],
+    "langkah": [
+      {
+        "judul": "Persiapan Bahan",
+        "durasi": "10 Menit",
+        "deskripsi": "Haluskan bawang merah, bawang putih, kemiri, jahe, dan kunyit. Memarkan lengkuas dan serai.",
+        "bahan_terkait": [
+          "Bawang merah",
+          "Bawang putih",
+          "Kemiri",
+          "Jahe",
+          "Kunyit",
+          "Lengkuas",
+          "Serai"
+        ]
+      },
+      {
+        "judul": "Tumis Bumbu",
+        "durasi": "8 Menit",
+        "deskripsi": "Panaskan minyak goreng, tumis bumbu halus bersama daun jeruk, daun salam, lengkuas, dan serai hingga harum dan matang.",
+        "bahan_terkait": [
+          "Minyak Goreng",
+          "Bawang merah",
+          "Bawang putih",
+          "Kemiri",
+          "Jahe",
+          "Kunyit",
+          "Lengkuas",
+          "Serai",
+          "Daun jeruk",
+          "Daun salam"
+        ]
+      },
+      {
+        "judul": "Masak Kuah Soto",
+        "durasi": "30 Menit",
+        "deskripsi": "Masukkan ayam kampung ke dalam panci berisi air mendidih. Tambahkan tumisan bumbu, garam, gula, dan merica. Masak dengan api sedang selama 30 menit hingga ayam empuk dan kaldu meresap. Angkat ayam lalu suwir-suwir.",
+        "bahan_terkait": [
+          "Ayam kampung",
+          "Air",
+          "Garam",
+          "Gula",
+          "Merica"
+        ]
+      },
+      {
+        "judul": "Penyajian",
+        "durasi": "5 Menit",
+        "deskripsi": "Tata nasi putih, suwiran ayam, tauge, dan seledri di dalam mangkuk. Siram dengan kuah soto panas dan taburi bawang goreng.",
+        "bahan_terkait": [
+          "Tauge pendek",
+          "Seledri",
+          "Bawang goreng"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "recipe-028",
+    "nama": "Sop Buntut Sapi",
+    "kategori": "Sup & Kuah",
+    "rangkuman": "Sup buntut sapi empuk dengan kuah kaldu rempah yang kaya rasa, dilengkapi potongan wortel dan kentang segar.",
+    "kalori": "435 kkal",
+    "protein": "32 g",
+    "fats": "26 g",
+    "carbs": "18 g",
+    "waktu_masak": "90 Menit",
+    "porsi": "4 Orang",
+    "alat_masak": "Kompor, Panci Tekanan, Pisau, Talenan",
+    "image_url": "https://ts4.explicit.bing.net/th?id=OIP.lKma_C1uBIcW_tUhZ1E0AQHaH8&pid=15.1",
+    "bumbu_dasar": "Garam • Gula • Merica • Minyak Goreng • Air • Pala bubuk",
+    "bahan": [
+      {
+        "nama": "Buntut sapi",
+        "status": "Ada",
+        "takaran": "750 gram"
+      },
+      {
+        "nama": "Wortel",
+        "status": "Ada",
+        "takaran": "2 buah"
+      },
+      {
+        "nama": "Kentang",
+        "status": "Ada",
+        "takaran": "2 buah"
+      },
+      {
+        "nama": "Bawang merah",
+        "status": "Ada",
+        "takaran": "5 siung"
+      },
+      {
+        "nama": "Bawang putih",
+        "status": "Ada",
+        "takaran": "4 siung"
+      },
+      {
+        "nama": "Kayu manis",
+        "status": "Ada",
+        "takaran": "3 cm"
+      },
+      {
+        "nama": "Cengkeh",
+        "status": "Ada",
+        "takaran": "4 butir"
+      },
+      {
+        "nama": "Kapulaga",
+        "status": "Ada",
+        "takaran": "2 butir"
+      },
+      {
+        "nama": "Daun bawang",
+        "status": "Ada",
+        "takaran": "2 batang"
+      },
+      {
+        "nama": "Seledri",
+        "status": "Ada",
+        "takaran": "2 batang"
+      },
+      {
+        "nama": "Tomat",
+        "status": "Ada",
+        "takaran": "1 buah"
+      }
+    ],
+    "langkah": [
+      {
+        "judul": "Persiapan Bahan",
+        "durasi": "15 Menit",
+        "deskripsi": "Potong-potong wortel dan kentang. Iris tipis bawang merah dan bawang putih, lalu haluskan bersama pala bubuk.",
+        "bahan_terkait": [
+          "Wortel",
+          "Kentang",
+          "Bawang merah",
+          "Bawang putih"
+        ]
+      },
+      {
+        "judul": "Presto Buntut",
+        "durasi": "45 Menit",
+        "deskripsi": "Rebus buntut sapi dengan panci presto berisi air selama 45 menit hingga empuk. Buang air rebusan pertama jika ingin kuah lebih bersih, lalu didihkan air baru.",
+        "bahan_terkait": [
+          "Buntut sapi",
+          "Air"
+        ]
+      },
+      {
+        "judul": "Tumis Bumbu Rempah",
+        "durasi": "7 Menit",
+        "deskripsi": "Tumis bumbu halus bersama kayu manis, cengkeh, dan kapulaga dengan sedikit minyak hingga harum.",
+        "bahan_terkait": [
+          "Minyak Goreng",
+          "Kayu manis",
+          "Cengkeh",
+          "Kapulaga"
+        ]
+      },
+      {
+        "judul": "Penyajian",
+        "durasi": "20 Menit",
+        "deskripsi": "Masukkan tumisan bumbu, wortel, dan kentang ke dalam kaldu buntut. Bumbui dengan garam, gula, dan merica. Masak sampai sayuran lunak dengan api sedang. Sajikan dengan irisan tomat, daun bawang, dan seledri.",
+        "bahan_terkait": [
+          "Wortel",
+          "Kentang",
+          "Garam",
+          "Gula",
+          "Merica",
+          "Tomat",
+          "Daun bawang",
+          "Seledri"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "recipe-029",
+    "nama": "Sayur Asem Sunda",
+    "kategori": "Sup & Kuah",
+    "rangkuman": "Sayur asem bening khas Sunda dengan sensasi asam segar yang membangkitkan selera makan bersama lauk pauk.",
+    "kalori": "120 kkal",
+    "protein": "4 g",
+    "fats": "2 g",
+    "carbs": "22 g",
+    "waktu_masak": "30 Menit",
+    "porsi": "4 Orang",
+    "alat_masak": "Kompor, Panci, Pisau, Talenan",
+    "image_url": "https://awsimages.detik.net.id/community/media/visual/2025/06/27/resep-sayur-asem-1750989885020.jpeg?w=700&q=90",
+    "bumbu_dasar": "Garam • Gula • Asam jawa • Air",
+    "bahan": [
+      {
+        "nama": "Kacang panjang",
+        "status": "Ada",
+        "takaran": "5 batang"
+      },
+      {
+        "nama": "Labu siam",
+        "status": "Ada",
+        "takaran": "1 buah"
+      },
+      {
+        "nama": "Jagung manis",
+        "status": "Ada",
+        "takaran": "1 buah"
+      },
+      {
+        "nama": "Melinjo",
+        "status": "Ada",
+        "takaran": "50 gram"
+      },
+      {
+        "nama": "Daun melinjo",
+        "status": "Ada",
+        "takaran": "1 genggam"
+      },
+      {
+        "nama": "Bawang merah",
+        "status": "Ada",
+        "takaran": "5 siung"
+      },
+      {
+        "nama": "Bawang putih",
+        "status": "Ada",
+        "takaran": "3 siung"
+      },
+      {
+        "nama": "Cabai merah besar",
+        "status": "Ada",
+        "takaran": "2 buah"
+      },
+      {
+        "nama": "Terasi",
+        "status": "Ada",
+        "takaran": "1 sendok teh"
+      },
+      {
+        "nama": "Lengkuas",
+        "status": "Ada",
+        "takaran": "2 cm"
+      }
+    ],
+    "langkah": [
+      {
+        "judul": "Persiapan Bahan",
+        "durasi": "10 Menit",
+        "deskripsi": "Potong-potong labu siam, kacang panjang, dan jagung manis. Iris tipis bawang merah, bawang putih, dan cabai merah. Memarkan lengkuas.",
+        "bahan_terkait": [
+          "Kacang panjang",
+          "Labu siam",
+          "Jagung manis",
+          "Bawang merah",
+          "Bawang putih",
+          "Cabai merah besar",
+          "Lengkuas"
+        ]
+      },
+      {
+        "judul": "Rebus Bahan Keras",
+        "durasi": "10 Menit",
+        "deskripsi": "Didihkan air dalam panci, masukkan jagung manis, melinjo, lengkuas, dan bumbu iris. Masak hingga setengah matang.",
+        "bahan_terkait": [
+          "Air",
+          "Jagung manis",
+          "Melinjo",
+          "Lengkuas",
+          "Bawang merah",
+          "Bawang putih",
+          "Cabai merah besar"
+        ]
+      },
+      {
+        "judul": "Masukkan Sayuran Lain",
+        "durasi": "5 Menit",
+        "deskripsi": "Masukkan labu siam dan kacang panjang. Aduk rata dan masak dengan api sedang.",
+        "bahan_terkait": [
+          "Labu siam",
+          "Kacang panjang"
+        ]
+      },
+      {
+        "judul": "Bumbui dan Sajikan",
+        "durasi": "5 Menit",
+        "deskripsi": "Tambahkan air asam jawa, terasi, garam, dan gula secukupnya. Terakhir masukkan daun melinjo, masak sebentar hingga layu dan matang. Angkat.",
+        "bahan_terkait": [
+          "Asam jawa",
+          "Terasi",
+          "Garam",
+          "Gula",
+          "Daun melinjo"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "recipe-030",
+    "nama": "Sayur Lodeh Jawa",
+    "kategori": "Sup & Kuah",
+    "rangkuman": "Sayur lodeh tradisional berkuah santan gurih dengan aneka potongan sayuran kaya nutrisi.",
+    "kalori": "225 kkal",
+    "protein": "5 g",
+    "fats": "15 g",
+    "carbs": "18 g",
+    "waktu_masak": "35 Menit",
+    "porsi": "4 Orang",
+    "alat_masak": "Kompor, Panci, Pisau, Talenan",
+    "image_url": "https://cdn0-production-images-kly.akamaized.net/05K-U33eKS4uVS7jVKxf21bZq5M=/640x640/smart/filters:quality(75):strip_icc():format(webp)/kly-media-production/medias/7737860/original/016155900_1780544347-sayur_lodeh_jawa_1.jpeg",
+    "bumbu_dasar": "Garam • Gula • Merica • Minyak Goreng • Air",
+    "bahan": [
+      {
+        "nama": "Santan kelapa",
+        "status": "Ada",
+        "takaran": "500 ml"
+      },
+      {
+        "nama": "Tempe",
+        "status": "Ada",
+        "takaran": "1 papan"
+      },
+      {
+        "nama": "Terong ungu",
+        "status": "Ada",
+        "takaran": "1 buah"
+      },
+      {
+        "nama": "Nangka muda",
+        "status": "Ada",
+        "takaran": "100 gram"
+      },
+      {
+        "nama": "Kacang panjang",
+        "status": "Ada",
+        "takaran": "5 batang"
+      },
+      {
+        "nama": "Bawang merah",
+        "status": "Ada",
+        "takaran": "5 siung"
+      },
+      {
+        "nama": "Bawang putih",
+        "status": "Ada",
+        "takaran": "3 siung"
+      },
+      {
+        "nama": "Kemiri",
+        "status": "Ada",
+        "takaran": "2 butir"
+      },
+      {
+        "nama": "Lengkuas",
+        "status": "Ada",
+        "takaran": "2 cm"
+      },
+      {
+        "nama": "Cabai hijau besar",
+        "status": "Ada",
+        "takaran": "3 buah"
+      },
+      {
+        "nama": "Daun salam",
+        "status": "Ada",
+        "takaran": "2 lembar"
+      }
+    ],
+    "langkah": [
+      {
+        "judul": "Persiapan Bahan",
+        "durasi": "12 Menit",
+        "deskripsi": "Potong dadu tempe, terong, dan nangka muda. Potong kacang panjang. Haluskan bawang merah, bawang putih, dan kemiri. Iris serong cabai hijau.",
+        "bahan_terkait": [
+          "Tempe",
+          "Terong ungu",
+          "Nangka muda",
+          "Kacang panjang",
+          "Bawang merah",
+          "Bawang putih",
+          "Kemiri",
+          "Cabai hijau besar"
+        ]
+      },
+      {
+        "judul": "Tumis Bumbu",
+        "durasi": "5 Menit",
+        "deskripsi": "Panaskan minyak, tumis bumbu halus bersama lengkuas dan daun salam hingga harum.",
+        "bahan_terkait": [
+          "Minyak Goreng",
+          "Bawang merah",
+          "Bawang putih",
+          "Kemiri",
+          "Lengkuas",
+          "Daun salam"
+        ]
+      },
+      {
+        "judul": "Masak Sayuran Keras",
+        "durasi": "10 Menit",
+        "deskripsi": "Masukkan nangka muda dan air secukupnya ke dalam panci, rebus hingga nangka agak empuk.",
+        "bahan_terkait": [
+          "Nangka muda",
+          "Air"
+        ]
+      },
+      {
+        "judul": "Selesaikan Lodeh",
+        "durasi": "8 Menit",
+        "deskripsi": "Masukkan santan, tempe, terong, kacang panjang, dan cabai hijau. Bumbui dengan garam, gula, dan merica. Masak dengan api kecil sambil diaduk agar santan tidak pecah hingga matang sempurna.",
+        "bahan_terkait": [
+          "Santan kelapa",
+          "Tempe",
+          "Terong ungu",
+          "Kacang panjang",
+          "Cabai hijau besar",
+          "Garam",
+          "Gula",
+          "Merica"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "recipe-031",
+    "nama": "Soto Banjar",
+    "kategori": "Sup & Kuah",
+    "rangkuman": "Soto khas Kalimantan Selatan berkuah kaya rempah beraroma harum susu dan suwiran ayam.",
+    "kalori": "370 kkal",
+    "protein": "26 g",
+    "fats": "16 g",
+    "carbs": "30 g",
+    "waktu_masak": "50 Menit",
+    "porsi": "4 Orang",
+    "alat_masak": "Kompor, Panci, Pisau, Talenan",
+    "image_url": "https://ts2.mm.bing.net/th?id=OIP._Ck00ssbSDEUrFNuKZtzaAHaEK&pid=15.1",
+    "bumbu_dasar": "Garam • Gula • Merica • Minyak Goreng • Air",
+    "bahan": [
+      {
+        "nama": "Daging ayam",
+        "status": "Ada",
+        "takaran": "500 gram"
+      },
+      {
+        "nama": "Susu cair",
+        "status": "Ada",
+        "takaran": "100 ml"
+      },
+      {
+        "nama": "Bawang merah",
+        "status": "Ada",
+        "takaran": "7 siung"
+      },
+      {
+        "nama": "Bawang putih",
+        "status": "Ada",
+        "takaran": "5 siung"
+      },
+      {
+        "nama": "Jahe",
+        "status": "Ada",
+        "takaran": "2 cm"
+      },
+      {
+        "nama": "Kayu manis",
+        "status": "Ada",
+        "takaran": "3 cm"
+      },
+      {
+        "nama": "Cengkeh",
+        "status": "Ada",
+        "takaran": "3 butir"
+      },
+      {
+        "nama": "Kapulaga",
+        "status": "Ada",
+        "takaran": "3 butir"
+      },
+      {
+        "nama": "Pala bubuk",
+        "status": "Ada",
+        "takaran": "0.5 sendok teh"
+      },
+      {
+        "nama": "Soun",
+        "status": "Ada",
+        "takaran": "50 gram"
+      },
+      {
+        "nama": "Perkedel kentang",
+        "status": "Ada",
+        "takaran": "4 buah"
+      },
+      {
+        "nama": "Telur bebek",
+        "status": "Ada",
+        "takaran": "2 butir"
+      }
+    ],
+    "langkah": [
+      {
+        "judul": "Persiapan Bahan",
+        "durasi": "15 Menit",
+        "deskripsi": "Rebus ayam hingga matang lalu suwir-suwir dagingnya. Haluskan bawang merah, bawang putih, dan jahe.",
+        "bahan_terkait": [
+          "Daging ayam",
+          "Bawang merah",
+          "Bawang putih",
+          "Jahe"
+        ]
+      },
+      {
+        "judul": "Tumis Rempah Kuah",
+        "durasi": "8 Menit",
+        "deskripsi": "Tumis bumbu halus bersama kayu manis, cengkeh, kapulaga, dan pala bubuk dengan sedikit minyak hingga harum.",
+        "bahan_terkait": [
+          "Minyak Goreng",
+          "Bawang merah",
+          "Bawang putih",
+          "Jahe",
+          "Kayu manis",
+          "Cengkeh",
+          "Kapulaga",
+          "Pala bubuk"
+        ]
+      },
+      {
+        "judul": "Masak Kuah Soto",
+        "durasi": "15 Menit",
+        "deskripsi": "Masukkan tumisan bumbu ke dalam air kaldu rebusan ayam. Tambahkan susu cair, garam, gula, dan merica. Masak dengan api sedang hingga mendidih dan meresap.",
+        "bahan_terkait": [
+          "Air",
+          "Susu cair",
+          "Garam",
+          "Gula",
+          "Merica"
+        ]
+      },
+      {
+        "judul": "Penyajian",
+        "durasi": "12 Menit",
+        "deskripsi": "Tata soun seduh, suwiran ayam, potongan telur bebek rebus, dan perkedel kentang di mangkuk. Siram dengan kuah soto panas.",
+        "bahan_terkait": [
+          "Soun",
+          "Daging ayam",
+          "Telur bebek",
+          "Perkedel kentang"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "recipe-032",
+    "nama": "Garang Asem Ayam",
+    "kategori": "Sup & Kuah",
+    "rangkuman": "Olahan ayam berkuah santan bercita rasa pedas, asam, dan gurih yang dikukus dalam balutan daun pisang.",
+    "kalori": "255 kkal",
+    "protein": "22 g",
+    "fats": "14 g",
+    "carbs": "10 g",
+    "waktu_masak": "45 Menit",
+    "porsi": "3 Orang",
+    "alat_masak": "Kompor, Pengukus, Mangkuk Daun Pisang, Pisau",
+    "image_url": "https://cdn1-production-images-kly.akamaized.net/Hz4yezhIF_pQodHK_QGBqBMrFPY=/2560x1440/smart/filters:quality(75):strip_icc()/kly-media-production/medias/4823021/original/003481000_1714977524-Sepiring_garang_asem_ayam_IG_banususanto.jpg",
+    "bumbu_dasar": "Garam • Gula • Merica • Kaldu bubuk",
+    "bahan": [
+      {
+        "nama": "Daging ayam",
+        "status": "Ada",
+        "takaran": "400 gram"
+      },
+      {
+        "nama": "Santan encer",
+        "status": "Ada",
+        "takaran": "200 ml"
+      },
+      {
+        "nama": "Belimbing wuluh",
+        "status": "Ada",
+        "takaran": "6 buah"
+      },
+      {
+        "nama": "Cabai rawit merah",
+        "status": "Ada",
+        "takaran": "10 buah"
+      },
+      {
+        "nama": "Tomat hijau",
+        "status": "Ada",
+        "takaran": "3 buah"
+      },
+      {
+        "nama": "Bawang merah",
+        "status": "Ada",
+        "takaran": "5 siung"
+      },
+      {
+        "nama": "Bawang putih",
+        "status": "Ada",
+        "takaran": "3 siung"
+      },
+      {
+        "nama": "Lengkuas",
+        "status": "Ada",
+        "takaran": "2 cm"
+      },
+      {
+        "nama": "Serai",
+        "status": "Ada",
+        "takaran": "1 batang"
+      },
+      {
+        "nama": "Daun salam",
+        "status": "Ada",
+        "takaran": "4 lembar"
+      },
+      {
+        "nama": "Daun pisang",
+        "status": "Ada",
+        "takaran": "3 lembar"
+      }
+    ],
+    "langkah": [
+      {
+        "judul": "Persiapan Bahan",
+        "durasi": "10 Menit",
+        "deskripsi": "Potong ayam sesuai selera. Iris tipis bawang merah, bawang putih, belimbing wuluh, tomat hijau, dan cabai rawit. Memarkan lengkuas dan serai.",
+        "bahan_terkait": [
+          "Daging ayam",
+          "Belimbing wuluh",
+          "Tomat hijau",
+          "Cabai rawit merah",
+          "Bawang merah",
+          "Bawang putih",
+          "Lengkuas",
+          "Serai"
+        ]
+      },
+      {
+        "judul": "Campur Bahan",
+        "durasi": "8 Menit",
+        "deskripsi": "Campurkan potongan ayam dengan bumbu iris, santan encer, garam, gula, merica, dan kaldu bubuk di dalam wadah.",
+        "bahan_terkait": [
+          "Daging ayam",
+          "Santan encer",
+          "Garam",
+          "Gula",
+          "Merica",
+          "Kaldu bubuk"
+        ]
+      },
+      {
+        "judul": "Bungkus Daun Pisang",
+        "durasi": "12 Menit",
+        "deskripsi": "Tata campuran ayam ke atas daun pisang, tambahkan daun salam, serai, dan sisa cabai rawit utuh. Bungkus rapi lalu semat dengan tusuk gigi.",
+        "bahan_terkait": [
+          "Daun pisang",
+          "Daun salam",
+          "Serai",
+          "Cabai rawit merah"
+        ]
+      },
+      {
+        "judul": "Kukus Matang",
+        "durasi": "35 Menit",
+        "deskripsi": "Panaskan kukusan, masukkan bungkusan garang asem. Kukus dengan api sedang selama 35 menit hingga ayam benar-benar empuk dan bumbu meresap.",
+        "bahan_terkait": [
+          "Daging ayam"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "recipe-033",
+    "nama": "Pindang Patin Palembang",
+    "kategori": "Sup & Kuah",
+    "rangkuman": "Sup ikan patin khas Palembang dengan kuah segar beraroma serai, kecombrang, dan nanas.",
+    "kalori": "265 kkal",
+    "protein": "25 g",
+    "fats": "12 g",
+    "carbs": "14 g",
+    "waktu_masak": "35 Menit",
+    "porsi": "3 Orang",
+    "alat_masak": "Kompor, Panci, Pisau, Talenan",
+    "image_url": "https://ts4.mm.bing.net/th?id=OIP.cQFX3w7T8ZYWKXwyKSfjqwHaEK&pid=15.1",
+    "bumbu_dasar": "Garam • Gula • Kecap manis • Air",
+    "bahan": [
+      {
+        "nama": "Ikan patin",
+        "status": "Ada",
+        "takaran": "500 gram"
+      },
+      {
+        "nama": "Nanas",
+        "status": "Ada",
+        "takaran": "1/4 buah"
+      },
+      {
+        "nama": "Bawang merah",
+        "status": "Ada",
+        "takaran": "6 siung"
+      },
+      {
+        "nama": "Bawang putih",
+        "status": "Ada",
+        "takaran": "3 siung"
+      },
+      {
+        "nama": "Kunyit",
+        "status": "Ada",
+        "takaran": "3 cm"
+      },
+      {
+        "nama": "Jahe",
+        "status": "Ada",
+        "takaran": "2 cm"
+      },
+      {
+        "nama": "Lengkuas",
+        "status": "Ada",
+        "takaran": "2 cm"
+      },
+      {
+        "nama": "Serai",
+        "status": "Ada",
+        "takaran": "2 batang"
+      },
+      {
+        "nama": "Daun kemangi",
+        "status": "Ada",
+        "takaran": "1 mangkuk"
+      },
+      {
+        "nama": "Cabai rawit utuh",
+        "status": "Ada",
+        "takaran": "8 buah"
+      },
+      {
+        "nama": "Air asam jawa",
+        "status": "Ada",
+        "takaran": "2 sendok makan"
+      }
+    ],
+    "langkah": [
+      {
+        "judul": "Persiapan Bahan",
+        "durasi": "10 Menit",
+        "deskripsi": "Potong ikan patin dan potong-potong nanas. Haluskan bawang merah, bawang putih, kunyit, dan jahe. Memarkan lengkuas dan serai.",
+        "bahan_terkait": [
+          "Ikan patin",
+          "Nanas",
+          "Bawang merah",
+          "Bawang putih",
+          "Kunyit",
+          "Jahe",
+          "Lengkuas",
+          "Serai"
+        ]
+      },
+      {
+        "judul": "Rebus Bumbu",
+        "durasi": "8 Menit",
+        "deskripsi": "Didihkan air dalam panci, masukkan bumbu halus, lengkuas, serai, dan air asam jawa. Masak hingga harum.",
+        "bahan_terkait": [
+          "Air",
+          "Lengkuas",
+          "Serai",
+          "Air asam jawa"
+        ]
+      },
+      {
+        "judul": "Masak Ikan Patin",
+        "durasi": "12 Menit",
+        "deskripsi": "Masukkan potongan ikan patin, nanas, cabai rawit utuh, garam, gula, dan sedikit kecap manis. Masak dengan api sedang hingga ikan matang.",
+        "bahan_terkait": [
+          "Ikan patin",
+          "Nanas",
+          "Cabai rawit utuh",
+          "Garam",
+          "Gula",
+          "Kecap manis"
+        ]
+      },
+      {
+        "judul": "Penyajian",
+        "durasi": "5 Menit",
+        "deskripsi": "Sebelum diangkat, masukkan daun kemangi aduk sebentar hingga layu. Matikan api dan sajikan hangat.",
+        "bahan_terkait": [
+          "Daun kemangi"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "recipe-034",
+    "nama": "Sop Kaki Sapi Betawi",
+    "kategori": "Sup & Kuah",
+    "rangkuman": "Sup kaki sapi empuk berkuah susu dan santan gurih khas Betawi dengan aroma rempah yang kuat.",
+    "kalori": "465 kkal",
+    "protein": "28 g",
+    "fats": "35 g",
+    "carbs": "10 g",
+    "waktu_masak": "90 Menit",
+    "porsi": "4 Orang",
+    "alat_masak": "Kompor, Panci Tekanan, Pisau",
+    "image_url": "https://ts4.mm.bing.net/th?id=OIP.lTnuk4Oh3nMADpd9wjMk-gHaFP&pid=15.1",
+    "bumbu_dasar": "Garam • Gula • Merica • Minyak Goreng • Air",
+    "bahan": [
+      {
+        "nama": "Kaki sapi",
+        "status": "Ada",
+        "takaran": "750 gram"
+      },
+      {
+        "nama": "Santan kental",
+        "status": "Ada",
+        "takaran": "150 ml"
+      },
+      {
+        "nama": "Susu cair",
+        "status": "Ada",
+        "takaran": "150 ml"
+      },
+      {
+        "nama": "Bawang merah",
+        "status": "Ada",
+        "takaran": "6 siung"
+      },
+      {
+        "nama": "Bawang putih",
+        "status": "Ada",
+        "takaran": "4 siung"
+      },
+      {
+        "nama": "Jahe",
+        "status": "Ada",
+        "takaran": "2 cm"
+      },
+      {
+        "nama": "Kunyit",
+        "status": "Ada",
+        "takaran": "2 cm"
+      },
+      {
+        "nama": "Kapulaga",
+        "status": "Ada",
+        "takaran": "3 butir"
+      },
+      {
+        "nama": "Cengkeh",
+        "status": "Ada",
+        "takaran": "3 butir"
+      },
+      {
+        "nama": "Kayu manis",
+        "status": "Ada",
+        "takaran": "3 cm"
+      },
+      {
+        "nama": "Daun bawang",
+        "status": "Ada",
+        "takaran": "2 batang"
+      },
+      {
+        "nama": "Bawang goreng",
+        "status": "Ada",
+        "takaran": "2 sendok makan"
+      }
+    ],
+    "langkah": [
+      {
+        "judul": "Presto Kaki Sapi",
+        "durasi": "55 Menit",
+        "deskripsi": "Rebus kaki sapi dengan panci presto selama 50 menit hingga empuk. Buang air rebusan pertama, lalu didihkan air baru bersama kaki sapi.",
+        "bahan_terkait": [
+          "Kaki sapi",
+          "Air"
+        ]
+      },
+      {
+        "judul": "Tumis Bumbu Halus",
+        "durasi": "10 Menit",
+        "deskripsi": "Haluskan bawang merah, bawang putih, jahe, dan kunyit. Tumis dengan minyak goreng bersama kapulaga, cengkeh, dan kayu manis hingga harum.",
+        "bahan_terkait": [
+          "Minyak Goreng",
+          "Bawang merah",
+          "Bawang putih",
+          "Jahe",
+          "Kunyit",
+          "Kapulaga",
+          "Cengkeh",
+          "Kayu manis"
+        ]
+      },
+      {
+        "judul": "Campur Kuah",
+        "durasi": "10 Menit",
+        "deskripsi": "Masukkan tumisan bumbu ke dalam rebusan kaki sapi. Tambahkan santan kental dan susu cair, aduk perlahan agar tidak pecah.",
+        "bahan_terkait": [
+          "Santan kental",
+          "Susu cair"
+        ]
+      },
+      {
+        "judul": "Bumbui dan Sajikan",
+        "durasi": "10 Menit",
+        "deskripsi": "Bumbui dengan garam, gula, dan merica. Masak sampai mendidih dan kuah meresap. Sajikan dengan taburan daun bawang dan bawang goreng.",
+        "bahan_terkait": [
+          "Garam",
+          "Gula",
+          "Merica",
+          "Daun bawang",
+          "Bawang goreng"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "recipe-035",
+    "nama": "Soto Madura",
+    "kategori": "Sup & Kuah",
+    "rangkuman": "Soto daging sapi bening kekuningan khas Madura yang kaya rempah dan disajikan dengan telur rebus serta kuah gurih.",
+    "kalori": "305 kkal",
+    "protein": "27 g",
+    "fats": "15 g",
+    "carbs": "16 g",
+    "waktu_masak": "60 Menit",
+    "porsi": "4 Orang",
+    "alat_masak": "Kompor, Panci, Pisau, Talenan",
+    "image_url": "https://awsimages.detik.net.id/community/media/visual/2024/06/03/soto-ayam-madura_169.jpeg?w=700&q=90",
+    "bumbu_dasar": "Garam • Gula • Merica • Minyak Goreng • Air",
+    "bahan": [
+      {
+        "nama": "Daging sapi",
+        "status": "Ada",
+        "takaran": "500 gram"
+      },
+      {
+        "nama": "Bawang merah",
+        "status": "Ada",
+        "takaran": "6 siung"
+      },
+      {
+        "nama": "Bawang putih",
+        "status": "Ada",
+        "takaran": "4 siung"
+      },
+      {
+        "nama": "Kemiri",
+        "status": "Ada",
+        "takaran": "4 butir"
+      },
+      {
+        "nama": "Kunyit",
+        "status": "Ada",
+        "takaran": "3 cm"
+      },
+      {
+        "nama": "Jahe",
+        "status": "Ada",
+        "takaran": "2 cm"
+      },
+      {
+        "nama": "Serai",
+        "status": "Ada",
+        "takaran": "2 batang"
+      },
+      {
+        "nama": "Daun jeruk",
+        "status": "Ada",
+        "takaran": "4 lembar"
+      },
+      {
+        "nama": "Daun bawang",
+        "status": "Ada",
+        "takaran": "2 batang"
+      },
+      {
+        "nama": "Telur ayam",
+        "status": "Ada",
+        "takaran": "2 butir"
+      }
+    ],
+    "langkah": [
+      {
+        "judul": "Rebus Daging",
+        "durasi": "40 Menit",
+        "deskripsi": "Rebus daging sapi hingga empuk, potong-potong dadu. Sisihkan air kaldu sebanyak 1.5 liter.",
+        "bahan_terkait": [
+          "Daging sapi",
+          "Air"
+        ]
+      },
+      {
+        "judul": "Tumis Bumbu",
+        "durasi": "10 Menit",
+        "deskripsi": "Haluskan bawang merah, bawang putih, kemiri, kunyit, dan jahe. Tumis dengan minyak bersama serai dan daun jeruk sampai harum.",
+        "bahan_terkait": [
+          "Minyak Goreng",
+          "Bawang merah",
+          "Bawang putih",
+          "Kemiri",
+          "Kunyit",
+          "Jahe",
+          "Serai",
+          "Daun jeruk"
+        ]
+      },
+      {
+        "judul": "Satukan Kaldu",
+        "durasi": "10 Menit",
+        "deskripsi": "Masukkan tumisan bumbu ke dalam air kaldu daging. Didihkan kembali dengan api sedang.",
+        "bahan_terkait": [
+          "Air"
+        ]
+      },
+      {
+        "judul": "Penyajian",
+        "durasi": "5 Menit",
+        "deskripsi": "Bumbui dengan garam, gula, dan merica. Tata potongan daging dan telur rebus di mangkuk, siram kuah soto panas dan beri irisan daun bawang.",
+        "bahan_terkait": [
+          "Daging sapi",
+          "Telur ayam",
+          "Garam",
+          "Gula",
+          "Merica",
+          "Daun bawang"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "recipe-036",
+    "nama": "Sup Konro Makassar",
+    "kategori": "Sup & Kuah",
+    "rangkuman": "Sup iga sapi khas Makassar dengan kuah hitam pekat berkat kluwek dan rempah pilihan yang sangat menggugah selera.",
+    "kalori": "435 kkal",
+    "protein": "34 g",
+    "fats": "28 g",
+    "carbs": "12 g",
+    "waktu_masak": "90 Menit",
+    "porsi": "4 Orang",
+    "alat_masak": "Kompor, Panci Tekanan, Pisau, Talenan",
+    "image_url": "https://ts4.mm.bing.net/th?id=OIP.2Xr35Svqz60ZKDSJJQksuwHaFP&pid=15.1",
+    "bumbu_dasar": "Garam • Gula • Merica • Minyak Goreng • Air",
+    "bahan": [
+      {
+        "nama": "Iga sapi",
+        "status": "Ada",
+        "takaran": "800 gram"
+      },
+      {
+        "nama": "Kluwek",
+        "status": "Ada",
+        "takaran": "3 buah"
+      },
+      {
+        "nama": "Bawang merah",
+        "status": "Ada",
+        "takaran": "7 siung"
+      },
+      {
+        "nama": "Bawang putih",
+        "status": "Ada",
+        "takaran": "4 siung"
+      },
+      {
+        "nama": "Ketumbar bubuk",
+        "status": "Ada",
+        "takaran": "1 sendok makan"
+      },
+      {
+        "nama": "Jintan",
+        "status": "Ada",
+        "takaran": "0.5 sendok teh"
+      },
+      {
+        "nama": "Kunyit",
+        "status": "Ada",
+        "takaran": "2 cm"
+      },
+      {
+        "nama": "Lengkuas",
+        "status": "Ada",
+        "takaran": "2 cm"
+      },
+      {
+        "nama": "Kayu manis",
+        "status": "Ada",
+        "takaran": "3 cm"
+      },
+      {
+        "nama": "Air asam jawa",
+        "status": "Ada",
+        "takaran": "3 sendok makan"
+      }
+    ],
+    "langkah": [
+      {
+        "judul": "Presto Iga Sapi",
+        "durasi": "45 Menit",
+        "deskripsi": "Rebus iga sapi menggunakan panci presto selama 45 menit hingga empuk. Ambil air kaldunya.",
+        "bahan_terkait": [
+          "Iga sapi",
+          "Air"
+        ]
+      },
+      {
+        "judul": "Haluskan Bumbu Kluwek",
+        "durasi": "10 Menit",
+        "deskripsi": "Kerok isi kluwek, rendam sebentar. Haluskan bersama bawang merah, bawang putih, ketumbar, jintan, dan kunyit.",
+        "bahan_terkait": [
+          "Kluwek",
+          "Bawang merah",
+          "Bawang putih",
+          "Ketumbar bubuk",
+          "Jintan",
+          "Kunyit"
+        ]
+      },
+      {
+        "judul": "Tumis Bumbu",
+        "durasi": "8 Menit",
+        "deskripsi": "Panaskan minyak, tumis bumbu halus bersama lengkuas dan kayu manis hingga harum matang.",
+        "bahan_terkait": [
+          "Minyak Goreng",
+          "Lengkuas",
+          "Kayu manis"
+        ]
+      },
+      {
+        "judul": "Masak Kuah Konro",
+        "durasi": "20 Menit",
+        "deskripsi": "Masukkan tumisan bumbu ke dalam air kaldu iga. Tambahkan iga sapi, air asam jawa, garam, gula, dan merica. Masak mendidih dengan api sedang hingga bumbu meresap.",
+        "bahan_terkait": [
+          "Iga sapi",
+          "Air asam jawa",
+          "Garam",
+          "Gula",
+          "Merica"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "recipe-037",
+    "nama": "Soto Padang",
+    "kategori": "Sup & Kuah",
+    "rangkuman": "Soto daging sapi khas Minang dengan kuah kaldu bening yang kaya rempah, disajikan bersama dendeng kering renyah.",
+    "kalori": "385 kkal",
+    "protein": "28 g",
+    "fats": "16 g",
+    "carbs": "32 g",
+    "waktu_masak": "60 Menit",
+    "porsi": "4 Orang",
+    "alat_masak": "Kompor, Panci, Wajan, Pisau",
+    "image_url": "https://ts2.mm.bing.net/th?id=OIP.LOa9AUuzCm38pURqNj7i6wHaHS&pid=15.1",
+    "bumbu_dasar": "Garam • Gula • Merica • Minyak Goreng • Air",
+    "bahan": [
+      {
+        "nama": "Daging sapi",
+        "status": "Ada",
+        "takaran": "500 gram"
+      },
+      {
+        "nama": "Bawang merah",
+        "status": "Ada",
+        "takaran": "7 siung"
+      },
+      {
+        "nama": "Bawang putih",
+        "status": "Ada",
+        "takaran": "4 siung"
+      },
+      {
+        "nama": "Jahe",
+        "status": "Ada",
+        "takaran": "3 cm"
+      },
+      {
+        "nama": "Kunyit",
+        "status": "Ada",
+        "takaran": "2 cm"
+      },
+      {
+        "nama": "Serai",
+        "status": "Ada",
+        "takaran": "2 batang"
+      },
+      {
+        "nama": "Lengkuas",
+        "status": "Ada",
+        "takaran": "3 cm"
+      },
+      {
+        "nama": "Daun jeruk",
+        "status": "Ada",
+        "takaran": "4 lembar"
+      },
+      {
+        "nama": "Kapulaga",
+        "status": "Ada",
+        "takaran": "3 butir"
+      },
+      {
+        "nama": "Cengkeh",
+        "status": "Ada",
+        "takaran": "3 butir"
+      },
+      {
+        "nama": "Soun",
+        "status": "Ada",
+        "takaran": "50 gram"
+      },
+      {
+        "nama": "Kerupuk merah",
+        "status": "Ada",
+        "takaran": "50 gram"
+      }
+    ],
+    "langkah": [
+      {
+        "judul": "Rebus dan Iris Daging",
+        "durasi": "35 Menit",
+        "deskripsi": "Rebus daging sapi hingga empuk. Sebagian daging diiris tipis untuk digoreng kering sebagai dendeng, sebagian lagi dipotong dadu.",
+        "bahan_terkait": [
+          "Daging sapi",
+          "Air"
+        ]
+      },
+      {
+        "judul": "Tumis Bumbu Soto",
+        "durasi": "10 Menit",
+        "deskripsi": "Haluskan bawang merah, bawang putih, jahe, dan kunyit. Tumis dengan minyak bersama serai, lengkuas, daun jeruk, kapulaga, dan cengkeh.",
+        "bahan_terkait": [
+          "Minyak Goreng",
+          "Bawang merah",
+          "Bawang putih",
+          "Jahe",
+          "Kunyit",
+          "Serai",
+          "Lengkuas",
+          "Daun jeruk",
+          "Kapulaga",
+          "Cengkeh"
+        ]
+      },
+      {
+        "judul": "Masak Kuah",
+        "durasi": "10 Menit",
+        "deskripsi": "Masukkan tumisan bumbu ke dalam air kaldu sisa rebusan daging. Tambahkan garam, gula, dan merica, lalu didihkan.",
+        "bahan_terkait": [
+          "Garam",
+          "Gula",
+          "Merica"
+        ]
+      },
+      {
+        "judul": "Penyajian",
+        "durasi": "5 Menit",
+        "deskripsi": "Tata nasi, soun, potongan daging, dan kerupuk merah di mangkuk. Siram kuah soto panas dan beri irisan dendeng kering.",
+        "bahan_terkait": [
+          "Soun",
+          "Daging sapi",
+          "Kerupuk merah"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "recipe-038",
+    "nama": "Cireng Salju Bumbu Rujak",
+    "kategori": "Cemilan",
+    "rangkuman": "Cireng renyah di luar dan kenyal di dalam yang disajikan dengan sambal rujak pedas manis.",
+    "kalori": "250 kkal",
+    "protein": "3 g",
+    "fats": "8 g",
+    "carbs": "42 g",
+    "waktu_masak": "20 Menit",
+    "porsi": "4 Orang",
+    "alat_masak": "Kompor, Wajan, Mangkuk, Spatula",
+    "image_url": "https://ts3.mm.bing.net/th?id=OIP.LKtPiAlg6AJbTwajdlK1XwHaHa&pid=15.1",
+    "bumbu_dasar": "garam • gula • merica/lada • kaldu bubuk • minyak goreng • air",
+    "bahan": [
+      {
+        "nama": "Tepung tapioka",
+        "status": "Ada",
+        "takaran": "250 gram"
+      },
+      {
+        "nama": "Tepung terigu",
+        "status": "Ada",
+        "takaran": "50 gram"
+      },
+      {
+        "nama": "Bawang putih",
+        "status": "Ada",
+        "takaran": "3 siung haluskan"
+      },
+      {
+        "nama": "Daun bawang",
+        "status": "Ada",
+        "takaran": "2 batang iris halus"
+      },
+      {
+        "nama": "Cabe rawit",
+        "status": "Ada",
+        "takaran": "5 buah"
+      },
+      {
+        "nama": "Gula merah",
+        "status": "Ada",
+        "takaran": "2 sendok makan"
+      },
+      {
+        "nama": "Asam jawa",
+        "status": "Ada",
+        "takaran": "1 sendok teh"
+      }
+    ],
+    "langkah": [
+      {
+        "judul": "Persiapan Bahan Biang",
+        "durasi": "5 Menit",
+        "deskripsi": "Campurkan sedikit tepung tapioka, air, bawang putih halus, garam, kaldu bubuk, dan merica ke dalam panci lalu masak hingga mengental bening menjadi adonan biang.",
+        "bahan_terkait": [
+          "Tepung tapioka",
+          "Bawang putih",
+          "garam",
+          "kaldu bubuk",
+          "merica/lada",
+          "air"
+        ]
+      },
+      {
+        "judul": "Membentuk Adonan Cireng",
+        "durasi": "5 Menit",
+        "deskripsi": "Campurkan adonan biang panas ke sisa tepung tapioka dan irisan daun bawang. Aduk asal tercampur rata dan bentuk pipih tidak beraturan.",
+        "bahan_terkait": [
+          "Tepung tapioka",
+          "Tepung terigu",
+          "Daun bawang"
+        ]
+      },
+      {
+        "judul": "Menggoreng Cireng",
+        "durasi": "5 Menit",
+        "deskripsi": "Panaskan minyak goreng dalam jumlah banyak. Goreng cireng dengan api sedang cenderung kecil hingga mengembang kokoh dan berwarna putih keemasan, lalu angkat.",
+        "bahan_terkait": [
+          "minyak goreng"
+        ]
+      },
+      {
+        "judul": "Membuat Bumbu Rujak dan Penyajian",
+        "durasi": "5 Menit",
+        "deskripsi": "Ulek halus cabe rawit, gula merah, asam jawa, dan sedikit garam lalu seduh dengan air hangat. Sajikan cireng hangat bersama kuah bumbu rujak.",
+        "bahan_terkait": [
+          "Cabe rawit",
+          "Gula merah",
+          "Asam jawa",
+          "garam",
+          "air"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "recipe-039",
+    "nama": "Bakwan Sayur Renyah",
+    "kategori": "Cemilan",
+    "rangkuman": "Gorengan gurih berisikan aneka sayuran segar yang renyah dan nikmat disantap dengan cabe rawit.",
+    "kalori": "220 kkal",
+    "protein": "5 g",
+    "fats": "10 g",
+    "carbs": "28 g",
+    "waktu_masak": "25 Menit",
+    "porsi": "4 Orang",
+    "alat_masak": "Kompor, Wajan, Baskom, Sendok Sayur",
+    "image_url": "https://ts3.mm.bing.net/th?id=OIP.zNuoj4PAxdOF0imRTpwPoQHaEK&pid=15.1",
+    "bumbu_dasar": "garam • gula • merica/lada • kaldu bubuk • minyak goreng • air",
+    "bahan": [
+      {
+        "nama": "Tepung terigu",
+        "status": "Ada",
+        "takaran": "200 gram"
+      },
+      {
+        "nama": "Tepung beras",
+        "status": "Ada",
+        "takaran": "50 gram"
+      },
+      {
+        "nama": "Kol",
+        "status": "Ada",
+        "takaran": "100 gram iris tipis"
+      },
+      {
+        "nama": "Wortel",
+        "status": "Ada",
+        "takaran": "1 buah potong korek api"
+      },
+      {
+        "nama": "Tauge",
+        "status": "Ada",
+        "takaran": "50 gram"
+      },
+      {
+        "nama": "Bawang putih",
+        "status": "Ada",
+        "takaran": "3 siung"
+      },
+      {
+        "nama": "Daun bawang",
+        "status": "Ada",
+        "takaran": "2 batang"
+      }
+    ],
+    "langkah": [
+      {
+        "judul": "Persiapan Irisan Sayur",
+        "durasi": "7 Menit",
+        "deskripsi": "Cuci bersih lalu iris tipis kol, potong wortel bentuk korek api, bersihkan tauge, dan iris halus daun bawang serta haluskan bawang putih.",
+        "bahan_terkait": [
+          "Kol",
+          "Wortel",
+          "Tauge",
+          "Bawang putih",
+          "Daun bawang"
+        ]
+      },
+      {
+        "judul": "Pencampuran Adonan",
+        "durasi": "5 Menit",
+        "deskripsi": "Campurkan tepung terigu, tepung beras, bawang putih halus, garam, merica, kaldu bubuk, dan air secukupnya hingga membentuk adonan kental, lalu masukkan semua sayuran.",
+        "bahan_terkait": [
+          "Tepung terigu",
+          "Tepung beras",
+          "Bawang putih",
+          "garam",
+          "merica/lada",
+          "kaldu bubuk",
+          "air"
+        ]
+      },
+      {
+        "judul": "Menggoreng Bakwan",
+        "durasi": "8 Menit",
+        "deskripsi": "Panaskan minyak banyak. Celupkan sendok sayur ke minyak panas, isi dengan adonan bakwan lalu celupkan ke wajan hingga terlepas. Goreng dengan api sedang sampai matang kecokelatan.",
+        "bahan_terkait": [
+          "minyak goreng"
+        ]
+      },
+      {
+        "judul": "Penyajian",
+        "durasi": "5 Menit",
+        "deskripsi": "Angkat bakwan sayur, tiriskan minyaknya, dan tata di piring saji untuk dinikmati selagi hangat.",
+        "bahan_terkait": []
+      }
+    ]
+  },
+  {
+    "id": "recipe-040",
+    "nama": "Pisang Goreng Madu",
+    "kategori": "Cemilan",
+    "rangkuman": "Pisang goreng khas dengan karamelisasi madu yang legit, manis alami, dan bertekstur garing di luar.",
+    "kalori": "270 kkal",
+    "protein": "2 g",
+    "fats": "9 g",
+    "carbs": "45 g",
+    "waktu_masak": "20 Menit",
+    "porsi": "3 Orang",
+    "alat_masak": "Kompor, Wajan, Mangkuk",
+    "image_url": "https://asset-2.tribunnews.com/jogja/foto/bank/images/Pisang-Goreng-Madu.jpg",
+    "bumbu_dasar": "garam • minyak goreng • air",
+    "bahan": [
+      {
+        "nama": "Pisang raja matang",
+        "status": "Ada",
+        "takaran": "5 buah potong kipas"
+      },
+      {
+        "nama": "Tepung terigu",
+        "status": "Ada",
+        "takaran": "150 gram"
+      },
+      {
+        "nama": "Tepung beras",
+        "status": "Ada",
+        "takaran": "30 gram"
+      },
+      {
+        "nama": "Madu",
+        "status": "Ada",
+        "takaran": "3 sendok makan"
+      },
+      {
+        "nama": "Gula pasir",
+        "status": "Ada",
+        "takaran": "1 sendok makan"
+      },
+      {
+        "nama": "Wijen putih",
+        "status": "Ada",
+        "takaran": "1 sendok teh"
+      }
+    ],
+    "langkah": [
+      {
+        "judul": "Membuat Adonan Tepung Madu",
+        "durasi": "5 Menit",
+        "deskripsi": "Campurkan tepung terigu, tepung beras, madu, gula pasir, wijen putih, sedikit garam, dan air secukupnya hingga menjadi adonan agak kental.",
+        "bahan_terkait": [
+          "Tepung terigu",
+          "Tepung beras",
+          "Madu",
+          "Gula pasir",
+          "Wijen putih",
+          "garam",
+          "air"
+        ]
+      },
+      {
+        "judul": "Memotong Pisang",
+        "durasi": "3 Menit",
+        "deskripsi": "Kupas pisang raja lalu potong-potong bentuk kipas atau sesuai selera namun tidak sampai putus di bagian pangkalnya.",
+        "bahan_terkait": [
+          "Pisang raja matang"
+        ]
+      },
+      {
+        "judul": "Proses Penggorengan",
+        "durasi": "8 Menit",
+        "deskripsi": "Celupkan pisang ke adonan tepung madu. Goreng dalam minyak panas dengan api sedang hingga lapisan madu mengalami karamelisasi berwarna cokelat gelap keemasan.",
+        "bahan_terkait": [
+          "minyak goreng"
+        ]
+      },
+      {
+        "judul": "Penyajian",
+        "durasi": "4 Menit",
+        "deskripsi": "Angkat dan tiriskan pisang goreng madu. Sajikan di piring saji saat sore hari.",
+        "bahan_terkait": []
+      }
+    ]
+  },
+  {
+    "id": "recipe-041",
+    "nama": "Tahu Isi Pedas Mercon",
+    "kategori": "Cemilan",
+    "rangkuman": "Tahu goreng dengan isian tumisan sayur dan daging cincang berasa super pedas yang menggugah selera.",
+    "kalori": "230 kkal",
+    "protein": "9 g",
+    "fats": "12 g",
+    "carbs": "22 g",
+    "waktu_masak": "30 Menit",
+    "porsi": "4 Orang",
+    "alat_masak": "Kompor, Wajan, Spatula",
+    "image_url": "https://ts3.mm.bing.net/th?id=OIP.iYI4KCY3977HjqzX2Uq7BwHaEK&pid=15.1",
+    "bumbu_dasar": "garam • gula • merica/lada • kaldu bubuk • minyak goreng • air",
+    "bahan": [
+      {
+        "nama": "Tahu pong",
+        "status": "Ada",
+        "takaran": "10 buah"
+      },
+      {
+        "nama": "Wortel",
+        "status": "Ada",
+        "takaran": "1 buah serut"
+      },
+      {
+        "nama": "Toge",
+        "status": "Ada",
+        "takaran": "50 gram"
+      },
+      {
+        "nama": "Cabe rawit merah",
+        "status": "Ada",
+        "takaran": "10 buah haluskan"
+      },
+      {
+        "nama": "Bawang merah",
+        "status": "Ada",
+        "takaran": "4 siung iris"
+      },
+      {
+        "nama": "Bawang putih",
+        "status": "Ada",
+        "takaran": "2 siung cincang"
+      },
+      {
+        "nama": "Tepung terigu",
+        "status": "Ada",
+        "takaran": "100 gram"
+      },
+      {
+        "nama": "Kunyit bubuk",
+        "status": "Ada",
+        "takaran": "setengah sendok teh"
+      }
+    ],
+    "langkah": [
+      {
+        "judul": "Menumis Isian Tahu",
+        "durasi": "10 Menit",
+        "deskripsi": "Tumis bawang merah, bawang putih, dan cabe rawit halus hingga harum. Masukkan wortel, toge, garam, gula, merica, dan kaldu bubuk. Masak sebentar lalu angkat.",
+        "bahan_terkait": [
+          "Cabe rawit merah",
+          "Bawang merah",
+          "Bawang putih",
+          "Wortel",
+          "Toge",
+          "garam",
+          "gula",
+          "merica/lada",
+          "kaldu bubuk"
+        ]
+      },
+      {
+        "judul": "Mengisi Tahu",
+        "durasi": "7 Menit",
+        "deskripsi": "Belah sedikit bagian tengah tahu pong, lalu masukkan tumisan isian sayur pedas ke dalam tahu hingga padat.",
+        "bahan_terkait": [
+          "Tahu pong"
+        ]
+      },
+      {
+        "judul": "Membuat Adonan Celupan dan Menggoreng",
+        "durasi": "8 Menit",
+        "deskripsi": "Buat adonan pencelup dari tepung terigu, kunyit bubuk, garam, dan air. Celupkan tahu isi kedalam adonan lalu goreng dalam minyak panas sampai kuning keemasan.",
+        "bahan_terkait": [
+          "Tepung terigu",
+          "Kunyit bubuk",
+          "garam",
+          "air",
+          "minyak goreng"
+        ]
+      },
+      {
+        "judul": "Penyajian",
+        "durasi": "5 Menit",
+        "deskripsi": "Tiriskan tahu isi pedas mercon dan sajikan hangat bersama cabe rawit utuh.",
+        "bahan_terkait": []
+      }
+    ]
+  },
+  {
+    "id": "recipe-042",
+    "nama": "Martabak Telur Mini Kulit Lumpia",
+    "kategori": "Cemilan",
+    "rangkuman": "Cemilan gurih praktis berisi campuran telur, daging cincang, dan daun bawang terbungkus kulit lumpia.",
+    "kalori": "205 kkal",
+    "protein": "8 g",
+    "fats": "11 g",
+    "carbs": "18 g",
+    "waktu_masak": "20 Menit",
+    "porsi": "4 Orang",
+    "alat_masak": "Kompor, Wajan, Mangkuk, Sendok",
+    "image_url": "https://ts3.mm.bing.net/th?id=OIP.b5WRd8V1MyiheLraSw29zQHaFM&pid=15.1",
+    "bumbu_dasar": "garam • merica/lada • kaldu bubuk • minyak goreng",
+    "bahan": [
+      {
+        "nama": "Kulit lumpia siap pakai",
+        "status": "Ada",
+        "takaran": "10 lembar"
+      },
+      {
+        "nama": "Telur ayam",
+        "status": "Ada",
+        "takaran": "2 butir"
+      },
+      {
+        "nama": "Daun bawang",
+        "status": "Ada",
+        "takaran": "3 batang iris tipis"
+      },
+      {
+        "nama": "Daging ayam cincang",
+        "status": "Ada",
+        "takaran": "50 gram tumis sebentar"
+      },
+      {
+        "nama": "Bawang putih",
+        "status": "Ada",
+        "takaran": "1 siung haluskan"
+      }
+    ],
+    "langkah": [
+      {
+        "judul": "Membuat Adonan Isian",
+        "durasi": "5 Menit",
+        "deskripsi": "Kocok lepas telur dalam mangkuk, masukkan daun bawang, daging ayam cincang, bawang putih halus, garam, merica, dan kaldu bubuk lalu aduk rata.",
+        "bahan_terkait": [
+          "Telur ayam",
+          "Daun bawang",
+          "Daging ayam cincang",
+          "Bawang putih",
+          "garam",
+          "merica/lada",
+          "kaldu bubuk"
+        ]
+      },
+      {
+        "judul": "Membungkus dengan Kulit Lumpia",
+        "durasi": "5 Menit",
+        "deskripsi": "Ambil selembar kulit lumpia, sendokkan adonan telur ke tengahnya, lalu lipat bentuk amplop atau persegi rapat.",
+        "bahan_terkait": [
+          "Kulit lumpia siap pakai"
+        ]
+      },
+      {
+        "judul": "Menggoreng Martabak",
+        "durasi": "6 Menit",
+        "deskripsi": "Panaskan minyak secukupnya. Goreng martabak mini dengan api sedang sampai kulit lumpia renyah dan matang kecokelatan kedua sisinya.",
+        "bahan_terkait": [
+          "minyak goreng"
+        ]
+      },
+      {
+        "judul": "Penyajian",
+        "durasi": "4 Menit",
+        "deskripsi": "Angkat, tiriskan, dan sajikan selagi panas dengan saus sambal atau cabe rawit.",
+        "bahan_terkait": []
+      }
+    ]
+  },
+  {
+    "id": "recipe-043",
+    "nama": "Risoles Ragout Ayam",
+    "kategori": "Cemilan",
+    "rangkuman": "Jajanan pasar klasik berupa kulit lembut berisi adonan ragout ayam creamy berbalut tepung panir.",
+    "kalori": "250 kkal",
+    "protein": "7 g",
+    "fats": "10 g",
+    "carbs": "33 g",
+    "waktu_masak": "35 Menit",
+    "porsi": "5 Orang",
+    "alat_masak": "Kompor, Teflon, Wajan, Spatula",
+    "image_url": "https://ts4.mm.bing.net/th?id=OIP.bIgtH__5Yt45RTA6KyQh9wHaEO&pid=15.1",
+    "bumbu_dasar": "garam • gula • merica/lada • kaldu bubuk • minyak goreng • air",
+    "bahan": [
+      {
+        "nama": "Tepung terigu",
+        "status": "Ada",
+        "takaran": "200 gram"
+      },
+      {
+        "nama": "Susu cair",
+        "status": "Ada",
+        "takaran": "200 ml"
+      },
+      {
+        "nama": "Daging ayam rebus suwir",
+        "status": "Ada",
+        "takaran": "100 gram"
+      },
+      {
+        "nama": "Wortel potong dadu kecil",
+        "status": "Ada",
+        "takaran": "1 buah"
+      },
+      {
+        "nama": "Bawang bombay",
+        "status": "Ada",
+        "takaran": "setengah buah cincang"
+      },
+      {
+        "nama": "Bawang putih",
+        "status": "Ada",
+        "takaran": "2 siung cincang"
+      },
+      {
+        "nama": "Tepung panir",
+        "status": "Ada",
+        "takaran": "100 gram"
+      },
+      {
+        "nama": "Telur ayam",
+        "status": "Ada",
+        "takaran": "1 butir untuk pelapis"
+      }
+    ],
+    "langkah": [
+      {
+        "judul": "Membuat Isian Ragout",
+        "durasi": "12 Menit",
+        "deskripsi": "Tumis bawang putih dan bawang bombay. Masukkan wortel, ayam suwir, sedikit terigu, susu cair, garam, gula, dan merica. Masak sampai mengental menjadi adonan ragout padat.",
+        "bahan_terkait": [
+          "Bawang putih",
+          "Bawang bombay",
+          "Wortel potong dadu kecil",
+          "Daging ayam rebus suwir",
+          "Susu cair",
+          "garam",
+          "gula",
+          "merica/lada"
+        ]
+      },
+      {
+        "judul": "Membuat Kulit Risoles",
+        "durasi": "10 Menit",
+        "deskripsi": "Campur sisa terigu, air, telur, dan garam aduk licin. Dadar tipis-tipis di teflon anti lengket hingga matang.",
+        "bahan_terkait": [
+          "Tepung terigu",
+          "garam",
+          "air",
+          "Telur ayam"
+        ]
+      },
+      {
+        "judul": "Membentuk dan Melapisi Risoles",
+        "durasi": "8 Menit",
+        "deskripsi": "Ambil selembar kulit, beri isian ragout, lipat amplop. Celupkan ke kocokan telur lalu gulingkan ke tepung panir hingga rata.",
+        "bahan_terkait": [
+          "Tepung panir",
+          "Telur ayam"
+        ]
+      },
+      {
+        "judul": "Menggoreng",
+        "durasi": "5 Menit",
+        "deskripsi": "Goreng risoles dalam minyak panas dengan api sedang hingga kuning keemasan, lalu angkat dan tiriskan.",
+        "bahan_terkait": [
+          "minyak goreng"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "recipe-044",
+    "nama": "Klepon Gula Merah",
+    "kategori": "Cemilan",
+    "rangkuman": "Kue tradisional berbentuk bola ketan hijau berisi lelehan gula merah manis berbalut kelapa parut.",
+    "kalori": "230 kkal",
+    "protein": "3 g",
+    "fats": "6 g",
+    "carbs": "41 g",
+    "waktu_masak": "25 Menit",
+    "porsi": "4 Orang",
+    "alat_masak": "Kompor, Panci, Mangkuk, Saringan",
+    "image_url": "https://ts2.mm.bing.net/th?id=OIP.Ew8OjW5V3U2STfc_f15XLgHaEK&pid=15.1",
+    "bumbu_dasar": "garam • air",
+    "bahan": [
+      {
+        "nama": "Tepung ketan putih",
+        "status": "Ada",
+        "takaran": "200 gram"
+      },
+      {
+        "nama": "Tepung tapioka",
+        "status": "Ada",
+        "takaran": "2 sendok makan"
+      },
+      {
+        "nama": "Air daun suji pandan",
+        "status": "Ada",
+        "takaran": "150 ml"
+      },
+      {
+        "nama": "Gula merah sisir halus",
+        "status": "Ada",
+        "takaran": "100 gram"
+      },
+      {
+        "nama": "Kelapa parut setengah tua",
+        "status": "Ada",
+        "takaran": "100 gram kukus"
+      }
+    ],
+    "langkah": [
+      {
+        "judul": "Menyiapkan Kelapa Parut",
+        "durasi": "5 Menit",
+        "deskripsi": "Campurkan kelapa parut dengan sedikit garam, lalu kukus sebentar agar tidak mudah basi dan sisihkan.",
+        "bahan_terkait": [
+          "Kelapa parut setengah tua",
+          "garam"
+        ]
+      },
+      {
+        "judul": "Membuat Adonan Ketan",
+        "durasi": "7 Menit",
+        "deskripsi": "Campurkan tepung ketan, tepung tapioka, dan sedikit garam. Tuang air daun suji pandan hangat sedikit-sedikit sambil diuleni hingga bisa dibentuk.",
+        "bahan_terkait": [
+          "Tepung ketan putih",
+          "Tepung tapioka",
+          "garam",
+          "Air daun suji pandan"
+        ]
+      },
+      {
+        "judul": "Membentuk dan Mengisi Klepon",
+        "durasi": "8 Menit",
+        "deskripsi": "Ambil sedikit adonan, pipihkan, beri isian gula merah di tengahnya lalu bulatkan rapat-rapat tanpa ada celah.",
+        "bahan_terkait": [
+          "Gula merah sisir halus"
+        ]
+      },
+      {
+        "judul": "Merebus dan Melapisi",
+        "durasi": "5 Menit",
+        "deskripsi": "Rebus bola klepon dalam air mendidih. Jika sudah mengapung tandanya matang, angkat lalu gulingkan segera di atas kelapa parut kukus.",
+        "bahan_terkait": [
+          "air"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "recipe-045",
+    "nama": "Pastel Sayur Telur",
+    "kategori": "Cemilan",
+    "rangkuman": "Kue pastel bertekstur renyah bergelombang dengan isian wortel, bihun, dan potongan telur rebus.",
+    "kalori": "290 kkal",
+    "protein": "6 g",
+    "fats": "12 g",
+    "carbs": "39 g",
+    "waktu_masak": "35 Menit",
+    "porsi": "4 Orang",
+    "alat_masak": "Kompor, Wajan, Penggilas Adonan",
+    "image_url": "https://ts3.mm.bing.net/th?id=OIP.FROFuSDr355nYHU4u-a44AHaGH&pid=15.1",
+    "bumbu_dasar": "garam • gula • merica/lada • kaldu bubuk • minyak goreng • air",
+    "bahan": [
+      {
+        "nama": "Tepung terigu",
+        "status": "Ada",
+        "takaran": "250 gram"
+      },
+      {
+        "nama": "Margarin cair",
+        "status": "Ada",
+        "takaran": "50 gram"
+      },
+      {
+        "nama": "Wortel potong dadu",
+        "status": "Ada",
+        "takaran": "1 buah"
+      },
+      {
+        "nama": "Kentang potong dadu",
+        "status": "Ada",
+        "takaran": "1 buah"
+      },
+      {
+        "nama": "Bihun jagung seduh",
+        "status": "Ada",
+        "takaran": "50 gram"
+      },
+      {
+        "nama": "Bawang putih",
+        "status": "Ada",
+        "takaran": "3 siung haluskan"
+      },
+      {
+        "nama": "Telur rebus",
+        "status": "Ada",
+        "takaran": "1 butir potong kecil"
+      }
+    ],
+    "langkah": [
+      {
+        "judul": "Membuat Kulit Pastel",
+        "durasi": "12 Menit",
+        "deskripsi": "Uleni tepung terigu, margarin cair, garam, dan air secukupnya hingga kalis elastis. Istirahatkan adonan selama 10 menit.",
+        "bahan_terkait": [
+          "Tepung terigu",
+          "Margarin cair",
+          "garam",
+          "air"
+        ]
+      },
+      {
+        "judul": "Membuat Tumisan Isian",
+        "durasi": "10 Menit",
+        "deskripsi": "Tumis bawang putih halus, masukkan wortel, kentang, bihun, garam, gula, merica, dan kaldu bubuk hingga matang empuk.",
+        "bahan_terkait": [
+          "Bawang putih",
+          "Wortel potong dadu",
+          "Kentang potong dadu",
+          "Bihun jagung seduh",
+          "garam",
+          "gula",
+          "merica/lada",
+          "kaldu bubuk"
+        ]
+      },
+      {
+        "judul": "Membentuk Pastel",
+        "durasi": "8 Menit",
+        "deskripsi": "Gilas tipis adonan kulit, cetak bulat, beri isian tumisan sayur dan potongan telur rebus, lalu lipat dan pilin pinggirannya.",
+        "bahan_terkait": [
+          "Telur rebus"
+        ]
+      },
+      {
+        "judul": "Menggoreng Pastel",
+        "durasi": "5 Menit",
+        "deskripsi": "Goreng pastel dalam minyak banyak dengan api sedang cenderung kecil hingga bintil-bintil renyah muncul dan kecokelatan.",
+        "bahan_terkait": [
+          "minyak goreng"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "recipe-046",
+    "nama": "Perkedel Kentang Kornet",
+    "kategori": "Cemilan",
+    "rangkuman": "Perkedel kentang lembut bercampur gurihnya kornet sapi dengan balutan telur goreng yang harum.",
+    "kalori": "210 kkal",
+    "protein": "7 g",
+    "fats": "10 g",
+    "carbs": "23 g",
+    "waktu_masak": "30 Menit",
+    "porsi": "4 Orang",
+    "alat_masak": "Kompor, Wajan, Ulekan, Mangkuk",
+    "image_url": "https://ts1.mm.bing.net/th?id=OIP.DORvG_Fy6ajjEacRCxNangHaFP&pid=15.1",
+    "bumbu_dasar": "garam • merica/lada • kaldu bubuk • minyak goreng",
+    "bahan": [
+      {
+        "nama": "Kentang",
+        "status": "Ada",
+        "takaran": "500 gram kupas potong"
+      },
+      {
+        "nama": "Kornet sapi",
+        "status": "Ada",
+        "takaran": "3 sendok makan"
+      },
+      {
+        "nama": "Bawang merah",
+        "status": "Ada",
+        "takaran": "5 siung iris tipis"
+      },
+      {
+        "nama": "Bawang putih",
+        "status": "Ada",
+        "takaran": "3 siung iris tipis"
+      },
+      {
+        "nama": "Seledri",
+        "status": "Ada",
+        "takaran": "2 batang iris halus"
+      },
+      {
+        "nama": "Telur ayam",
+        "status": "Ada",
+        "takaran": "1 butir kocok lepas"
+      }
+    ],
+    "langkah": [
+      {
+        "judul": "Menggoreng Kentang dan Bawang",
+        "durasi": "12 Menit",
+        "deskripsi": "Goreng kentang sampai empuk matang, lalu haluskan selagi panas. Goreng pula irisan bawang merah dan bawang putih hingga harum kecokelatan.",
+        "bahan_terkait": [
+          "Kentang",
+          "Bawang merah",
+          "Bawang putih",
+          "minyak goreng"
+        ]
+      },
+      {
+        "judul": "Mencampur Adonan Perkedel",
+        "durasi": "8 Menit",
+        "deskripsi": "Campurkan kentang halus, bawang goreng, kornet sapi, irisan seledri, garam, merica, dan kaldu bubuk. Aduk rata lalu bentuk bulat pipih.",
+        "bahan_terkait": [
+          "Kornet sapi",
+          "Seledri",
+          "garam",
+          "merica/lada",
+          "kaldu bubuk"
+        ]
+      },
+      {
+        "judul": "Melapisi dan Menggoreng",
+        "durasi": "6 Menit",
+        "deskripsi": "Celupkan padatan perkedel ke dalam kocokan telur ayam, lalu goreng dalam minyak panas dengan api sedang hingga lapisan telur kokoh kecokelatan.",
+        "bahan_terkait": [
+          "Telur ayam",
+          "minyak goreng"
+        ]
+      },
+      {
+        "judul": "Penyajian",
+        "durasi": "4 Menit",
+        "deskripsi": "Angkat dan tiriskan perkedel kentang kornet, sajikan sebagai cemilan gurih atau teman makan.",
+        "bahan_terkait": []
+      }
+    ]
+  },
+  {
+    "id": "recipe-047",
+    "nama": "Combro Pedas Oncom",
+    "kategori": "Cemilan",
+    "rangkuman": "Cemilan tradisional Sunda berbahan parutan singkong isi oncom berbumbu kencur dan cabai yang pedas gurih.",
+    "kalori": "250 kkal",
+    "protein": "4 g",
+    "fats": "9 g",
+    "carbs": "38 g",
+    "waktu_masak": "30 Menit",
+    "porsi": "4 Orang",
+    "alat_masak": "Kompor, Wajan, Wadah Adonan",
+    "image_url": "https://ts2.mm.bing.net/th?id=OIP.BrQP3yLLQf43G0V777eXmQHaE5&pid=15.1",
+    "bumbu_dasar": "garam • gula • merica/lada • kaldu bubuk • minyak goreng",
+    "bahan": [
+      {
+        "nama": "Singkong",
+        "status": "Ada",
+        "takaran": "500 gram kupas parut"
+      },
+      {
+        "nama": "Kelapa parut",
+        "status": "Ada",
+        "takaran": "50 gram"
+      },
+      {
+        "nama": "Oncom",
+        "status": "Ada",
+        "takaran": "100 gram hancurkan"
+      },
+      {
+        "nama": "Kencur",
+        "status": "Ada",
+        "takaran": "2 ruas haluskan"
+      },
+      {
+        "nama": "Cabe rawit merah",
+        "status": "Ada",
+        "takaran": "6 buah haluskan"
+      },
+      {
+        "nama": "Bawang merah",
+        "status": "Ada",
+        "takaran": "3 siung iris"
+      },
+      {
+        "nama": "Daun kemangi",
+        "status": "Ada",
+        "takaran": "1 genggam"
+      }
+    ],
+    "langkah": [
+      {
+        "judul": "Membuat Isian Oncom",
+        "durasi": "10 Menit",
+        "deskripsi": "Tumis bawang merah, kencur halus, dan cabe rawit. Masukkan oncom hancurkan, daun kemangi, garam, gula, dan kaldu bubuk. Masak hingga matang meresap.",
+        "bahan_terkait": [
+          "Oncom",
+          "Kencur",
+          "Cabe rawit merah",
+          "Bawang merah",
+          "Daun kemangi",
+          "garam",
+          "gula",
+          "kaldu bubuk"
+        ]
+      },
+      {
+        "judul": "Menyiapkan Kulit Singkong",
+        "durasi": "6 Menit",
+        "deskripsi": "Peras sedikit air parutan singkong tapi jangan terlalu kering, lalu campurkan dengan kelapa parut dan sedikit garam.",
+        "bahan_terkait": [
+          "Singkong",
+          "Kelapa parut",
+          "garam"
+        ]
+      },
+      {
+        "judul": "Membentuk Combro",
+        "durasi": "8 Menit",
+        "deskripsi": "Ambil segenggam adonan singkong, pipihkan, beri isian oncom pedas di tengahnya lalu bentuk lonjong lonjong padat.",
+        "bahan_terkait": []
+      },
+      {
+        "judul": "Menggoreng",
+        "durasi": "6 Menit",
+        "deskripsi": "Goreng combro dalam minyak panas banyak dengan api sedang hingga matang kuning keemasan, tiriskan.",
+        "bahan_terkait": [
+          "minyak goreng"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "recipe-048",
+    "nama": "Pepes Tahu Jamur Kemangi",
+    "kategori": "Fit & Diet",
+    "rangkuman": "Pepes tahu jamur kemangi khas Sunda yang harum, rendah kalori, dan kaya protein nabati tanpa minyak.",
+    "kalori": "160 kkal",
+    "protein": "12 g",
+    "fats": "6 g",
+    "carbs": "15 g",
+    "waktu_masak": "30 Menit",
+    "porsi": "2 Orang",
+    "alat_masak": "Kompor, Pengukus, Mangkuk, Daun Pisang",
+    "image_url": "https://ts3.mm.bing.net/th?id=OIP.FFcWYIgb8mjILw1j9GQqbwHaHa&pid=15.1",
+    "bumbu_dasar": "garam • kaldu bubuk • merica",
+    "bahan": [
+      {
+        "nama": "tahu putih",
+        "status": "Ada",
+        "takaran": "2 buah"
+      },
+      {
+        "nama": "jamur tiram",
+        "status": "Ada",
+        "takaran": "100 gram"
+      },
+      {
+        "nama": "daun kemangi",
+        "status": "Ada",
+        "takaran": "30 gram"
+      },
+      {
+        "nama": "bawang merah",
+        "status": "Ada",
+        "takaran": "4 siung"
+      },
+      {
+        "nama": "bawang putih",
+        "status": "Ada",
+        "takaran": "2 siung"
+      },
+      {
+        "nama": "cabai merah keriting",
+        "status": "Ada",
+        "takaran": "3 buah"
+      },
+      {
+        "nama": "daun pisang",
+        "status": "Ada",
+        "takaran": "secukupnya"
+      }
+    ],
+    "langkah": [
+      {
+        "judul": "Persiapan Bahan",
+        "durasi": "10 Menit",
+        "deskripsi": "Haluskan bawang merah, bawang putih, dan cabai merah. Iris lembut jamur tiram dan haluskan tahu putih menggunakan garpu.",
+        "bahan_terkait": [
+          "tahu putih",
+          "jamur tiram",
+          "bawang merah",
+          "bawang putih",
+          "cabai merah keriting"
+        ]
+      },
+      {
+        "judul": "Pencampuran Adonan",
+        "durasi": "5 Menit",
+        "deskripsi": "Campurkan tahu lumat, jamur iris, bumbu halus, daun kemangi, garam, kaldu bubuk, dan merica. Aduk rata.",
+        "bahan_terkait": [
+          "daun kemangi",
+          "garam",
+          "kaldu bubuk",
+          "merica"
+        ]
+      },
+      {
+        "judul": "Pembungkusan Pepes",
+        "durasi": "5 Menit",
+        "deskripsi": "Ambil selembar daun pisang, beri adonan pepes di tengahnya, lalu bungkus rapat dan sematkan kedua ujungnya dengan tusuk gigi.",
+        "bahan_terkait": [
+          "daun pisang"
+        ]
+      },
+      {
+        "judul": "Pengukusan dan Penyajian",
+        "durasi": "10 Menit",
+        "deskripsi": "Kukus pepes di atas api sedang selama 15 menit hingga matang dan harum. Angkat dan sajikan selagi hangat.",
+        "bahan_terkait": []
+      }
+    ]
+  },
+  {
+    "id": "recipe-049",
+    "nama": "Ikan Kakap Kukus Jahe Kecap",
+    "kategori": "Fit & Diet",
+    "rangkuman": "Menu diet tinggi protein dari ikan kakap segar yang dikukus dengan aroma jahe hangat yang menggugah selera.",
+    "kalori": "180 kkal",
+    "protein": "28 g",
+    "fats": "4 g",
+    "carbs": "8 g",
+    "waktu_masak": "20 Menit",
+    "porsi": "1 Orang",
+    "alat_masak": "Kompor, Pengukus, Piring Tahan Panas",
+    "image_url": "https://img-global.cpcdn.com/recipes/9ada25bc6b4adf14/1200x630cq80/photo.jpg",
+    "bumbu_dasar": "kecap manis • garam • merica • air",
+    "bahan": [
+      {
+        "nama": "fillet ikan kakap",
+        "status": "Ada",
+        "takaran": "150 gram"
+      },
+      {
+        "nama": "jahe",
+        "status": "Ada",
+        "takaran": "2 ruas"
+      },
+      {
+        "nama": "bawang putih",
+        "status": "Ada",
+        "takaran": "2 siung"
+      },
+      {
+        "nama": "daun bawang",
+        "status": "Ada",
+        "takaran": "1 batang"
+      },
+      {
+        "nama": "kecap asin",
+        "status": "Ada",
+        "takaran": "1 sendok makan"
+      }
+    ],
+    "langkah": [
+      {
+        "judul": "Persiapan Bahan Ikan",
+        "durasi": "5 Menit",
+        "deskripsi": "Iris tipis jahe berbentuk korek api, cincang halus bawang putih, dan iris serong daun bawang.",
+        "bahan_terkait": [
+          "jahe",
+          "bawang putih",
+          "daun bawang"
+        ]
+      },
+      {
+        "judul": "Penyusunan di Piring",
+        "durasi": "5 Menit",
+        "deskripsi": "Letakkan fillet ikan kakap di atas piring tahan panas. Lumuri dengan sedikit garam dan merica, lalu taburi setengah bagian jahe dan bawang putih.",
+        "bahan_terkait": [
+          "fillet ikan kakap",
+          "garam",
+          "merica"
+        ]
+      },
+      {
+        "judul": "Proses Pengukusan",
+        "durasi": "12 Menit",
+        "deskripsi": "Masukkan piring berisi ikan ke dalam pengukus yang sudah dipanaskan. Kukus menggunakan api sedang selama 12 menit hingga ikan matang sempurna.",
+        "bahan_terkait": []
+      },
+      {
+        "judul": "Penyajian",
+        "durasi": "3 Menit",
+        "deskripsi": "Angkat ikan, beri siraman kecap manis, kecap asin, sisa jahe, dan daun bawang segar di atasnya.",
+        "bahan_terkait": [
+          "kecap asin"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "recipe-050",
+    "nama": "Urap Sayur Bumbu Kelapa Kukus",
+    "kategori": "Fit & Diet",
+    "rangkuman": "Salad tradisional Nusantara berisi aneka sayuran segar dengan bumbu kelapa parut kukus yang rendah minyak.",
+    "kalori": "190 kkal",
+    "protein": "5 g",
+    "fats": "10 g",
+    "carbs": "20 g",
+    "waktu_masak": "25 Menit",
+    "porsi": "3 Orang",
+    "alat_masak": "Kompor, Panci, Pengukus, Parutan Kelapa",
+    "image_url": "https://ts3.mm.bing.net/th?id=OIP.049Snhm4Co6TY8YgUMW9ugHaE8&pid=15.1",
+    "bumbu_dasar": "garam • gula • air",
+    "bahan": [
+      {
+        "nama": "kelapa parut setengah tua",
+        "status": "Ada",
+        "takaran": "100 gram"
+      },
+      {
+        "nama": "bayam",
+        "status": "Ada",
+        "takaran": "1 ikatan"
+      },
+      {
+        "nama": "kacang panjang",
+        "status": "Ada",
+        "takaran": "5 batang"
+      },
+      {
+        "nama": "toge",
+        "status": "Ada",
+        "takaran": "50 gram"
+      },
+      {
+        "nama": "bawang merah",
+        "status": "Ada",
+        "takaran": "3 siung"
+      },
+      {
+        "nama": "kencur",
+        "status": "Ada",
+        "takaran": "1 ruas"
+      },
+      {
+        "nama": "cabai merah",
+        "status": "Ada",
+        "takaran": "2 buah"
+      },
+      {
+        "nama": "daun jeruk",
+        "status": "Ada",
+        "takaran": "2 lembar"
+      }
+    ],
+    "langkah": [
+      {
+        "judul": "Merebus Sayuran",
+        "durasi": "10 Menit",
+        "deskripsi": "Didihkan air dalam panci, rebus bayam, kacang panjang, dan toge secara bergantian hingga matang tetapi tetap renyah (crunchy). Tiriskan.",
+        "bahan_terkait": [
+          "bayam",
+          "kacang panjang",
+          "toge"
+        ]
+      },
+      {
+        "judul": "Membuat Bumbu Urap",
+        "durasi": "5 Menit",
+        "deskripsi": "Haluskan bawang merah, kencur, cabai merah, dan garam. Campurkan bumbu halus dengan kelapa parut dan irisan daun jeruk.",
+        "bahan_terkait": [
+          "kelapa parut setengah tua",
+          "bawang merah",
+          "kencur",
+          "cabai merah",
+          "daun jeruk",
+          "garam"
+        ]
+      },
+      {
+        "judul": "Mengukus Kelapa",
+        "durasi": "10 Menit",
+        "deskripsi": "Kukus campuran kelapa parut berbumbu selama 10 menit agar tidak mudah basi dan rasanya lebih gurih alami.",
+        "bahan_terkait": []
+      },
+      {
+        "judul": "Penyajian",
+        "durasi": "2 Menit",
+        "deskripsi": "Tata sayuran rebus di atas piring, lalu campurkan dengan kelapa kukus secukupnya saat akan disantap.",
+        "bahan_terkait": []
+      }
+    ]
+  },
+  {
+    "id": "recipe-051",
+    "nama": "Tumis Dada Ayam Brokoli",
+    "kategori": "Fit & Diet",
+    "rangkuman": "Menu fit and diet tinggi protein dan serat yang memadukan dada ayam lembut dengan renyahnya brokoli.",
+    "kalori": "220 kkal",
+    "protein": "32 g",
+    "fats": "5 g",
+    "carbs": "12 g",
+    "waktu_masak": "15 Menit",
+    "porsi": "2 Orang",
+    "alat_masak": "Kompor, Wajan Teflon, Spatula",
+    "image_url": "https://img-global.cpcdn.com/recipes/9520514c3e7049bf/680x482cq70/ayam-tumis-brokoli-foto-resep-utama.jpg",
+    "bumbu_dasar": "minyak goreng • garam • merica • air",
+    "bahan": [
+      {
+        "nama": "dada ayam fillet",
+        "status": "Ada",
+        "takaran": "150 gram"
+      },
+      {
+        "nama": "brokoli",
+        "status": "Ada",
+        "takaran": "150 gram"
+      },
+      {
+        "nama": "bawang putih",
+        "status": "Ada",
+        "takaran": "3 siung"
+      },
+      {
+        "nama": "bawang bombay",
+        "status": "Ada",
+        "takaran": "1/4 buah"
+      },
+      {
+        "nama": "kecap ikan",
+        "status": "Ada",
+        "takaran": "secukupnya"
+      }
+    ],
+    "langkah": [
+      {
+        "judul": "Persiapan Bahan",
+        "durasi": "5 Menit",
+        "deskripsi": "Potong dada ayam bentuk dadu kecil. Potong brokoli per kuntum lalu cuci bersih. Cincang bawang putih dan iris bawang bombay.",
+        "bahan_terkait": [
+          "dada ayam fillet",
+          "brokoli",
+          "bawang putih",
+          "bawang bombay"
+        ]
+      },
+      {
+        "judul": "Menumis Aromatik",
+        "durasi": "3 Menit",
+        "deskripsi": "Panaskan sedikit minyak goreng di wajan teflon, tumis bawang putih dan bawang bombay dengan api sedang hingga harum.",
+        "bahan_terkait": [
+          "minyak goreng"
+        ]
+      },
+      {
+        "judul": "Memasak Ayam dan Brokoli",
+        "durasi": "5 Menit",
+        "deskripsi": "Masukkan potongan dada ayam, aduk hingga berubah warna. Tambahkan brokoli, sedikit air, garam, merica, dan kecap ikan.",
+        "bahan_terkait": [
+          "garam",
+          "merica",
+          "kecap ikan"
+        ]
+      },
+      {
+        "judul": "Penyelesaian",
+        "durasi": "2 Menit",
+        "deskripsi": "Masak hingga brokoli empuk namun tetap berwarna hijau cerah dan air menyusut. Angkat dan sajikan.",
+        "bahan_terkait": []
+      }
+    ]
+  },
+  {
+    "id": "recipe-052",
+    "nama": "Sate Lilit Ikan Tenggiri Panggang",
+    "kategori": "Fit & Diet",
+    "rangkuman": "Sate lilit khas Bali berbahan dasar ikan tenggiri giling dengan rempah kaya rasa, rendah lemak dan dipanggang.",
+    "kalori": "200 kkal",
+    "protein": "24 g",
+    "fats": "7 g",
+    "carbs": "10 g",
+    "waktu_masak": "30 Menit",
+    "porsi": "2 Orang",
+    "alat_masak": "Kompor, Grill Pan, Mangkuk, Tusuk Sate Bambu",
+    "image_url": "https://ts1.mm.bing.net/th?id=OIP.571ZdcsrlMBarS3fWzy9lAHaE8&pid=15.1",
+    "bumbu_dasar": "garam • gula • minyak goreng • merica",
+    "bahan": [
+      {
+        "nama": "daging ikan tenggiri giling",
+        "status": "Ada",
+        "takaran": "200 gram"
+      },
+      {
+        "nama": "kelapa parut sangrai",
+        "status": "Ada",
+        "takaran": "2 sendok makan"
+      },
+      {
+        "nama": "bawang merah",
+        "status": "Ada",
+        "takaran": "4 siung"
+      },
+      {
+        "nama": "bawang putih",
+        "status": "Ada",
+        "takaran": "2 siung"
+      },
+      {
+        "nama": "serai",
+        "status": "Ada",
+        "takaran": "4 batang"
+      },
+      {
+        "nama": "daun jeruk",
+        "status": "Ada",
+        "takaran": "3 lembar"
+      },
+      {
+        "nama": "kunyit",
+        "status": "Ada",
+        "takaran": "1 ruas"
+      }
+    ],
+    "langkah": [
+      {
+        "judul": "Membuat Adonan Sate",
+        "durasi": "10 Menit",
+        "deskripsi": "Haluskan bawang merah, bawang putih, kunyit, dan daun jeruk. Campurkan dengan ikan tenggiri giling, kelapa parut, garam, gula, dan merica.",
+        "bahan_terkait": [
+          "daging ikan tenggiri giling",
+          "kelapa parut sangrai",
+          "bawang merah",
+          "bawang putih",
+          "kunyit",
+          "daun jeruk",
+          "garam"
+        ]
+      },
+      {
+        "judul": "Melilit Sate",
+        "durasi": "10 Menit",
+        "deskripsi": "Ambil adonan secukupnya, kepalkan pada batang serai secara padat dan merata hingga membentuk sate lilit.",
+        "bahan_terkait": [
+          "serai"
+        ]
+      },
+      {
+        "judul": "Memanggang Sate",
+        "durasi": "8 Menit",
+        "deskripsi": "Panaskan grill pan dengan sedikit minyak. Panggang sate lilit di atas api sedang sambil dibolak-balik hingga matang kecokelatan.",
+        "bahan_terkait": [
+          "minyak goreng"
+        ]
+      },
+      {
+        "judul": "Penyajian",
+        "durasi": "2 Menit",
+        "deskripsi": "Angkat sate lilit ikan tenggiri dan sajikan selagi hangat bersama perasan jeruk nipis.",
+        "bahan_terkait": []
+      }
+    ]
+  },
+  {
+    "id": "recipe-053",
+    "nama": "Gado-Gado Siram Saus Kacang Encer",
+    "kategori": "Fit & Diet",
+    "rangkuman": "Gado-gado segar dengan saus kacang yang lebih encer dan minim minyak, kaya akan sayuran rebus dan protein.",
+    "kalori": "285 kkal",
+    "protein": "14 g",
+    "fats": "10 g",
+    "carbs": "35 g",
+    "waktu_masak": "25 Menit",
+    "porsi": "2 Orang",
+    "alat_masak": "Kompor, Panci, Blender, Piring Saji",
+    "image_url": "https://awsimages.detik.net.id/community/media/visual/2024/02/14/resep-gado-gado-siram.jpeg?w=700&q=90",
+    "bumbu_dasar": "garam • gula • air",
+    "bahan": [
+      {
+        "nama": "kacang tanah sangrai",
+        "status": "Ada",
+        "takaran": "50 gram"
+      },
+      {
+        "nama": "tahu putih",
+        "status": "Ada",
+        "takaran": "1 buah"
+      },
+      {
+        "nama": "telur ayam",
+        "status": "Ada",
+        "takaran": "1 butir"
+      },
+      {
+        "nama": "kol",
+        "status": "Ada",
+        "takaran": "50 gram"
+      },
+      {
+        "nama": "bount/taoge",
+        "status": "Ada",
+        "takaran": "40 gram"
+      },
+      {
+        "nama": "bawang putih",
+        "status": "Ada",
+        "takaran": "1 siung"
+      },
+      {
+        "nama": "cabai rawit",
+        "status": "Ada",
+        "takaran": "2 buah"
+      },
+      {
+        "nama": "kecap manis",
+        "status": "Ada",
+        "takaran": "1 sendok makan"
+      }
+    ],
+    "langkah": [
+      {
+        "judul": "Merebus Bahan",
+        "durasi": "10 Menit",
+        "deskripsi": "Rebus telur hingga matang, rebus sebentar kol dan taoge. Kukus atau panggang tahu putih tanpa minyak.",
+        "bahan_terkait": [
+          "telur ayam",
+          "kol",
+          "bount/taoge",
+          "tahu putih"
+        ]
+      },
+      {
+        "judul": "Membuat Saus Kacang",
+        "durasi": "5 Menit",
+        "deskripsi": "Haluskan kacang tanah sangrai, bawang putih, cabai rawit, garam, dan gula. Tambahkan air matang hangat hingga tekstur saus agak encer.",
+        "bahan_terkait": [
+          "kacang tanah sangrai",
+          "bawang putih",
+          "cabai rawit",
+          "garam"
+        ]
+      },
+      {
+        "judul": "Penyusunan Piring",
+        "durasi": "5 Menit",
+        "deskripsi": "Tata sayuran rebus, tahu, dan potong-potong telur rebus di atas piring saji.",
+        "bahan_terkait": []
+      },
+      {
+        "judul": "Penyiraman",
+        "durasi": "5 Menit",
+        "deskripsi": "Siram saus kacang encer di atas tumpukan sayur, beri sedikit kecap manis di atasnya.",
+        "bahan_terkait": [
+          "kecap manis"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "recipe-054",
+    "nama": "Sup Ayam Jagung Bening",
+    "kategori": "Fit & Diet",
+    "rangkuman": "Sup hangat yang menyegarkan dengan suwiran ayam dan bulir jagung manis pilihan yang rendah kalori.",
+    "kalori": "165 kkal",
+    "protein": "18 g",
+    "fats": "3 g",
+    "carbs": "16 g",
+    "waktu_masak": "20 Menit",
+    "porsi": "2 Orang",
+    "alat_masak": "Kompor, Panci, Sendok Sayur",
+    "image_url": "https://ts1.mm.bing.net/th?id=OIP.4PnXFMSpT5iSrHTKGSxyhAHaE8&pid=15.1",
+    "bumbu_dasar": "garam • merica • kaldu bubuk • air",
+    "bahan": [
+      {
+        "nama": "dada ayam fillet",
+        "status": "Ada",
+        "takaran": "100 gram"
+      },
+      {
+        "nama": "jagung manis",
+        "status": "Ada",
+        "takaran": "1 buah (pipil)"
+      },
+      {
+        "nama": "wortel",
+        "status": "Ada",
+        "takaran": "1 buah"
+      },
+      {
+        "nama": "bawang putih",
+        "status": "Ada",
+        "takaran": "2 siung"
+      },
+      {
+        "nama": "daun bawang",
+        "status": "Ada",
+        "takaran": "1 batang"
+      },
+      {
+        "nama": "seledri",
+        "status": "Ada",
+        "takaran": "1 batang"
+      }
+    ],
+    "langkah": [
+      {
+        "judul": "Persiapan Sup",
+        "durasi": "8 Menit",
+        "deskripsi": "Rebus dada ayam hingga matang, angkat lalu suwir-suwir dagingnya. Potong wortel bentuk dadu kecil dan cincang bawang putih.",
+        "bahan_terkait": [
+          "dada ayam fillet",
+          "wortel",
+          "bawang putih"
+        ]
+      },
+      {
+        "judul": "Memasak Kaldu",
+        "durasi": "5 Menit",
+        "deskripsi": "Didihkan air dalam panci bersih, masukkan bawang putih cincang, jagung pipil, dan potongan wortel. Masak dengan api sedang.",
+        "bahan_terkait": [
+          "jagung manis"
+        ]
+      },
+      {
+        "judul": "Memasukkan Ayam",
+        "durasi": "5 Menit",
+        "deskripsi": "Masukkan suwiran ayam ke dalam rebusan sayur. Bumbui dengan garam, merica, dan kaldu bubuk.",
+        "bahan_terkait": [
+          "garam",
+          "merica",
+          "kaldu bubuk"
+        ]
+      },
+      {
+        "judul": "Penyajian",
+        "durasi": "2 Menit",
+        "deskripsi": "Menjelang diangkat, taburkan irisan daun bawang dan seledri. Aduk sebentar lalu sajikan hangat.",
+        "bahan_terkait": [
+          "daun bawang",
+          "seledri"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "recipe-055",
+    "nama": "Tumis Tahu Putih Taoge Sedap",
+    "kategori": "Fit & Diet",
+    "rangkuman": "Tumisan sehat kilat berbahan tahu putih dan taoge segar, tinggi protein nabati dan serat, sangat rendah kalori.",
+    "kalori": "135 kkal",
+    "protein": "10 g",
+    "fats": "5 g",
+    "carbs": "12 g",
+    "waktu_masak": "10 Menit",
+    "porsi": "2 Orang",
+    "alat_masak": "Kompor, Wajan, Spatula",
+    "image_url": "https://ts3.mm.bing.net/th?id=OIF.M1LBRhsqruRQpfUKvXzBQA&pid=15.1",
+    "bumbu_dasar": "minyak goreng • garam • kecap manis • air",
+    "bahan": [
+      {
+        "nama": "tahu putih",
+        "status": "Ada",
+        "takaran": "2 buah"
+      },
+      {
+        "nama": "taoge",
+        "status": "Ada",
+        "takaran": "100 gram"
+      },
+      {
+        "nama": "bawang merah",
+        "status": "Ada",
+        "takaran": "3 siung"
+      },
+      {
+        "nama": "bawang putih",
+        "status": "Ada",
+        "takaran": "2 siung"
+      },
+      {
+        "nama": "cabai merah",
+        "status": "Ada",
+        "takaran": "2 buah"
+      },
+      {
+        "nama": "daun bawang",
+        "status": "Ada",
+        "takaran": "1 batang"
+      }
+    ],
+    "langkah": [
+      {
+        "judul": "Persiapan Iris",
+        "durasi": "3 Menit",
+        "deskripsi": "Potong tahu putih bentuk dadu kecil. Iris tipis bawang merah, bawang putih, cabai merah, dan daun bawang.",
+        "bahan_terkait": [
+          "tahu putih",
+          "bawang merah",
+          "bawang putih",
+          "cabai merah",
+          "daun bawang"
+        ]
+      },
+      {
+        "judul": "Menumis Bumbu",
+        "durasi": "2 Menit",
+        "deskripsi": "Panaskan sedikit minyak goreng, tumis bawang merah, bawang putih, dan cabai merah hingga harum dan layu.",
+        "bahan_terkait": [
+          "minyak goreng"
+        ]
+      },
+      {
+        "judul": "Memasukkan Tahu",
+        "durasi": "3 Menit",
+        "deskripsi": "Masukkan potongan tahu putih, aduk perlahan agar tidak hancur. Beri sedikit air, garam, dan kecap manis.",
+        "bahan_terkait": [
+          "garam",
+          "kecap manis"
+        ]
+      },
+      {
+        "judul": "Penyelesaian",
+        "durasi": "2 Menit",
+        "deskripsi": "Masukkan taoge dan irisan daun bawang sesaat sebelum api dimatikan agar teksturnya tetap renyah. Angkat.",
+        "bahan_terkait": [
+          "taoge"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "recipe-056",
+    "nama": "Salad Timun Tomat Bumbu Rujak",
+    "kategori": "Fit & Diet",
+    "rangkuman": "Salad Nusantara super segar dengan potongan timun dan tomat berbalut dressing bumbu rujak pedas manis sehat.",
+    "kalori": "120 kkal",
+    "protein": "3 g",
+    "fats": "2 g",
+    "carbs": "22 g",
+    "waktu_masak": "10 Menit",
+    "porsi": "2 Orang",
+    "alat_masak": "Pisau, Talenan, Mangkuk Besar",
+    "image_url": "https://ts3.mm.bing.net/th?id=OIP.kZdwccoXFq8VwiPD8l0BgQHaDt&pid=15.1",
+    "bumbu_dasar": "garam • gula • air",
+    "bahan": [
+      {
+        "nama": "timun",
+        "status": "Ada",
+        "takaran": "2 buah"
+      },
+      {
+        "nama": "tomat merah",
+        "status": "Ada",
+        "takaran": "2 buah"
+      },
+      {
+        "nama": "kacang tanah sangrai",
+        "status": "Ada",
+        "takaran": "2 sendok makan"
+      },
+      {
+        "nama": "cabai rawit",
+        "status": "Ada",
+        "takaran": "3 buah"
+      },
+      {
+        "nama": "gula merah",
+        "status": "Ada",
+        "takaran": "1 sendok makan"
+      },
+      {
+        "nama": "air jeruk nipis",
+        "status": "Ada",
+        "takaran": "1 sendok makan"
+      }
+    ],
+    "langkah": [
+      {
+        "judul": "Memotong Sayuran",
+        "durasi": "4 Menit",
+        "deskripsi": "Cuci bersih timun dan tomat, lalu potong-potong dengan ukuran sesuai selera ke dalam mangkuk.",
+        "bahan_terkait": [
+          "timun",
+          "tomat merah"
+        ]
+      },
+      {
+        "judul": "Membuat Dressing Rujak",
+        "durasi": "4 Menit",
+        "deskripsi": "Ulek kasar kacang tanah sangrai, cabai rawit, gula merah, dan sedikit garam. Beri air hangat dan air jeruk nipis, aduk rata.",
+        "bahan_terkait": [
+          "kacang tanah sangrai",
+          "cabai rawit",
+          "gula merah",
+          "air jeruk nipis",
+          "garam"
+        ]
+      },
+      {
+        "judul": "Mencampur Salad",
+        "durasi": "1 Menit",
+        "deskripsi": "Tuang dressing bumbu rujak di atas potongan timun dan tomat.",
+        "bahan_terkait": []
+      },
+      {
+        "judul": "Penyajian",
+        "durasi": "1 Menit",
+        "deskripsi": "Aduk sesaat sebelum dinikmati agar kesegaran air timun dan tomat tetap terjaga.",
+        "bahan_terkait": []
+      }
+    ]
+  },
+  {
+    "id": "recipe-057",
+    "nama": "Soto Ayam Bening Tanpa Santan",
+    "kategori": "Fit & Diet",
+    "rangkuman": "Soto ayam kuah bening yang kaya rempah aromatik, hangat di badan, rendah kalori, dan bebas santan.",
+    "kalori": "185 kkal",
+    "protein": "22 g",
+    "fats": "4 g",
+    "carbs": "15 g",
+    "waktu_masak": "30 Menit",
+    "porsi": "3 Orang",
+    "alat_masak": "Kompor, Panci, Sendok Sayur",
+    "image_url": "https://ts2.mm.bing.net/th?id=OIP.J7cDf8bxG8RVQGeLZcdCVQHaDs&pid=15.1",
+    "bumbu_dasar": "garam • merica • kaldu bubuk • minyak goreng • air",
+    "bahan": [
+      {
+        "nama": "dada ayam",
+        "status": "Ada",
+        "takaran": "150 gram"
+      },
+      {
+        "nama": "bawang merah",
+        "status": "Ada",
+        "takaran": "4 siung"
+      },
+      {
+        "nama": "bawang putih",
+        "status": "Ada",
+        "takaran": "2 siung"
+      },
+      {
+        "nama": "jahe",
+        "status": "Ada",
+        "takaran": "1 ruas"
+      },
+      {
+        "nama": "kunyit",
+        "status": "Ada",
+        "takaran": "1 ruas"
+      },
+      {
+        "nama": "serai",
+        "status": "Ada",
+        "takaran": "1 batang"
+      },
+      {
+        "nama": "daun jeruk",
+        "status": "Ada",
+        "takaran": "3 lembar"
+      },
+      {
+        "nama": "kol",
+        "status": "Ada",
+        "takaran": "50 gram"
+      }
+    ],
+    "langkah": [
+      {
+        "judul": "Membuat Bumbu Halus",
+        "durasi": "5 Menit",
+        "deskripsi": "Haluskan bawang merah, bawang putih, jahe, dan kunyit.",
+        "bahan_terkait": [
+          "bawang merah",
+          "bawang putih",
+          "jahe",
+          "kunyit"
+        ]
+      },
+      {
+        "judul": "Menumis Bumbu",
+        "durasi": "5 Menit",
+        "deskripsi": "Panaskan sedikit minyak, tumis bumbu halus bersama serai dan daun jeruk hingga harum dan matang.",
+        "bahan_terkait": [
+          "minyak goreng",
+          "serai",
+          "daun jeruk"
+        ]
+      },
+      {
+        "judul": "Merebus Kuah",
+        "durasi": "15 Menit",
+        "deskripsi": "Masukkan air dan dada ayam ke dalam tumisan bumbu. Rebus hingga ayam empuk, lalu suwir-suwir dagingnya.",
+        "bahan_terkait": [
+          "dada ayam"
+        ]
+      },
+      {
+        "judul": "Penyajian",
+        "durasi": "5 Menit",
+        "deskripsi": "Tata irisan kol dan suwiran ayam di mangkuk, siram dengan kuah soto panas yang sudah dibumbui garam dan merica.",
+        "bahan_terkait": [
+          "kol",
+          "garam",
+          "merica"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "recipe-058",
+    "nama": "Sup Jamur Tiram Hangat",
+    "kategori": "Fit & Diet",
+    "rangkuman": "Sup bening ringan dengan bahan dasar jamur tiram berserat tinggi, sangat cocok untuk menu makan malam diet.",
+    "kalori": "120 kkal",
+    "protein": "8 g",
+    "fats": "2 g",
+    "carbs": "18 g",
+    "waktu_masak": "15 Menit",
+    "porsi": "2 Orang",
+    "alat_masak": "Kompor, Panci",
+    "image_url": "https://ts1.mm.bing.net/th?id=OIP.sCtPgwCORpIQvbHV8VEPwgAAAA&pid=15.1",
+    "bumbu_dasar": "garam • merica • kaldu bubuk • air",
+    "bahan": [
+      {
+        "nama": "jamur tiram",
+        "status": "Ada",
+        "takaran": "150 gram"
+      },
+      {
+        "nama": "wortel",
+        "status": "Ada",
+        "takaran": "1 buah"
+      },
+      {
+        "nama": "bawang putih",
+        "status": "Ada",
+        "takaran": "2 siung"
+      },
+      {
+        "nama": "daun bawang",
+        "status": "Ada",
+        "takaran": "1 batang"
+      },
+      {
+        "nama": "seledri",
+        "status": "Ada",
+        "takaran": "1 batang"
+      }
+    ],
+    "langkah": [
+      {
+        "judul": "Persiapan Bahan",
+        "durasi": "5 Menit",
+        "deskripsi": "Suwir jamur tiram ukuran sedang, iris tipis wortel, dan memarkan bawang putih.",
+        "bahan_terkait": [
+          "jamur tiram",
+          "wortel",
+          "bawang putih"
+        ]
+      },
+      {
+        "judul": "Merebus Air",
+        "durasi": "5 Menit",
+        "deskripsi": "Didihkan air dalam panci, masukkan bawang putih memar dan irisan wortel hingga setengah lunak.",
+        "bahan_terkait": [
+          "wortel"
+        ]
+      },
+      {
+        "judul": "Memasukkan Jamur",
+        "durasi": "3 Menit",
+        "deskripsi": "Masukkan jamur tiram suwir, bumbui dengan garam, merica, dan kaldu bubuk. Masak sebentar.",
+        "bahan_terkait": [
+          "jamur tiram",
+          "garam",
+          "merica",
+          "kaldu bubuk"
+        ]
+      },
+      {
+        "judul": "Penyajian",
+        "durasi": "2 Menit",
+        "deskripsi": "Taburkan daun bawang dan seledri, aduk rata, lalu angkat dan sajikan hangat.",
+        "bahan_terkait": [
+          "daun bawang",
+          "seledri"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "recipe-059",
+    "nama": "Tumis Buncis Daging Cincang",
+    "kategori": "Fit & Diet",
+    "rangkuman": "Tumis buncis segar berpadu dengan gurihnya cincangan daging sapi tanpa lemak, tinggi protein dan serat.",
+    "kalori": "210 kkal",
+    "protein": "20 g",
+    "fats": "8 g",
+    "carbs": "14 g",
+    "waktu_masak": "15 Menit",
+    "porsi": "2 Orang",
+    "alat_masak": "Kompor, Wajan, Spatula",
+    "image_url": "https://ts1.mm.bing.net/th?id=OIP.R0FL7W_Q_RfEd_Q40sjOgwHaFP&pid=15.1",
+    "bumbu_dasar": "minyak goreng • garam • kecap manis • merica • air",
+    "bahan": [
+      {
+        "nama": "buncis",
+        "status": "Ada",
+        "takaran": "150 gram"
+      },
+      {
+        "nama": "daging sapi giling tanpa lemak",
+        "status": "Ada",
+        "takaran": "80 gram"
+      },
+      {
+        "nama": "bawang putih",
+        "status": "Ada",
+        "takaran": "2 siung"
+      },
+      {
+        "nama": "bawang merah",
+        "status": "Ada",
+        "takaran": "3 siung"
+      },
+      {
+        "nama": "cabai merah keriting",
+        "status": "Ada",
+        "takaran": "2 buah"
+      }
+    ],
+    "langkah": [
+      {
+        "judul": "Persiapan",
+        "durasi": "5 Menit",
+        "deskripsi": "Potong buncis serong. Iris tipis bawang merah, bawang putih, dan cabai merah keriting.",
+        "bahan_terkait": [
+          "buncis",
+          "bawang merah",
+          "bawang putih",
+          "cabai merah keriting"
+        ]
+      },
+      {
+        "judul": "Menumis Daging",
+        "durasi": "5 Menit",
+        "deskripsi": "Panaskan sedikit minyak, tumis bawang merah, bawang putih, dan cabai hingga harum. Masukkan daging sapi giling, aduk hingga berubah warna.",
+        "bahan_terkait": [
+          "minyak goreng",
+          "daging sapi giling tanpa lemak"
+        ]
+      },
+      {
+        "judul": "Memasukkan Buncis",
+        "durasi": "3 Menit",
+        "deskripsi": "Masukkan buncis, beri sedikit air, garam, merica, dan kecap manis. Aduk cepat dengan api besar.",
+        "bahan_terkait": [
+          "garam",
+          "merica",
+          "kecap manis"
+        ]
+      },
+      {
+        "judul": "Penyajian",
+        "durasi": "2 Menit",
+        "deskripsi": "Masak sebentar hingga buncis matang namun tetap renyah. Angkat dan sajikan.",
+        "bahan_terkait": []
+      }
+    ]
+  },
+  {
+    "id": "recipe-060",
+    "nama": "Pepes Ikan Tuna Kemangi",
+    "kategori": "Fit & Diet",
+    "rangkuman": "Pepes ikan tuna kaya protein dengan bumbu rempah meresap dan aroma daun kemangi yang khas, dibungkus daun pisang.",
+    "kalori": "195 kkal",
+    "protein": "30 g",
+    "fats": "5 g",
+    "carbs": "8 g",
+    "waktu_masak": "35 Menit",
+    "porsi": "2 Orang",
+    "alat_masak": "Kompor, Pengukus, Daun Pisang",
+    "image_url": "https://asset-2.tstatic.net/travel/foto/bank/images/Resep-pepes-ikan-harum.jpg",
+    "bumbu_dasar": "garam • kaldu bubuk • merica",
+    "bahan": [
+      {
+        "nama": "fillet ikan tuna",
+        "status": "Ada",
+        "takaran": "200 gram"
+      },
+      {
+        "nama": "daun kemangi",
+        "status": "Ada",
+        "takaran": "20 gram"
+      },
+      {
+        "nama": "bawang merah",
+        "status": "Ada",
+        "takaran": "4 siung"
+      },
+      {
+        "nama": "bawang putih",
+        "status": "Ada",
+        "takaran": "2 siung"
+      },
+      {
+        "nama": "cabai merah",
+        "status": "Ada",
+        "takaran": "2 buah"
+      },
+      {
+        "nama": "kunyit",
+        "status": "Ada",
+        "takaran": "1 ruas"
+      },
+      {
+        "nama": "daun pisang",
+        "status": "Ada",
+        "takaran": "secukupnya"
+      }
+    ],
+    "langkah": [
+      {
+        "judul": "Persiapan Bumbu dan Ikan",
+        "durasi": "10 Menit",
+        "deskripsi": "Haluskan bawang merah, bawang putih, cabai merah, dan kunyit. Potong fillet ikan tuna menjadi bagian lebih kecil.",
+        "bahan_terkait": [
+          "bawang merah",
+          "bawang putih",
+          "cabai merah",
+          "kunyit",
+          "fillet ikan tuna"
+        ]
+      },
+      {
+        "judul": "Pencampuran",
+        "durasi": "5 Menit",
+        "deskripsi": "Campurkan potongan tuna dengan bumbu halus, daun kemangi, garam, kaldu bubuk, dan merica hingga rata.",
+        "bahan_terkait": [
+          "daun kemangi",
+          "garam",
+          "kaldu bubuk",
+          "merica"
+        ]
+      },
+      {
+        "judul": "Membungkus",
+        "durasi": "5 Menit",
+        "deskripsi": "Bungkus adonan tuna berbumbu dengan daun pisang, sematkan kedua ujungnya dengan lidi atau tusuk gigi.",
+        "bahan_terkait": [
+          "daun pisang"
+        ]
+      },
+      {
+        "judul": "Pengukusan",
+        "durasi": "15 Menit",
+        "deskripsi": "Kukus pepes tuna di dalam panci pengukus selama 20 menit hingga matang sempurna. Angkat.",
+        "bahan_terkait": []
+      }
+    ]
+  }
+]

@@ -2,12 +2,14 @@
 // Halaman Search: bar pencarian, kategori, dan daftar "Kamu Mungkin Suka".
 import { Ionicons } from '@expo/vector-icons';
 import { Image } from 'expo-image';
-import { useRouter } from 'expo-router';
+import { useFocusEffect, useLocalSearchParams, useRouter } from 'expo-router';
 import { StatusBar } from 'expo-status-bar';
-import { useMemo, useState } from 'react';
+import { useCallback, useEffect, useMemo, useState } from 'react';
 import {
+    ActivityIndicator,
+    Alert,
+    FlatList,
     Pressable,
-    ScrollView,
     StyleSheet,
     Text,
     TextInput,
@@ -17,9 +19,10 @@ import {
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 import { BAR_H, BottomBar } from '@/components/bottom-bar';
-
-// ---- route ----
-const ROUTE_AYO_MASAK = '/ayomasak';
+import { SaveSuccessModal } from '@/components/SaveSuccessModal';
+import { api } from '@/lib/api';
+import { firstParam } from '@/lib/recipe-flow';
+import { formatKkal, getFallbackImage, macroBarPercent } from '@/lib/resep';
 
 // ---- ukuran (sama gaya dengan home) ----
 const SEARCH_TOP = 20; // jarak bar pencarian dari atas (di bawah status bar)
@@ -39,68 +42,59 @@ const CATEGORIES = [
   { key: 'fit-diet', label: 'Fit & Diet', image: require('@/assets/images/home/makanan5.svg') },
 ];
 
-// Data contoh. Nanti diganti hasil dari API (GET /recipes/suggestions).
-type Suggestion = {
-  id: string;
-  title: string;
-  image: any;
-  protein: number;
-  fat: number;
-  carbs: number;
-  kcal: number;
-  summary: string;
-  time: string;
-  servings: string;
+type CatalogRecipe = {
+  id: string | number;
+  nama: string;
+  kategori: string;
+  rangkuman: string;
+  kalori: string;
+  protein: string;
+  fats: string;
+  carbs: string;
+  waktu_masak: string;
+  porsi: string;
+  alat_masak?: string;
+  image_url: string;
+  bahan?: { nama: string; takaran: string; status?: string }[];
+  bumbu_dasar?: string;
+  langkah?: { judul: string; deskripsi: string; durasi: string; bahan_terkait?: string[] }[];
 };
 
-const LOREM =
-  'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et';
+const FETCH_TIMEOUT_MS = 3000;
 
-const SUGGESTIONS: Suggestion[] = [
-  {
-    id: 'steak',
-    title: 'Steak',
-    image: require('@/assets/images/home/home7.jpg'),
-    protein: 32,
-    fat: 24,
-    carbs: 20,
-    kcal: 990,
-    summary: LOREM,
-    time: '50 Menit',
-    servings: '4-5 Orang',
-  },
-  {
-    id: 'nasi-goreng',
-    title: 'Nasi Goreng',
-    image: require('@/assets/images/search/enak1.png'),
-    protein: 32,
-    fat: 24,
-    carbs: 20,
-    kcal: 990,
-    summary: LOREM,
-    time: '50 Menit',
-    servings: '4-5 Orang',
-  },
-  {
-    id: 'sop-ayam',
-    title: 'Sop Ayam',
-    image: require('@/assets/images/search/enak2.png'),
-    protein: 32,
-    fat: 24,
-    carbs: 20,
-    kcal: 990,
-    summary: LOREM,
-    time: '50 Menit',
-    servings: '4-5 Orang',
-  },
-];
+function categoryFromParams(kategori?: string | string[], label?: string | string[]) {
+  const named = firstParam(label);
+  if (named && CATEGORIES.some((item) => item.label === named)) return named;
+  const key = firstParam(kategori);
+  return CATEGORIES.find((item) => item.key === key || item.label === key)?.label ?? null;
+}
+
+function recipeMatchesQuery(recipe: CatalogRecipe, needle: string): boolean {
+  if (String(recipe.nama || '').toLowerCase().includes(needle)) return true;
+  for (const bahan of recipe.bahan ?? []) {
+    const nama = typeof bahan === 'string' ? bahan : bahan?.nama;
+    if (String(nama || '').toLowerCase().includes(needle)) return true;
+  }
+  return false;
+}
 
 export default function SearchScreen() {
   const router = useRouter();
+  const params = useLocalSearchParams<{ kategori?: string; label?: string }>();
   const insets = useSafeAreaInsets();
   const { width } = useWindowDimensions();
   const s = width / 390; // skala layar, samakan dengan yang dipakai di home
   const [query, setQuery] = useState('');
+  const paramKategori = firstParam(params.kategori);
+  const paramLabel = firstParam(params.label);
+  const [kategori, setKategori] = useState<string | null>(() => categoryFromParams(paramKategori, paramLabel));
+  const [allRecipes, setAllRecipes] = useState<CatalogRecipe[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState('');
+  const [failedImages, setFailedImages] = useState<Record<string, boolean>>({});
+  const [savedNames, setSavedNames] = useState<Record<string, boolean>>({});
+  const [savingName, setSavingName] = useState<string | null>(null);
+  const [savedModalVisible, setSavedModalVisible] = useState(false);
 
   // ---- ukuran kartu: kartu utama + rangkuman yang menyelip di baliknya ----
   const boxW = width - 40 * s; // lebar total
@@ -110,127 +104,299 @@ export default function SearchScreen() {
   const sumW = boxW - mainW + overlap;
   const imgSize = mainH * 0.82; // gambar persegi 1:1
 
-  // Filter sederhana berdasarkan nama masakan
-  const data = useMemo(() => {
-    const q = query.trim().toLowerCase();
-    if (!q) return SUGGESTIONS;
-    return SUGGESTIONS.filter((r) => r.title.toLowerCase().includes(q));
-  }, [query]);
+  useEffect(() => {
+    setKategori(categoryFromParams(paramKategori, paramLabel));
+  }, [paramKategori, paramLabel]);
 
-  const goAyoMasak = (id: string) =>
-    router.push({ pathname: ROUTE_AYO_MASAK, params: { id } } as any);
+  const fetchCatalog = useCallback(async (signal?: AbortSignal) => {
+    try {
+      const list = await api<CatalogRecipe[]>('/api/recipes', { signal });
+      if (!signal?.aborted) {
+        setAllRecipes(Array.isArray(list) ? list : []);
+        setError('');
+      }
+    } catch (err: any) {
+      if (err?.name === 'AbortError') {
+        setError('Waktu muat habis (>3 detik). Tarik atau tekan Muat Ulang.');
+      } else {
+        setError(err?.message || 'Gagal memuat resep.');
+      }
+    } finally {
+      setLoading(false);
+    }
+  }, []);
 
-  return (
-    <View style={styles.container}>
-      <StatusBar style="dark" />
+  useEffect(() => {
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), FETCH_TIMEOUT_MS);
 
-      <ScrollView
-        showsVerticalScrollIndicator={false}
-        keyboardShouldPersistTaps="handled"
-        contentContainerStyle={{
-          paddingTop: insets.top + SEARCH_TOP * s,
-          paddingBottom: BAR_H + insets.bottom + 40 * s,
-        }}>
-        {/* Bar pencarian */}
-        <View style={[styles.searchBar, { marginHorizontal: 24 * s, height: SEARCH_H * s }]}>
-          <Image source={IMG.btnSearch} style={styles.searchIcon} contentFit="contain" />
-          <TextInput
-            value={query}
-            onChangeText={setQuery}
-            placeholder="Apa yang ingin anda ramu hari ini?"
-            placeholderTextColor="#7A7A7A"
-            style={styles.searchInput}
-            returnKeyType="search"
-          />
-          <Ionicons name="options-outline" size={20} color="#6B6B6B" />
-        </View>
+    fetchCatalog(controller.signal).finally(() => clearTimeout(timeoutId));
 
-        {/* Kategori */}
-        <View style={[styles.categoryRow, { marginHorizontal: 20 * s }]}>
-          {CATEGORIES.map((c) => (
-            <Pressable key={c.key} style={[styles.categoryItem, { width: CATEGORY_ITEM_W }]}>
-              <View style={styles.categoryRing}>
+    return () => {
+      clearTimeout(timeoutId);
+      controller.abort();
+    };
+  }, [fetchCatalog]);
+
+  useFocusEffect(
+    useCallback(() => {
+      let active = true;
+      api<any[]>('/api/recipes/saved')
+        .then((list) => {
+          if (!active || !Array.isArray(list)) return;
+          const next: Record<string, boolean> = {};
+          for (const item of list) {
+            const key = String(item?.nama || item?.title || '').trim().toLowerCase();
+            if (key) next[key] = true;
+          }
+          setSavedNames(next);
+        })
+        .catch(() => {});
+      return () => {
+        active = false;
+      };
+    }, [])
+  );
+
+  const handleSaveRecipe = useCallback(
+    async (item: CatalogRecipe, imageUri: string) => {
+      const key = String(item.nama || '').trim().toLowerCase();
+      if (!key || savedNames[key] || savingName) return;
+      try {
+        setSavingName(key);
+        await api('/api/recipes/save', {
+          method: 'POST',
+          body: JSON.stringify({ ...item, image_url: imageUri }),
+        });
+        setSavedNames((prev) => ({ ...prev, [key]: true }));
+        setSavedModalVisible(true);
+      } catch (err: any) {
+        Alert.alert('Gagal menyimpan', err?.message || 'Coba lagi ya.');
+      } finally {
+        setSavingName(null);
+      }
+    },
+    [savedNames, savingName]
+  );
+
+  const recipes = useMemo(() => {
+    let list = allRecipes;
+    if (kategori) {
+      const wanted = kategori.trim().toLowerCase();
+      list = list.filter((r) => String(r.kategori || '').trim().toLowerCase() === wanted);
+    }
+    const needle = query.trim().toLowerCase();
+    if (needle) {
+      list = list.filter((r) => recipeMatchesQuery(r, needle));
+    }
+    return list;
+  }, [allRecipes, kategori, query]);
+
+  const openDetail = useCallback(
+    (item: CatalogRecipe, imageUri: string) => {
+      router.push({
+        pathname: '/detail-resep',
+        params: {
+          resep: JSON.stringify({ ...item, image_url: imageUri }),
+          source: 'catalog',
+        },
+      } as any);
+    },
+    [router]
+  );
+
+  const retryLoad = useCallback(() => {
+    setLoading(true);
+    setError('');
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), FETCH_TIMEOUT_MS);
+    fetchCatalog(controller.signal).finally(() => clearTimeout(timeoutId));
+  }, [fetchCatalog]);
+
+  const headerElement = (
+    <View>
+      {/* Bar pencarian */}
+      <View style={[styles.searchBar, { marginHorizontal: 24 * s, height: SEARCH_H * s }]}>
+        <Image source={IMG.btnSearch} style={styles.searchIcon} contentFit="contain" />
+        <TextInput
+          value={query}
+          onChangeText={setQuery}
+          placeholder="Apa yang ingin anda ramu hari ini?"
+          placeholderTextColor="#7A7A7A"
+          style={styles.searchInput}
+          returnKeyType="search"
+        />
+        <Ionicons name="options-outline" size={20} color="#6B6B6B" />
+      </View>
+
+      {/* Kategori */}
+      <View style={[styles.categoryRow, { marginHorizontal: 20 * s }]}>
+        {CATEGORIES.map((c) => {
+          const active = kategori === c.label;
+          return (
+            <Pressable
+              key={c.key}
+              style={[styles.categoryItem, { width: CATEGORY_ITEM_W }]}
+              onPress={() => setKategori((current) => (current === c.label ? null : c.label))}>
+              <View style={[styles.categoryRing, active && styles.categoryRingOn]}>
                 <Image
                   source={c.image}
                   style={{ width: CATEGORY_IMG, height: CATEGORY_IMG }}
                   contentFit="contain"
                 />
               </View>
-              <Text style={styles.categoryLabel} numberOfLines={2}>
+              <Text style={[styles.categoryLabel, active && styles.categoryLabelOn]} numberOfLines={2}>
                 {c.label}
               </Text>
             </Pressable>
-          ))}
-        </View>
+          );
+        })}
+      </View>
 
-        <Text style={styles.sectionTitle}>Kamu Mungkin Suka</Text>
+      <Text style={styles.sectionTitle}>Kamu Mungkin Suka</Text>
+    </View>
+  );
 
-        {/* Daftar kartu */}
-        {data.map((r) => (
-          <View key={r.id} style={[styles.cardBox, { width: boxW, marginHorizontal: 20 * s }]}>
-            {/* Rangkuman (di belakang kartu utama, nempel kanan) */}
-            <View style={[styles.summary, { width: sumW, height: mainH }]}>
-              <View style={{ paddingLeft: overlap + 6 }}>
-                <Text style={styles.summaryTitle}>Rangkuman</Text>
-                <Text style={styles.summaryText} numberOfLines={4}>
-                  {r.summary}
-                </Text>
+  return (
+    <View style={styles.container}>
+      <StatusBar style="dark" />
 
-                <View style={styles.metaRow}>
-                  <Ionicons name="time-outline" size={11} color="#222" />
-                  <Text style={styles.metaText}>{r.time}</Text>
+      <FlatList
+        data={recipes}
+        keyExtractor={(item) => String(item.id)}
+        initialNumToRender={8}
+        windowSize={5}
+        maxToRenderPerBatch={8}
+        showsVerticalScrollIndicator={false}
+        keyboardShouldPersistTaps="handled"
+        contentContainerStyle={{
+          paddingTop: insets.top + SEARCH_TOP * s,
+          paddingBottom: BAR_H + insets.bottom + 40 * s,
+        }}
+        ListHeaderComponent={headerElement}
+        renderItem={({ item: r, index }) => {
+          const imageKey = `${r.id}:${r.image_url}`;
+          const imageFailed = Boolean(failedImages[imageKey]);
+          const imageUri = imageFailed || !r.image_url ? getFallbackImage(index) : r.image_url;
+          const savedKey = String(r.nama || '').trim().toLowerCase();
+          const isSaved = Boolean(savedNames[savedKey]);
+          return (
+            <View style={[styles.cardBox, { width: boxW, marginHorizontal: 20 * s }]}>
+              {/* Rangkuman (di belakang kartu utama, nempel kanan) */}
+              <View style={[styles.summary, { width: sumW, height: mainH }]}>
+                <View style={{ paddingLeft: overlap + 6 }}>
+                  <Text style={styles.summaryTitle}>Rangkuman</Text>
+                  <Text style={styles.summaryText} numberOfLines={4}>
+                    {r.rangkuman}
+                  </Text>
+
+                  <View style={styles.metaRow}>
+                    <Ionicons name="time-outline" size={11} color="#222" />
+                    <Text style={styles.metaText}>{r.waktu_masak}</Text>
+                  </View>
+                  <View style={styles.metaRow}>
+                    <Ionicons name="people-outline" size={11} color="#222" />
+                    <Text style={styles.metaText}>{r.porsi}</Text>
+                  </View>
+
+                  <Pressable style={styles.cookBtn} onPress={() => openDetail(r, imageUri)}>
+                    <Text style={styles.cookBtnText}>Ayo Masak!</Text>
+                  </Pressable>
                 </View>
-                <View style={styles.metaRow}>
-                  <Ionicons name="people-outline" size={11} color="#222" />
-                  <Text style={styles.metaText}>{r.servings}</Text>
+              </View>
+
+              {/* Kartu utama */}
+              <View style={[styles.mainCard, { width: mainW, height: mainH }]}>
+                <Image
+                  source={{ uri: imageUri }}
+                  style={{ width: imgSize, height: imgSize, borderRadius: 10 }}
+                  contentFit="cover"
+                  onError={() => {
+                    if (!imageFailed && r.image_url) {
+                      setFailedImages((prev) => ({ ...prev, [imageKey]: true }));
+                    }
+                  }}
+                />
+                <View style={styles.mainInfo}>
+                  <Text style={styles.recipeTitle} numberOfLines={1}>
+                    {r.nama}
+                  </Text>
+                  <View style={styles.kcalBadge}>
+                    <Ionicons name="flame" size={9} color="#E8590C" />
+                    <Text style={styles.kcalText}>{formatKkal(r.kalori)}</Text>
+                  </View>
+
+                  <View style={styles.macroRow}>
+                    <Macro kind="protein" value={r.protein} label="Protein" />
+                    <Macro kind="fats" value={r.fats} label="Fats" />
+                    <Macro kind="carbs" value={r.carbs} label="Carbs" />
+                  </View>
                 </View>
 
-                <Pressable style={styles.cookBtn} onPress={() => goAyoMasak(r.id)}>
-                  <Text style={styles.cookBtnText}>Ayo Masak!</Text>
+                <Pressable
+                  style={styles.bookmarkBtn}
+                  onPress={() => handleSaveRecipe(r, imageUri)}
+                  hitSlop={8}>
+                  <Ionicons
+                    name={isSaved ? 'bookmark' : 'bookmark-outline'}
+                    size={16}
+                    color="#8DB63C"
+                  />
                 </Pressable>
               </View>
             </View>
-
-            {/* Kartu utama */}
-            <View style={[styles.mainCard, { width: mainW, height: mainH }]}>
-              <Image
-                source={r.image}
-                style={{ width: imgSize, height: imgSize, borderRadius: 10 }}
-                contentFit="cover"
-              />
-              <View style={styles.mainInfo}>
-                <Text style={styles.recipeTitle} numberOfLines={1}>
-                  {r.title}
-                </Text>
-                <View style={styles.kcalBadge}>
-                  <Ionicons name="flame" size={9} color="#E8590C" />
-                  <Text style={styles.kcalText}>{r.kcal} kcal</Text>
-                </View>
-
-                <View style={styles.macroRow}>
-                  <Macro value={r.protein} label="Protein" />
-                  <Macro value={r.fat} label="Fats" />
-                  <Macro value={r.carbs} label="Carbs" />
-                </View>
-              </View>
+          );
+        }}
+        ListEmptyComponent={
+          loading ? (
+            <View style={styles.loadingWrap}>
+              <ActivityIndicator size="small" color="#8DB63C" />
+              <Text style={styles.empty}>Memuat resep...</Text>
             </View>
-          </View>
-        ))}
+          ) : error ? (
+            <View style={styles.loadingWrap}>
+              <Text style={styles.empty}>{error}</Text>
+              <Pressable style={styles.retryBtn} onPress={retryLoad}>
+                <Text style={styles.retryText}>Muat Ulang</Text>
+              </Pressable>
+            </View>
+          ) : (
+            <Text style={styles.empty}>Resep tidak ditemukan</Text>
+          )
+        }
+      />
 
-        {data.length === 0 && <Text style={styles.empty}>Resep tidak ditemukan</Text>}
-      </ScrollView>
+      <SaveSuccessModal
+        visible={savedModalVisible}
+        onClose={() => setSavedModalVisible(false)}
+        onViewSaved={() => {
+          setSavedModalVisible(false);
+          router.push('/save' as any);
+        }}
+      />
 
       <BottomBar current="search" />
     </View>
   );
 }
 
-function Macro({ value, label }: { value: number; label: string }) {
+function Macro({
+  kind,
+  value,
+  label,
+}: {
+  kind: 'protein' | 'fats' | 'carbs';
+  value: string;
+  label: string;
+}) {
+  const pct = macroBarPercent(kind, value);
   return (
     <View style={styles.macro}>
-      <View style={styles.macroBar} />
+      <View style={styles.macroTrack}>
+        <View style={[styles.macroBar, { height: `${pct}%` }]} />
+      </View>
       <View>
-        <Text style={styles.macroValue}>{value} g</Text>
+        <Text style={styles.macroValue}>{value}</Text>
         <Text style={styles.macroLabel}>{label}</Text>
       </View>
     </View>
@@ -276,12 +442,20 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  categoryRingOn: {
+    backgroundColor: '#B7D96A',
+    borderColor: '#5E8E16',
+  },
   categoryLabel: {
     marginTop: 4,
     fontSize: 10,
     fontWeight: '500',
     color: '#111',
     textAlign: 'center',
+  },
+  categoryLabelOn: {
+    fontWeight: '800',
+    color: '#3E6E12',
   },
 
   sectionTitle: {
@@ -311,7 +485,8 @@ const styles = StyleSheet.create({
     elevation: 3,
   },
   mainInfo: { flex: 1, marginLeft: 10 },
-  recipeTitle: { fontSize: 15, fontWeight: '700', color: '#111' },
+  recipeTitle: { fontSize: 15, fontWeight: '700', color: '#111', paddingRight: 22 },
+  bookmarkBtn: { position: 'absolute', top: 10, right: 10 },
   kcalBadge: {
     flexDirection: 'row',
     alignItems: 'center',
@@ -325,8 +500,16 @@ const styles = StyleSheet.create({
   },
   kcalText: { fontSize: 7, fontWeight: '600', color: '#B45309' },
   macroRow: { flexDirection: 'row', marginTop: 8, gap: 8 },
-  macro: { flexDirection: 'row', alignItems: 'center', gap: 3 },
-  macroBar: { width: 2, height: 22, borderRadius: 1, backgroundColor: '#8DB63C' },
+  macro: { flexDirection: 'row', alignItems: 'center', gap: 4 },
+  macroTrack: {
+    width: 4,
+    height: 28,
+    borderRadius: 999,
+    backgroundColor: '#E5E7EB',
+    justifyContent: 'flex-end',
+    overflow: 'hidden',
+  },
+  macroBar: { width: '100%', borderRadius: 999, backgroundColor: '#84CC16' },
   macroValue: { fontSize: 11, fontWeight: '700', color: '#111' },
   macroLabel: { fontSize: 7, color: '#6B6B6B' },
 
@@ -355,5 +538,14 @@ const styles = StyleSheet.create({
   },
   cookBtnText: { fontSize: 7, fontWeight: '700', color: '#FFFFFF' },
 
-  empty: { textAlign: 'center', color: '#7A7A7A', marginTop: 24, fontSize: 13 },
+  empty: { textAlign: 'center', color: '#7A7A7A', marginTop: 12, fontSize: 13 },
+  loadingWrap: { alignItems: 'center', marginTop: 24, paddingHorizontal: 24 },
+  retryBtn: {
+    marginTop: 12,
+    backgroundColor: '#8DB63C',
+    borderRadius: 999,
+    paddingHorizontal: 18,
+    paddingVertical: 8,
+  },
+  retryText: { color: '#FFFFFF', fontSize: 12, fontWeight: '700' },
 });

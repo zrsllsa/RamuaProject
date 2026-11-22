@@ -12,17 +12,17 @@ import {
   useWindowDimensions,
 } from 'react-native';
 import { CameraView, useCameraPermissions } from 'expo-camera';
+import { File } from 'expo-file-system';
 import * as ImagePicker from 'expo-image-picker';
 import { StatusBar } from 'expo-status-bar';
 import { Ionicons } from '@expo/vector-icons';
 import { useRouter } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import { api } from '@/lib/api';
 
 // import ScanHelpModal from '@/components/scan-help-modal';
 
 // ---- route ----
-const ROUTE_SCAN_RESULT = '/scan-result'; // halaman pemeriksaan bahan (dibuat di langkah berikutnya)
-
 // ---- ukuran ----
 const SHEET_H = 130; // tinggi panel krem di bawah (di luar safe area)
 const SHUTTER_SIZE = 84; // tombol jepret
@@ -40,20 +40,34 @@ export default function ScanFoodScreen() {
   const [permission, requestPermission] = useCameraPermissions();
   const [helpVisible, setHelpVisible] = useState(false);
   const [busy, setBusy] = useState(false);
+  const [detecting, setDetecting] = useState(false);
 
   const frameSize = width * FRAME_RATIO;
 
-  // Lanjut ke halaman pemeriksaan bahan sambil membawa alamat foto
-  const goToResult = (uri: string) =>
-    router.push({ pathname: ROUTE_SCAN_RESULT, params: { uri } } as any);
+  const detectAndContinue = async (fotoUri: string) => {
+    setDetecting(true);
+    try {
+      const formData = new FormData();
+      formData.append('file', new File(fotoUri));
+      const responseData = await api('/api/detect', { method: 'POST', body: formData });
+      router.push({
+        pathname: '/scan-result',
+        params: { data: JSON.stringify(responseData), imageUri: String(fotoUri) },
+      } as any);
+    } catch (e: any) {
+      Alert.alert('Deteksi gagal', e?.message || 'Bahan makanan gagal dikenali. Coba lagi ya.');
+    } finally {
+      setDetecting(false);
+    }
+  };
 
   // Tombol jepret
   const takePhoto = async () => {
-    if (busy || !cameraRef.current) return;
+    if (busy || detecting || !cameraRef.current) return;
     try {
       setBusy(true);
       const photo = await cameraRef.current.takePictureAsync({ quality: 0.7 });
-      if (photo?.uri) goToResult(photo.uri);
+      if (photo?.uri) await detectAndContinue(photo.uri);
     } catch {
       Alert.alert('Gagal', 'Foto gagal diambil, coba lagi ya.');
     } finally {
@@ -63,14 +77,14 @@ export default function ScanFoodScreen() {
 
   // Tombol Galeri
   const pickFromGallery = async () => {
-    if (busy) return;
+    if (busy || detecting) return;
     try {
       setBusy(true);
       const res = await ImagePicker.launchImageLibraryAsync({
         mediaTypes: ['images'],
         quality: 0.7,
       });
-      if (!res.canceled && res.assets?.[0]?.uri) goToResult(res.assets[0].uri);
+      if (!res.canceled && res.assets?.[0]?.uri) await detectAndContinue(res.assets[0].uri);
     } catch {
       Alert.alert('Gagal', 'Gambar gagal dibuka, coba lagi ya.');
     } finally {
@@ -99,9 +113,10 @@ export default function ScanFoodScreen() {
         <Pressable style={styles.permBtn} onPress={requestPermission}>
           <Text style={styles.permBtnText}>Izinkan Kamera</Text>
         </Pressable>
-        <Pressable onPress={pickFromGallery} style={{ marginTop: 12 }}>
+        <Pressable onPress={pickFromGallery} style={{ marginTop: 12 }} disabled={busy || detecting}>
           <Text style={styles.permLink}>Pilih dari Galeri</Text>
         </Pressable>
+        {detecting ? <DetectingOverlay /> : null}
       </View>
     );
   }
@@ -165,24 +180,44 @@ export default function ScanFoodScreen() {
       {/* Tombol jepret di tengah, menonjol ke atas panel */}
       <Pressable
         onPress={takePhoto}
-        disabled={busy}
+        disabled={busy || detecting}
         style={[styles.shutterRing, { bottom: SHEET_H + insets.bottom - SHUTTER_SIZE / 2 - 4 }]}>
         <View style={styles.shutterInner}>
-          {busy ? (
+          {busy || detecting ? (
             <ActivityIndicator color="#FFFFFF" />
           ) : (
             <Ionicons name="aperture-outline" size={38} color="#FFFFFF" />
           )}
         </View>
       </Pressable>
- 
+
+      {detecting ? <DetectingOverlay /> : null}
+
       {/* <ScanHelpModal visible={helpVisible} onClose={() => setHelpVisible(false)} /> */}
+    </View>
+  );
+}
+
+function DetectingOverlay() {
+  return (
+    <View style={styles.detectingOverlay}>
+      <ActivityIndicator size="large" color="#8DB63C" />
+      <Text style={styles.detectingText}>Mengenali bahan makanan...</Text>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
   container: { flex: 1, backgroundColor: '#000000' },
+  detectingOverlay: {
+    ...StyleSheet.absoluteFillObject,
+    backgroundColor: 'rgba(255,255,255,0.88)',
+    alignItems: 'center',
+    justifyContent: 'center',
+    gap: 12,
+    zIndex: 20,
+  },
+  detectingText: { fontSize: 15, fontWeight: '700', color: '#1F2D0A' },
 
   // Izin kamera
   center: {

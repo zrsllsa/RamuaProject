@@ -2,7 +2,7 @@
 import { supabase } from './supabase';
 
 // Alamat backend FastAPI
-const BASE_URL = 'http://192.168.0.17:8000';
+const BASE_URL = 'http://192.168.0.142:8000';
 
 export async function api<T = any>(
   path: string,
@@ -10,14 +10,20 @@ export async function api<T = any>(
 ): Promise<T> {
   const { data } = await supabase.auth.getSession();
   const token = data.session?.access_token;
+  const isFormData = options.body instanceof FormData;
+  const customHeaders: any = {
+    ...(token ? { Authorization: `Bearer ${token}` } : {}),
+    ...options.headers,
+  };
+
+  // HANYA gunakan application/json jika data BUKAN FormData
+  if (!isFormData) {
+    customHeaders['Content-Type'] = 'application/json';
+  }
 
   const res = await fetch(`${BASE_URL}${path}`, {
     ...options,
-    headers: {
-      'Content-Type': 'application/json',
-      ...(token ? { Authorization: `Bearer ${token}` } : {}),
-      ...options.headers,
-    },
+    headers: customHeaders,
   });
 
   const text = await res.text();

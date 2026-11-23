@@ -1,0 +1,21 @@
+# Environment lokal (secret diisi melalui Hugging Face Spaces Secrets)
+.env
+.env.*
+!.env.example
+
+# Cache & virtual environment Python
+__pycache__/
+**/__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+
+# OS & editor
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Pastikan folder model & bobot YOLO (.pt) ikut terbawa ke image Docker
+!models/
+!models/*.pt

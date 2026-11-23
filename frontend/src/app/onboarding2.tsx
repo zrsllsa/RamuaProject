@@ -26,6 +26,7 @@ export default function Onboarding2() {
       description="Tentukan alat yang kamu miliki di dapur interaktif serta atur estimasi waktu dan jumlah porsi."
       buttonLabel="Lanjut"
       nextRoute="/onboarding3"
+      animOffsetY={-80}
     />
   );
 }

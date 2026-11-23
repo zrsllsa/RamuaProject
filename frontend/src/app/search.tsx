@@ -24,6 +24,9 @@ import { api } from '@/lib/api';
 import { firstParam } from '@/lib/recipe-flow';
 import { formatKkal, getFallbackImage, macroBarPercent } from '@/lib/resep';
 
+// Area sentuh tombol "Ayo Masak!" diperluas (±44px) tanpa mengubah layout
+const COOK_BTN_HIT_SLOP = { top: 10, bottom: 10, left: 10, right: 10 };
+
 // ---- ukuran (sama gaya dengan home) ----
 const SEARCH_TOP = 20; // jarak bar pencarian dari atas (di bawah status bar)
 const SEARCH_H = 45; // tinggi bar pencarian
@@ -299,7 +302,10 @@ export default function SearchScreen() {
                     <Text style={styles.metaText}>{r.porsi}</Text>
                   </View>
 
-                  <Pressable style={styles.cookBtn} onPress={() => openDetail(r, imageUri)}>
+                  <Pressable
+                    style={styles.cookBtn}
+                    hitSlop={COOK_BTN_HIT_SLOP}
+                    onPress={() => openDetail(r, imageUri)}>
                     <Text style={styles.cookBtnText}>Ayo Masak!</Text>
                   </Pressable>
                 </View>

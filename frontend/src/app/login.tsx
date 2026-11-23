@@ -94,9 +94,10 @@ export default function Login() {
           <RamuaAnimation
             lottieSource={LOGIN_ANIM}
             SvgComponent={LoginLogoSvg}
-            width={200}
-            height={200}
+            width={270}
+            height={270}
             renderMode="SOFTWARE"
+            style={styles.loginAnim}
           />
 
           <OmbreText text="Selamat Datang!" style={styles.title} />
@@ -174,11 +175,15 @@ const styles = StyleSheet.create({
   flex: { flex: 1, backgroundColor: '#FFFFFF' },
   container: {
     flexGrow: 1,
+    justifyContent: 'center', // seluruh konten (animasi + form) di tengah layar
     paddingHorizontal: 27,
-    paddingTop: 90,
-    paddingBottom: 30,
+    paddingTop: 40,
+    paddingBottom: 40,
   },
   center: { alignItems: 'center' },
+  // Kanvas animasi_login punya ruang kosong ~37% di bagian atas; tarik ke atas
+  // supaya jarak kosong di atas logo tidak terlalu lapang dan form ikut naik.
+  loginAnim: { marginTop: -95 },
   logo: { width: 180, height: 180 },
   title: { fontSize: 24, fontWeight: '700', marginTop: 16 },
   subtitle: {

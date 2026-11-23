@@ -21,6 +21,9 @@ import { BottomBar, BAR_H } from '@/components/bottom-bar';
 import { api } from '@/lib/api';
 import { getFallbackImage, macroBarPercent } from '@/lib/resep';
 
+// Area sentuh tombol "Ayo Masak!" diperluas (±44px) tanpa mengubah layout
+const COOK_BTN_HIT_SLOP = { top: 10, bottom: 10, left: 10, right: 10 };
+
 // ---- route ----
 const ROUTE_SEARCH = '/search';
 const ROUTE_DETAIL = '/detail-resep';
@@ -229,7 +232,10 @@ export default function SaveScreen() {
                         </View>
                       </View>
 
-                      <Pressable style={styles.cookBtn} onPress={() => openDetail(r, imageUri)}>
+                      <Pressable
+                        style={styles.cookBtn}
+                        hitSlop={COOK_BTN_HIT_SLOP}
+                        onPress={() => openDetail(r, imageUri)}>
                         <Text style={styles.cookBtnText}>Ayo Masak!</Text>
                       </Pressable>
                     </View>

@@ -20,6 +20,9 @@ import {
 } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
+// Area sentuh tombol "Ayo Masak!" diperluas (±44px) tanpa mengubah layout
+const COOK_BTN_HIT_SLOP = { top: 10, bottom: 10, left: 10, right: 10 };
+
 // ====== GAMBAR (semua di assets/images/) — ganti ekstensi DI SINI SAJA ======
 const IMG = {
   home1: require('@/assets/images/home/home01.svg'), // placeholder/fallback gambar dapur (header)
@@ -539,6 +542,7 @@ export default function Home() {
                         <TouchableOpacity
                           style={styles.cookBtn}
                           activeOpacity={0.85}
+                          hitSlop={COOK_BTN_HIT_SLOP}
                           onPress={() => openSavedDetail(item, imageUri)}>
                           <Text style={styles.cookBtnText} numberOfLines={1}>
                             Ayo Masak!

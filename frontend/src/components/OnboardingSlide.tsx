@@ -22,6 +22,8 @@ type OnboardingSlideProps = {
   description: string;
   buttonLabel: string;
   nextRoute: '/onboarding2' | '/onboarding3' | '/login';
+  /** Geser posisi animasi (px desain lebar 375, negatif = naik). Default 0. */
+  animOffsetY?: number;
 };
 
 const WAVE_PATH =
@@ -57,6 +59,7 @@ export function OnboardingSlide({
   description,
   buttonLabel,
   nextRoute,
+  animOffsetY = 0,
 }: OnboardingSlideProps) {
   const router = useRouter();
   const isFocused = useIsFocused();
@@ -75,7 +78,10 @@ export function OnboardingSlide({
       {/* LAYER 1: animasi penuh selebar layar menempel dari tepi atas */}
       <Animated.View
         entering={FadeIn.duration(700)}
-        style={[styles.layer, { width: screenWidth, height: animHeight }]}>
+        style={[
+          styles.layer,
+          { width: screenWidth, height: animHeight, top: Math.round(animOffsetY * s) },
+        ]}>
         <RamuaAnimation
           lottieSource={lottieSource}
           SvgComponent={SvgComponent}

@@ -7,6 +7,11 @@
     "icon": "./assets/images/icon.png",
     "scheme": "ramuamobile",
     "userInterfaceStyle": "automatic",
+    "splash": {
+      "image": "./assets/images/splash-icon.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#FFFFFF"
+    },
     "ios": {
       "icon": "./assets/expo.icon"
     },
@@ -29,9 +34,13 @@
       [
         "expo-splash-screen",
         {
-          "backgroundColor": "#208AEF",
+          "backgroundColor": "#FFFFFF",
           "image": "./assets/images/splash-icon.png",
-          "imageWidth": 76
+          "imageWidth": 200,
+          "dark": {
+            "backgroundColor": "#FFFFFF",
+            "image": "./assets/images/splash-icon.png"
+          }
         }
       ],
       "expo-image"

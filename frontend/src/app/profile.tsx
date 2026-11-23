@@ -5,12 +5,21 @@ import { Image } from 'expo-image';
 import { useFocusEffect, useRouter } from 'expo-router';
 import { StatusBar } from 'expo-status-bar';
 import { useCallback, useState } from 'react';
-import { Pressable, StyleSheet, Text, View, useWindowDimensions } from 'react-native';
+import {
+  ActivityIndicator,
+  Modal,
+  Pressable,
+  StyleSheet,
+  Text,
+  View,
+  useWindowDimensions,
+} from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 // ====== ROUTE TUJUAN ======
 const ROUTE_EDIT = '/editprofile'; // editprofile.tsx
 const ROUTE_SAVED = '/save'; // save.tsx
+const ROUTE_LOGIN = '/login'; // login.tsx
 // ==========================
 
 const AVATAR = 84; // ukuran lingkaran foto (px desain, lebar 375)
@@ -24,6 +33,8 @@ export default function Profile() {
   const [name, setName] = useState('');
   const [handle, setHandle] = useState('');
   const [avatarUrl, setAvatarUrl] = useState<string | null>(null);
+  const [showLogoutModal, setShowLogoutModal] = useState(false);
+  const [isLoggingOut, setIsLoggingOut] = useState(false);
 
   // Dimuat ulang tiap halaman ini tampil lagi (misal habis simpan di edit profil)
   useFocusEffect(
@@ -39,6 +50,20 @@ export default function Profile() {
       });
     }, [])
   );
+
+  const handleConfirmLogout = async () => {
+    if (isLoggingOut) return;
+    setIsLoggingOut(true);
+    try {
+      await supabase.auth.signOut();
+    } catch {
+      // Tetap lanjut keluar ke halaman login jika signOut jaringan bermasalah
+    } finally {
+      setIsLoggingOut(false);
+      setShowLogoutModal(false);
+      router.replace(ROUTE_LOGIN as any);
+    }
+  };
 
   return (
     <View style={styles.container}>
@@ -89,8 +114,68 @@ export default function Profile() {
           pressed && { opacity: 0.6 },
         ]}>
         <Text style={styles.rowText}>Resep yang disimpan</Text>
-        <Ionicons name="chevron-forward" size={18} color="#6B6B6B" />
+        <Ionicons name="chevron-forward" size={18} color="#9CA3AF" />
       </Pressable>
+
+      <View style={[styles.menuDivider, { marginHorizontal: 24 * s }]} />
+
+      {/* Keluar akun -> buka modal konfirmasi */}
+      <Pressable
+        onPress={() => setShowLogoutModal(true)}
+        style={({ pressed }) => [
+          styles.row,
+          { marginHorizontal: 24 * s },
+          pressed && { opacity: 0.6 },
+        ]}>
+        <View style={styles.logoutLeft}>
+          <Ionicons name="log-out-outline" size={20} color="#DC2626" />
+          <Text style={styles.logoutText}>Keluar</Text>
+        </View>
+        <Ionicons name="chevron-forward" size={18} color="#9CA3AF" />
+      </Pressable>
+
+      <Modal
+        visible={showLogoutModal}
+        transparent
+        animationType="fade"
+        onRequestClose={() => {
+          if (!isLoggingOut) setShowLogoutModal(false);
+        }}>
+        <View style={styles.modalBackdrop}>
+          <View style={styles.modalCard}>
+            <Text style={styles.modalTitle}>Keluar dari Akun</Text>
+            <Text style={styles.modalSubtitle}>
+              Apakah anda yakin ingin keluar dari akun?
+            </Text>
+
+            <View style={styles.modalActions}>
+              <Pressable
+                onPress={() => setShowLogoutModal(false)}
+                disabled={isLoggingOut}
+                style={({ pressed }) => [
+                  styles.cancelButton,
+                  pressed && !isLoggingOut && { opacity: 0.8 },
+                ]}>
+                <Text style={styles.cancelButtonText}>Batal</Text>
+              </Pressable>
+
+              <Pressable
+                onPress={handleConfirmLogout}
+                disabled={isLoggingOut}
+                style={({ pressed }) => [
+                  styles.confirmButton,
+                  (pressed || isLoggingOut) && { opacity: 0.85 },
+                ]}>
+                {isLoggingOut ? (
+                  <ActivityIndicator size="small" color="#FFFFFF" />
+                ) : (
+                  <Text style={styles.confirmButtonText}>Keluar</Text>
+                )}
+              </Pressable>
+            </View>
+          </View>
+        </View>
+      </Modal>
 
       <BottomBar current="profile" />
     </View>
@@ -133,7 +218,83 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
-    paddingVertical: 10,
+    paddingVertical: 12,
   },
   rowText: { fontSize: 13.5, color: '#111111' },
+  menuDivider: {
+    borderBottomWidth: 1,
+    borderColor: '#F3F4F6',
+  },
+  logoutLeft: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 10,
+  },
+  logoutText: {
+    fontSize: 16,
+    fontWeight: '500',
+    color: '#DC2626',
+  },
+
+  modalBackdrop: {
+    flex: 1,
+    backgroundColor: 'rgba(0, 0, 0, 0.45)',
+    justifyContent: 'center',
+    alignItems: 'center',
+    paddingHorizontal: 24,
+  },
+  modalCard: {
+    backgroundColor: '#FFFFFF',
+    borderRadius: 24,
+    paddingHorizontal: 24,
+    paddingVertical: 28,
+    width: '100%',
+    maxWidth: 360,
+  },
+  modalTitle: {
+    textAlign: 'center',
+    fontSize: 22,
+    fontWeight: '700',
+    color: '#1E1E1E',
+    marginBottom: 10,
+  },
+  modalSubtitle: {
+    textAlign: 'center',
+    fontSize: 15,
+    lineHeight: 22,
+    color: '#6B7280',
+    marginBottom: 24,
+  },
+  modalActions: {
+    flexDirection: 'row',
+    gap: 12,
+  },
+  cancelButton: {
+    flex: 1,
+    height: 48,
+    borderRadius: 999,
+    backgroundColor: '#FFFFFF',
+    borderWidth: 1.5,
+    borderColor: '#8BB94A',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  cancelButtonText: {
+    color: '#8BB94A',
+    fontSize: 15,
+    fontWeight: '700',
+  },
+  confirmButton: {
+    flex: 1,
+    height: 48,
+    borderRadius: 999,
+    backgroundColor: '#8BB94A',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  confirmButtonText: {
+    color: '#FFFFFF',
+    fontSize: 15,
+    fontWeight: '700',
+  },
 });

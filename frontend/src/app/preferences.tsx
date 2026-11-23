@@ -1,13 +1,15 @@
+import { RamuaAnimation } from '@/components/RamuaAnimation';
 import { StepIndicator } from '@/components/StepIndicator';
 import { parseDraft } from '@/lib/recipe-flow';
 import { Ionicons } from '@expo/vector-icons';
-import { useLocalSearchParams, useRouter } from 'expo-router';
+import { useIsFocused, useLocalSearchParams, useRouter } from 'expo-router';
 import { StatusBar } from 'expo-status-bar';
 import { useMemo, useState } from 'react';
-import { Image, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
+import { Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 const MascotKalori = require('../../assets/images/setkalori.png');
+const ANIM_PREFERENSI = require('../../assets/ramuanimation/animasi_preferensipage.json');
 
 const GREEN = '#8FCB4C';
 const YELLOW = '#F6C445';
@@ -37,6 +39,7 @@ function kcalFromX(x: number, width: number) {
 
 export default function PreferencesScreen() {
   const router = useRouter();
+  const isFocused = useIsFocused();
   const insets = useSafeAreaInsets();
   const params = useLocalSearchParams<{ data?: string }>();
   const draft = useMemo(() => parseDraft(params.data), [params.data]);
@@ -83,7 +86,16 @@ export default function PreferencesScreen() {
         <Text style={styles.subtitle}>
           Resep dapat diracik agar sesuai dengan selera dan ketersediaan waktu kamu!
         </Text>
-        <Image source={MascotKalori} resizeMode="contain" style={styles.mascot} />
+        <RamuaAnimation
+          lottieSource={ANIM_PREFERENSI}
+          pngSource={MascotKalori}
+          width={240}
+          height={165}
+          resizeMode="contain"
+          renderMode="AUTOMATIC"
+          isActive={isFocused}
+          style={styles.mascot}
+        />
 
         <View style={styles.card}>
           <View style={styles.sectionHead}>

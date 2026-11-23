@@ -1,14 +1,17 @@
+import { RamuaAnimation } from '@/components/RamuaAnimation';
 import { api } from '@/lib/api';
 import { firstParam } from '@/lib/recipe-flow';
 import { Ionicons } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
-import { useLocalSearchParams, useRouter } from 'expo-router';
+import { useIsFocused, useLocalSearchParams, useRouter } from 'expo-router';
 import { StatusBar } from 'expo-status-bar';
 import { useEffect, useMemo, useRef, useState } from 'react';
-import { Image, Pressable, StyleSheet, Text, View } from 'react-native';
-import { SafeAreaView } from 'react-native-safe-area-context';
+import { Pressable, ScrollView, StyleSheet, Text, View, useWindowDimensions } from 'react-native';
+import { SafeAreaView, useSafeAreaInsets } from 'react-native-safe-area-context';
 
 const MascotMeramu = require('../../assets/images/meramu.png');
+const ANIM_ANALYZING = require('../../assets/ramuanimation/animasi_analyzingrecipe.json');
+const ANIM_RATIO = (ANIM_ANALYZING?.h && ANIM_ANALYZING?.w) ? ANIM_ANALYZING.h / ANIM_ANALYZING.w : 415 / 436;
 
 const GREEN = '#8FCB4C';
 
@@ -21,6 +24,9 @@ const CHECKS = [
 
 export default function BufferingScreen() {
   const router = useRouter();
+  const isFocused = useIsFocused();
+  const insets = useSafeAreaInsets();
+  const { width: screenWidth } = useWindowDimensions();
   const params = useLocalSearchParams<{
     bahan_terdeteksi?: string;
     target_kalori?: string;
@@ -89,70 +95,114 @@ export default function BufferingScreen() {
     router.back();
   };
 
+  const animHeight = Math.round(screenWidth * ANIM_RATIO);
+
   return (
-    <SafeAreaView edges={['left', 'right', 'bottom']} style={styles.container}>
+    <SafeAreaView edges={['bottom']} style={styles.container}>
       <StatusBar style="dark" />
-      <Image source={MascotMeramu} resizeMode="cover" style={styles.mascot} />
+      <ScrollView
+        showsVerticalScrollIndicator={false}
+        bounces={false}
+        contentInsetAdjustmentBehavior="never"
+        contentContainerStyle={[
+          styles.scrollContent,
+          { paddingBottom: Math.max(insets.bottom, 16) },
+        ]}>
+        {/* Area header: menempel penuh dari top=0, left=0 selebar layar agar cahaya animasi/meramu.png menutup hingga belakang status bar */}
+        <View style={[styles.hero, { width: screenWidth, height: animHeight }]}>
+          <RamuaAnimation
+            lottieSource={ANIM_ANALYZING}
+            pngSource={MascotMeramu}
+            width={screenWidth}
+            height={animHeight}
+            resizeMode="cover"
+            renderMode="AUTOMATIC"
+            isActive={isFocused}
+          />
+        </View>
 
-      <Text style={styles.title}>Meramu Resepmu...</Text>
-      <Text style={styles.subtitle}>
-        Sebentar ya, kami sedang mencocokkan bahan dengan preferensimu!
-      </Text>
+        <Text style={styles.title}>Meramu Resepmu...</Text>
+        <Text style={styles.subtitle}>
+          Sebentar ya, kami sedang mencocokkan bahan dengan preferensimu!
+        </Text>
 
-      <View style={styles.card}>
-        {CHECKS.map((item, index) => {
-          const done = index < doneCount;
-          return (
-            <View key={item.label} style={styles.row}>
-              <View style={[styles.iconBox, { backgroundColor: done ? '#F3F8E8' : '#F6F6F6' }]}>
-                <Ionicons name={item.icon as any} size={18} color={item.color} />
+        <View style={styles.card}>
+          {CHECKS.map((item, index) => {
+            const done = index < doneCount;
+            return (
+              <View key={item.label} style={styles.row}>
+                <View style={[styles.iconBox, { backgroundColor: done ? '#F3F8E8' : '#F6F6F6' }]}>
+                  <Ionicons name={item.icon as any} size={18} color={item.color} />
+                </View>
+                <Text style={styles.rowText}>{item.label}</Text>
+                {done ? (
+                  <Ionicons name="checkmark-circle" size={22} color={GREEN} />
+                ) : (
+                  <View style={styles.emptyCheck} />
+                )}
               </View>
-              <Text style={styles.rowText}>{item.label}</Text>
-              {done ? (
-                <Ionicons name="checkmark-circle" size={22} color={GREEN} />
-              ) : (
-                <View style={styles.emptyCheck} />
-              )}
-            </View>
-          );
-        })}
-      </View>
+            );
+          })}
+        </View>
 
-      <View style={styles.progressTrack}>
-        <LinearGradient
-          colors={['#8FCB4C', '#F6C445']}
-          start={{ x: 0, y: 0.5 }}
-          end={{ x: 1, y: 0.5 }}
-          style={[styles.progressFill, { width: `${(doneCount / CHECKS.length) * 100}%` }]}
-        />
-      </View>
-      <Text style={styles.progressLabel}>{statusText}</Text>
+        <View style={styles.progressTrack}>
+          <LinearGradient
+            colors={['#8FCB4C', '#F6C445']}
+            start={{ x: 0, y: 0.5 }}
+            end={{ x: 1, y: 0.5 }}
+            style={[styles.progressFill, { width: `${(doneCount / CHECKS.length) * 100}%` }]}
+          />
+        </View>
+        <Text style={styles.progressLabel}>{statusText}</Text>
 
-      <Pressable onPress={cancel} style={styles.cancel}>
-        <Text style={styles.cancelText}>Batal</Text>
-      </Pressable>
+        <Pressable onPress={cancel} style={styles.cancel}>
+          <Text style={styles.cancelText}>Batal</Text>
+        </Pressable>
+      </ScrollView>
     </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
   container: { flex: 1, backgroundColor: '#FFFFFF' },
-  mascot: { width: '100%', height: 280 },
-  title: { marginTop: 8, textAlign: 'center', fontSize: 22, fontWeight: '800', color: '#161616', paddingHorizontal: 24 },
-  subtitle: { marginTop: 8, textAlign: 'center', color: '#6E6E6E', fontSize: 14, lineHeight: 20, paddingHorizontal: 24 },
+  scrollContent: { flexGrow: 1 },
+  hero: {
+    top: 0,
+    left: 0,
+    alignItems: 'center',
+    justifyContent: 'center',
+    overflow: 'hidden',
+    backgroundColor: '#FFFFFF',
+  },
+  title: {
+    marginTop: 4,
+    textAlign: 'center',
+    fontSize: 22,
+    fontWeight: '800',
+    color: '#161616',
+    paddingHorizontal: 24,
+  },
+  subtitle: {
+    marginTop: 4,
+    textAlign: 'center',
+    color: '#6E6E6E',
+    fontSize: 13.5,
+    lineHeight: 18,
+    paddingHorizontal: 24,
+  },
   card: {
-    marginTop: 22,
+    marginTop: 10,
     marginHorizontal: 24,
     borderRadius: 20,
     backgroundColor: '#FFF8E8',
-    paddingVertical: 8,
+    paddingVertical: 4,
     paddingHorizontal: 12,
   },
-  row: { flexDirection: 'row', alignItems: 'center', gap: 10, paddingVertical: 10 },
+  row: { flexDirection: 'row', alignItems: 'center', gap: 10, paddingVertical: 6 },
   iconBox: {
-    width: 36,
-    height: 36,
-    borderRadius: 12,
+    width: 32,
+    height: 32,
+    borderRadius: 10,
     alignItems: 'center',
     justifyContent: 'center',
   },
@@ -165,7 +215,7 @@ const styles = StyleSheet.create({
     borderColor: '#D5D5D5',
   },
   progressTrack: {
-    marginTop: 22,
+    marginTop: 12,
     marginHorizontal: 24,
     height: 8,
     borderRadius: 999,
@@ -173,7 +223,7 @@ const styles = StyleSheet.create({
     overflow: 'hidden',
   },
   progressFill: { height: '100%' },
-  progressLabel: { marginTop: 10, textAlign: 'center', color: '#6E6E6E', fontSize: 13 },
-  cancel: { marginTop: 22, alignItems: 'center', padding: 8 },
+  progressLabel: { marginTop: 6, textAlign: 'center', color: '#6E6E6E', fontSize: 13 },
+  cancel: { marginTop: 6, alignItems: 'center', paddingVertical: 6, paddingHorizontal: 12 },
   cancelText: { color: '#E23B3B', fontSize: 16, fontWeight: '800' },
 });

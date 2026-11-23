@@ -1,10 +1,9 @@
+import { RamuaAnimation } from '@/components/RamuaAnimation';
 import { Image } from 'expo-image';
-import { LinearGradient } from 'expo-linear-gradient';
 import { useRouter } from 'expo-router';
-import { useEffect } from 'react';
+import { useCallback, useEffect, useRef } from 'react';
 import { StyleSheet, View } from 'react-native';
 import Animated, {
-  Easing,
   runOnJS,
   useAnimatedStyle,
   useSharedValue,
@@ -12,57 +11,86 @@ import Animated, {
   withTiming,
 } from 'react-native-reanimated';
 
-const SIZE = 230; // ukuran logo
+const LOGO_ANIM = require('@/assets/ramuanimation/animasi_logoramua.json');
+const LOGO_WIDTH = 240;
+const LOGO_HEIGHT =
+  LOGO_ANIM?.w > 0 && LOGO_ANIM?.h > 0 ? Math.round(LOGO_WIDTH * (LOGO_ANIM.h / LOGO_ANIM.w)) : 240;
+const ANIM_DURATION_MS =
+  LOGO_ANIM?.fr > 0 ? Math.round(((LOGO_ANIM.op - LOGO_ANIM.ip) / LOGO_ANIM.fr) * 1000) : 3350;
+
+function RamuaLogoSvg({ width, height }: { width?: number; height?: number }) {
+  return (
+    <Image
+      source={require('@/assets/images/ramua-logo.svg')}
+      style={{ width, height }}
+      contentFit="contain"
+      transition={0}
+    />
+  );
+}
 
 export default function SplashScreen() {
   const router = useRouter();
-
-  const cover = useSharedValue(-SIZE); // awal: lapisan putih menutupi logo penuh
   const opacity = useSharedValue(1);
+  const exitTriggeredRef = useRef(false);
+  const fallbackTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
-  const goNext = () => router.replace('/onboarding1');
+  const goNext = useCallback(() => {
+    router.replace('/onboarding1');
+  }, [router]);
+
+  const startFadeOut = useCallback(
+    (delayMs: number) => {
+      if (exitTriggeredRef.current) return;
+      exitTriggeredRef.current = true;
+      if (fallbackTimerRef.current) {
+        clearTimeout(fallbackTimerRef.current);
+        fallbackTimerRef.current = null;
+      }
+      opacity.value = withDelay(
+        delayMs,
+        withTiming(0, { duration: 450 }, (finished) => {
+          if (finished) runOnJS(goNext)();
+        })
+      );
+    },
+    [goNext, opacity]
+  );
 
   useEffect(() => {
-    // 1. Lapisan putih bergeser ke kanan bawah -> logo terungkap dari kiri atas
-    cover.value = withTiming(SIZE, {
-      duration: 2000,
-      easing: Easing.inOut(Easing.quad),
-    });
+    // Fallback jika Lottie tidak tersedia / gagal memanggil onAnimationFinish
+    fallbackTimerRef.current = setTimeout(() => {
+      startFadeOut(300);
+    }, ANIM_DURATION_MS + 900);
 
-    // 2. Tahan sebentar, lalu memudar dan pindah halaman
-    opacity.value = withDelay(
-      2600,
-      withTiming(0, { duration: 500 }, (finished) => {
-        if (finished) runOnJS(goNext)();
-      })
-    );
-  }, []);
-
-  const coverStyle = useAnimatedStyle(() => ({
-    transform: [{ translateX: cover.value }, { translateY: cover.value }],
-  }));
+    return () => {
+      if (fallbackTimerRef.current) {
+        clearTimeout(fallbackTimerRef.current);
+      }
+    };
+  }, [startFadeOut]);
 
   const wrapperStyle = useAnimatedStyle(() => ({ opacity: opacity.value }));
 
   return (
     <View style={styles.container}>
       <Animated.View style={[styles.logoBox, wrapperStyle]}>
-        <Image
-          source={require('@/assets/images/ramua-logo.svg')}
-          style={styles.logo}
-          contentFit="contain"
+        <RamuaAnimation
+          lottieSource={LOGO_ANIM}
+          SvgComponent={RamuaLogoSvg}
+          width={LOGO_WIDTH}
+          height={LOGO_HEIGHT}
+          resizeMode="contain"
+          renderMode="AUTOMATIC"
+          isActive
+          loop={false}
+          onAnimationFinish={(isCancelled) => {
+            if (!isCancelled) {
+              startFadeOut(500);
+            }
+          }}
+          style={styles.animContainer}
         />
-
-        {/* Lapisan putih transparan yang menyingkap logo secara diagonal */}
-        <Animated.View style={[styles.cover, coverStyle]} pointerEvents="none">
-          <LinearGradient
-            colors={['rgba(255,255,255,0)', '#FFFFFF']}
-            locations={[0, 0.5]}
-            start={{ x: 0, y: 0 }}
-            end={{ x: 1, y: 1 }}
-            style={StyleSheet.absoluteFill}
-          />
-        </Animated.View>
       </Animated.View>
     </View>
   );
@@ -75,7 +103,14 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-  logoBox: { width: SIZE, height: SIZE, overflow: 'hidden' },
-  logo: { width: SIZE, height: SIZE },
-  cover: { position: 'absolute', top: 0, left: 0, width: SIZE * 2, height: SIZE * 2 },
+  logoBox: {
+    width: LOGO_WIDTH,
+    height: LOGO_HEIGHT,
+    overflow: 'visible',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  animContainer: {
+    overflow: 'visible',
+  },
 });

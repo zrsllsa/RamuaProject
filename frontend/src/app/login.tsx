@@ -1,4 +1,5 @@
 import { Ionicons } from '@expo/vector-icons';
+import { RamuaAnimation } from '@/components/RamuaAnimation';
 import { Image } from 'expo-image';
 import { useRouter } from 'expo-router';
 import { StatusBar } from 'expo-status-bar';
@@ -17,6 +18,19 @@ import {
 } from 'react-native';
 import Animated, { FadeInDown } from 'react-native-reanimated';
 import { supabase } from '@/lib/supabase';
+
+const LOGIN_ANIM = require('@/assets/ramuanimation/animasi_login.json');
+
+function LoginLogoSvg({ width, height }: { width?: number; height?: number }) {
+  return (
+    <Image
+      source={require('@/assets/images/logo-login.svg')}
+      style={{ width, height }}
+      contentFit="contain"
+      transition={0}
+    />
+  );
+}
 
 // Warna ombre per huruf, dari #94BE56 ke #7080B4
 function OmbreText({ text, style }: { text: string; style: any }) {
@@ -77,10 +91,12 @@ export default function Login() {
         showsVerticalScrollIndicator={false}>
             
         <Animated.View entering={FadeInDown.duration(600)} style={styles.center}>
-          <Image
-            source={require('@/assets/images/logo-login.svg')}
-            style={{ width: 600, height: 250 }}
-            contentFit="contain"
+          <RamuaAnimation
+            lottieSource={LOGIN_ANIM}
+            SvgComponent={LoginLogoSvg}
+            width={200}
+            height={200}
+            renderMode="SOFTWARE"
           />
 
           <OmbreText text="Selamat Datang!" style={styles.title} />

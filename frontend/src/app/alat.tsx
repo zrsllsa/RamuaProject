@@ -1,13 +1,15 @@
+import { RamuaAnimation } from '@/components/RamuaAnimation';
 import { StepIndicator } from '@/components/StepIndicator';
 import { parseDraft } from '@/lib/recipe-flow';
 import { Ionicons } from '@expo/vector-icons';
-import { useLocalSearchParams, useRouter } from 'expo-router';
+import { useIsFocused, useLocalSearchParams, useRouter } from 'expo-router';
 import { StatusBar } from 'expo-status-bar';
 import { useMemo, useState } from 'react';
-import { Image, Pressable, ScrollView, StyleSheet, Text, View, useWindowDimensions } from 'react-native';
+import { Pressable, ScrollView, StyleSheet, Text, View, useWindowDimensions } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 const MascotAlat = require('../../assets/images/alatmasak.png');
+const ANIM_ALAT = require('../../assets/ramuanimation/animasi_alatpage.json');
 
 const GREEN = '#8FCB4C';
 
@@ -30,6 +32,7 @@ const TOOLS = [
 
 export default function AlatScreen() {
   const router = useRouter();
+  const isFocused = useIsFocused();
   const insets = useSafeAreaInsets();
   const { width } = useWindowDimensions();
   const params = useLocalSearchParams<{ data?: string }>();
@@ -75,7 +78,17 @@ export default function AlatScreen() {
 
         <Text style={styles.title}>Pilih Alat Masakmu</Text>
         <Text style={styles.subtitle}>Ketuk alat yang kamu punya atau ingin pakai hari ini.</Text>
-        <Image source={MascotAlat} resizeMode="contain" style={styles.mascot} />
+        <View style={styles.mascotWrap}>
+          <RamuaAnimation
+            lottieSource={ANIM_ALAT}
+            pngSource={MascotAlat}
+            width={240}
+            height={165}
+            resizeMode="contain"
+            renderMode="AUTOMATIC"
+            isActive={isFocused}
+          />
+        </View>
 
         <View style={styles.grid}>
           {TOOLS.map((tool) => {
@@ -141,7 +154,12 @@ const styles = StyleSheet.create({
   headerTitle: { fontSize: 16, fontWeight: '800', color: '#161616' },
   title: { marginTop: 16, marginHorizontal: 20, fontSize: 20, fontWeight: '800', color: '#161616' },
   subtitle: { marginTop: 6, marginHorizontal: 20, color: '#6E6E6E', fontSize: 13, lineHeight: 19 },
-  mascot: { alignSelf: 'center', width: 240, height: 165, marginTop: 4 },
+  mascotWrap: {
+    width: '100%',
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginTop: 4,
+  },
   grid: { marginTop: 18, marginHorizontal: 20, flexDirection: 'row', flexWrap: 'wrap', gap: 12 },
   tool: {
     borderRadius: 18,

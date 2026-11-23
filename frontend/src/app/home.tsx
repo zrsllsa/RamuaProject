@@ -1,12 +1,14 @@
+import { RamuaAnimation } from '@/components/RamuaAnimation';
+import { BAR_H, BottomBar } from '@/components/bottom-bar';
 import { api } from '@/lib/api';
 import { getFallbackImage, macroBarPercent } from '@/lib/resep';
 import { supabase } from '@/lib/supabase';
-import { BAR_H, BottomBar } from '@/components/bottom-bar';
 import { Ionicons } from '@expo/vector-icons';
 import { Image } from 'expo-image';
-import { useFocusEffect, useRouter } from 'expo-router';
+import { useFocusEffect, useIsFocused, useRouter } from 'expo-router';
 import { StatusBar } from 'expo-status-bar';
-import { useCallback, useEffect, useRef, useState } from 'react';
+import type { AnimationObject } from 'lottie-react-native';
+import { useCallback, useEffect, useState } from 'react';
 import {
   Pressable,
   ScrollView,
@@ -16,30 +18,35 @@ import {
   View,
   useWindowDimensions,
 } from 'react-native';
-import Animated, {
-  Extrapolation,
-  SharedValue,
-  interpolate,
-  runOnJS,
-  useAnimatedScrollHandler,
-  useAnimatedStyle,
-  useSharedValue,
-} from 'react-native-reanimated';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
-// ====== GAMBAR (semua di assets/images/home/) — ganti ekstensi DI SINI SAJA ======
+// ====== GAMBAR (semua di assets/images/) — ganti ekstensi DI SINI SAJA ======
 const IMG = {
-  home1: require('@/assets/images/home/home01.svg'), // gambar dapur (header)
+  home1: require('@/assets/images/home/home01.svg'), // placeholder/fallback gambar dapur (header)
   home00: require('@/assets/images/home/home00.png'), // card banner "Sekali Jepret"
   home2: require('@/assets/images/home/home2.svg'), // ilustrasi maskot di atas banner
   home3: require('@/assets/images/home/home3.svg'), // shape putih
-  home5: require('@/assets/images/home/home5.svg'), // fitur: rekomendasi resep
-  home6: require('@/assets/images/home/home6.svg'), // fitur: pindai otomatis
-  home8: require('@/assets/images/home/home8.png'), // fitur: simpan resep favorit
+  pindaiHome: require('@/assets/images/pindai-home.png'), // fitur: pindai otomatis
+  simpanResepHome: require('@/assets/images/simpanresep-home.png'), // fitur: simpan resep favorit
+  rekomendHome: require('@/assets/images/rekomend-home.png'), // fitur: rekomendasi resep
   home7: require('@/assets/images/home/home7.jpg'), // foto resep tersimpan
   btnSearch: require('@/assets/expo.icon/btn-search.svg'), // ikon bulat search
 };
 // ==================================================================================
+
+const ANIM_HOMEPAGE = require('@/assets/ramuanimation/animasi_homepage.json') as AnimationObject;
+
+function Home01Svg({ width: w, height: h }: { width?: number; height?: number }) {
+  return (
+    <Image
+      source={IMG.home1}
+      style={{ width: w, height: h }}
+      contentFit="cover"
+      contentPosition="top"
+      transition={0}
+    />
+  );
+}
 
 // ====== KATEGORI POPULER (bisa dipencet -> halaman search + filter) ======
 const CATEGORIES = [
@@ -61,13 +68,11 @@ const SEARCH_TOP = 230; // posisi bar pencarian
 const SEARCH_H = 45; // tinggi bar pencarian
 const SHAPE_OVERLAP = 42; // seberapa naik shape putih menimpa gambar dapur
 const SHAPE_CAP_H = 120; // tinggi shape putih (home3)
-const BANNER_H = 125; // tinggi card banner (home00)
+const BANNER_MARGIN = 16; // jarak tepi kiri-kanan banner dari sisi layar
+const BANNER_HEIGHT_RATIO = 0.5; // rasio tinggi ramping terhadap lebar kartu (2:1)
 const BANNER_RADIUS = 22; // kelengkungan ujung banner
 const CATEGORY_IMG = 50; // ukuran gambar kategori (makanan1-5), makin kecil makin renggang
 const CATEGORY_ITEM_W = 58; // lebar tiap kolom kategori (gambar + tulisan)
-const PANEL_SMALL = 46; // tinggi panel putih di kartu samping (judul saja)
-const PANEL_BIG = 112; // tinggi panel di kartu depan (judul + detail + tombol)
-const PANEL_OPACITY = 0.5; // transparansi panel putih (0.5 = 50%)
 // ==================================================================
 
 const GREEN = '#8DB84A';
@@ -85,24 +90,18 @@ type Feature = {
   desc: string;
   button: string;
   image: any;
+  lottie: AnimationObject;
   route: string;
 };
 
 const FEATURES: Feature[] = [
   {
-    id: 'rekomendasi',
-    title: 'Rekomendasi Resep',
-    desc: 'Dapatkan ide resep yang cocok dengan bahan dan alat dapur yang kamu punya.',
-    button: 'Lihat Resep',
-    image: IMG.home5,
-    route: ROUTE_SEARCH,
-  },
-  {
     id: 'pindai',
     title: 'Pindai Otomatis',
     desc: 'Cukup foto bahan makanan, sistem langsung mengenali semuanya secara otomatis.',
     button: 'Pindai Sekarang',
-    image: IMG.home6,
+    image: IMG.pindaiHome,
+    lottie: require('@/assets/ramuanimation/animasi_fiturpindai.json'),
     route: ROUTE_SCAN,
   },
   {
@@ -110,13 +109,20 @@ const FEATURES: Feature[] = [
     title: 'Simpan Resep Favorite',
     desc: 'Simpan resep pilihan secara praktis untuk kamu akses cepat sesuai jadwal memasakmu.',
     button: 'Lihat Favorit',
-    image: IMG.home8,
+    image: IMG.simpanResepHome,
+    lottie: require('@/assets/ramuanimation/animasi_fitursimpanresep.json'),
     route: ROUTE_SAVED,
   },
+  {
+    id: 'rekomendasi',
+    title: 'Rekomendasi Resep',
+    desc: 'Dapatkan ide resep yang cocok dengan bahan dan alat dapur yang kamu punya.',
+    button: 'Lihat Resep',
+    image: IMG.rekomendHome,
+    lottie: require('@/assets/ramuanimation/animasi_fiturrekomendasiresep.json'),
+    route: ROUTE_SEARCH,
+  },
 ];
-
-// Kartu yang paling depan saat halaman home dibuka (0 = pertama, 1 = tengah, dst.)
-const DEFAULT_FEATURE_INDEX = 1; // "Pindai Otomatis"
 
 type RawSavedRecipe = Record<string, any>;
 
@@ -194,89 +200,35 @@ function mapSavedRecipe(raw: RawSavedRecipe, index: number): SavedRecipe {
   };
 }
 
-// ====== kartu "Fitur Kami": persegi 1:1, panel bawah memanjang di kartu depan ======
+// ====== Satu kartu di slider "Fitur Kami" ======
 function FeatureCard({
   item,
-  index,
-  scrollX,
-  step,
   cardW,
-  s,
-  active,
-  onPressCard,
-  onPressButton,
+  isActive,
+  onPress,
 }: {
   item: Feature;
-  index: number;
-  scrollX: SharedValue<number>;
-  step: number;
   cardW: number;
-  s: number;
-  active: boolean;
-  onPressCard: () => void;
-  onPressButton: () => void;
+  isActive: boolean;
+  onPress: () => void;
 }) {
-  // Panel putih di bawah: pendek di samping, tinggi di depan
-  const panelStyle = useAnimatedStyle(() => {
-    const range = [(index - 0.6) * step, index * step, (index + 0.6) * step];
-    return {
-      height: interpolate(
-        scrollX.value,
-        range,
-        [PANEL_SMALL * s, PANEL_BIG * s, PANEL_SMALL * s],
-        Extrapolation.CLAMP
-      ),
-    };
-  });
-
-  // Deskripsi + tombol muncul hanya di kartu depan
-  const detailStyle = useAnimatedStyle(() => {
-    const range = [(index - 0.4) * step, index * step, (index + 0.4) * step];
-    return {
-      opacity: interpolate(scrollX.value, range, [0, 1, 0], Extrapolation.CLAMP),
-      transform: [
-        { translateY: interpolate(scrollX.value, range, [10, 0, 10], Extrapolation.CLAMP) },
-      ],
-    };
-  });
-
-  // Kartu samping sedikit lebih pudar (ukuran tetap sama)
-  const cardStyle = useAnimatedStyle(() => {
-    const range = [(index - 1) * step, index * step, (index + 1) * step];
-    return {
-      opacity: interpolate(scrollX.value, range, [0.7, 1, 0.7], Extrapolation.CLAMP),
-    };
-  });
-
   return (
-    <Pressable onPress={onPressCard}>
-      <Animated.View style={[styles.featureCard, { width: cardW, height: cardW }, cardStyle]}>
-        <Image
-          source={item.image}
-          style={{ position: 'absolute', top: 0, left: 0, width: cardW, height: cardW }}
-          contentFit="cover"
-        />
-
-        {/* Panel putih transparan 50%: judul selalu ada, detail ikut terbuka di kartu depan */}
-        <Animated.View
-          style={[
-            styles.featurePanel,
-            { backgroundColor: `rgba(255,255,255,${PANEL_OPACITY})` },
-            panelStyle,
-          ]}>
-          <Text style={styles.featureTitle}>{item.title}</Text>
-          <Animated.View
-            style={[styles.featureDetail, detailStyle]}
-            pointerEvents={active ? 'auto' : 'none'}>
-            <Text style={styles.featureDesc} numberOfLines={3}>
-              {item.desc}
-            </Text>
-            <TouchableOpacity style={styles.featureBtn} activeOpacity={0.85} onPress={onPressButton}>
-              <Text style={styles.featureBtnText}>{item.button}</Text>
-            </TouchableOpacity>
-          </Animated.View>
-        </Animated.View>
-      </Animated.View>
+    <Pressable onPress={onPress} style={[styles.featureCard, { width: cardW }]}>
+      <RamuaAnimation
+        lottieSource={item.lottie}
+        pngSource={item.image}
+        width="100%"
+        height={155}
+        resizeMode="contain"
+        renderMode="AUTOMATIC"
+        isActive={isActive}
+        style={styles.featureImg}
+      />
+      <Text style={styles.featureTitle}>{item.title}</Text>
+      <Text style={styles.featureDesc}>{item.desc}</Text>
+      <TouchableOpacity style={styles.featureBtn} activeOpacity={0.85} onPress={onPress}>
+        <Text style={styles.featureBtnText}>{item.button}</Text>
+      </TouchableOpacity>
     </Pressable>
   );
 }
@@ -307,9 +259,12 @@ function Nutri({
 
 export default function Home() {
   const router = useRouter();
+  const isFocused = useIsFocused();
   const insets = useSafeAreaInsets();
   const { width } = useWindowDimensions();
   const s = width / 375;
+  const bannerWidth = width - BANNER_MARGIN * 2;
+  const bannerHeight = Math.round(bannerWidth * BANNER_HEIGHT_RATIO);
 
   const [name, setName] = useState('');
   const [savedRecipes, setSavedRecipes] = useState<SavedRecipe[]>([]);
@@ -347,37 +302,9 @@ export default function Home() {
     }, [])
   );
 
-  // ---- carousel "Fitur Kami" (kartu persegi) ----
-  const cardW = width * 0.62;
-  const gap = 14;
-  const step = cardW + gap;
-  const sidePad = (width - cardW) / 2;
-  const scrollX = useSharedValue(DEFAULT_FEATURE_INDEX * step);
-  const [activeIdx, setActiveIdx] = useState(DEFAULT_FEATURE_INDEX);
-  const carouselRef = useRef<any>(null);
-  const opacity = 500;
-
-  const onScroll = useAnimatedScrollHandler({
-    onScroll: (e) => {
-      scrollX.value = e.contentOffset.x;
-    },
-    onMomentumEnd: (e) => {
-      runOnJS(setActiveIdx)(Math.round(e.contentOffset.x / step));
-    },
-  });
-
-  const goToCard = (i: number) => {
-    carouselRef.current?.scrollTo({ x: i * step, animated: true });
-    setActiveIdx(i);
-  };
-
-  // Saat home dibuka, kartu tengah ("Pindai Otomatis") langsung di depan
-  useEffect(() => {
-    const t = setTimeout(() => {
-      carouselRef.current?.scrollTo({ x: DEFAULT_FEATURE_INDEX * step, animated: false });
-    }, 50);
-    return () => clearTimeout(t);
-  }, [step]);
+  // ---- slider "Fitur Kami" ----
+  const cardW = Math.min(240, Math.max(220, Math.round(width * 0.62)));
+  const featureGap = 14;
 
   // ---- kartu "Resep yang anda Simpan": maks 3 kartu terbaru ----
   const visibleSaved = savedRecipes.slice(0, 3);
@@ -405,11 +332,15 @@ export default function Home() {
 
 
         <View style={{ height: (HEADER_H - SHAPE_OVERLAP) * s }}>
-          <Image
-            source={IMG.home1}
-            style={{ position: 'absolute', top: 0, left: 0, width, height: HEADER_H * s }}
-            contentFit="cover"
-            contentPosition="top"
+          <RamuaAnimation
+            lottieSource={ANIM_HOMEPAGE}
+            SvgComponent={Home01Svg}
+            width={width}
+            height={HEADER_H * s}
+            resizeMode="cover"
+            renderMode="AUTOMATIC"
+            isActive={isFocused}
+            style={{ position: 'absolute', top: 0, left: 0, zIndex: 0 }}
           />
 
           <Text style={[styles.greeting, { top: GREETING_TOP * s }]}>
@@ -452,27 +383,25 @@ export default function Home() {
             {/* Banner (gambar home00, ujung melengkung) -> pindai bahan. Tulisan + tombol tetap di atas gambar. */}
             <Pressable
               onPress={() => router.push(ROUTE_SCAN as any)}
-              style={{ marginHorizontal: 20 * s, marginTop: 23 * s, height: BANNER_H * s }}>
+              style={[
+                styles.bannerCard,
+                {
+                  marginHorizontal: BANNER_MARGIN,
+                  marginTop: 20 * s,
+                  width: bannerWidth,
+                  height: bannerHeight,
+                },
+              ]}>
               <Image
                 source={IMG.home00}
-                style={{
-                  position: 'absolute',
-                  top: 0,
-                  left: 0,
-                  width: width - 40 * s,
-                  height: BANNER_H * s,
-                  borderRadius: BANNER_RADIUS,
-                }}
+                style={styles.bannerImage}
                 contentFit="cover"
               />
 
-              {/* Ilustrasi transparan ditimpa di atas banner */}
-
-              <View
-                style={{ flex: 1, paddingLeft: 16 * s, justifyContent: 'center', width: '55%' }}>
+              <View style={styles.bannerContent}>
                 <Text style={styles.bannerTitle}>Sekali Jepret,{'\n'}Resep Dapet!</Text>
-                <Text style={styles.bannerDesc} numberOfLines={2}>
-                  Foto bahan di dapurmu, biar sistem yang racik menunya.
+                <Text style={styles.bannerDesc}>
+                  Foto bahan di kulkasmu, biarkan sistem meracik resep pas buatmu.
                 </Text>
                 <View style={styles.bannerBtn}>
                   <Text style={styles.bannerBtnText}>Pindai bahan</Text>
@@ -505,38 +434,31 @@ export default function Home() {
               ))}
             </View>
 
-            {/* Fitur Kami (geser kiri-kanan, kartu persegi) */}
+            {/* Fitur Kami (slider horizontal, topi koki menonjol ke atas kartu) */}
             <Text style={[styles.sectionTitle, { marginTop: 24 * s }]}>Fitur Kami</Text>
-            <Animated.ScrollView
-              ref={carouselRef}
+            <ScrollView
               horizontal
               showsHorizontalScrollIndicator={false}
-              snapToInterval={step}
+              snapToInterval={cardW + featureGap}
               decelerationRate="fast"
-              scrollEventThrottle={16}
-              onScroll={onScroll}
-              contentOffset={{ x: DEFAULT_FEATURE_INDEX * step, y: 0 }}
+              style={{ marginTop: 12 * s, overflow: 'visible' }}
               contentContainerStyle={{
-                paddingHorizontal: sidePad,
-                paddingVertical: 8,
-                gap,
-              }}
-              style={{ marginTop: 16 * s }}>
-              {FEATURES.map((f, i) => (
+                paddingHorizontal: 16,
+                paddingTop: 28,
+                paddingBottom: 8,
+                gap: featureGap,
+                alignItems: 'stretch',
+              }}>
+              {FEATURES.map((f) => (
                 <FeatureCard
                   key={f.id}
                   item={f}
-                  index={i}
-                  scrollX={scrollX}
-                  step={step}
                   cardW={cardW}
-                  s={s}
-                  active={activeIdx === i}
-                  onPressCard={() => goToCard(i)}
-                  onPressButton={() => router.push(f.route as any)}
+                  isActive={isFocused}
+                  onPress={() => router.push(f.route as any)}
                 />
               ))}
-            </Animated.ScrollView>
+            </ScrollView>
 
             {/* Resep yang Anda Simpan */}
             <View style={[styles.savedHeaderRow, { marginTop: 20 * s, marginHorizontal: 20 * s }]}>
@@ -713,17 +635,48 @@ const styles = StyleSheet.create({
   },
 
   // Banner
-  bannerTitle: { fontSize: 18, fontWeight: '800', color: '#1B1B1B', lineHeight: 22 },
-  bannerDesc: { fontSize: 10, color: '#3B4A8A', marginTop: 6, lineHeight: 14 },
+  bannerCard: {
+    borderRadius: BANNER_RADIUS,
+    overflow: 'hidden',
+    backgroundColor: '#DCE3F5',
+  },
+  bannerImage: {
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    width: '100%',
+    height: '100%',
+  },
+  bannerContent: {
+    width: '52%',
+    height: '100%',
+    justifyContent: 'flex-end',
+    paddingLeft: 18,
+    paddingTop: 38,
+    paddingBottom: 14,
+  },
+  bannerTitle: {
+    fontSize: 18,
+    lineHeight: 22,
+    fontWeight: '800',
+    color: '#18181B',
+    marginBottom: 5,
+  },
+  bannerDesc: {
+    fontSize: 11,
+    lineHeight: 15,
+    fontWeight: '400',
+    color: '#3F3F46',
+    marginBottom: 12,
+  },
   bannerBtn: {
     alignSelf: 'flex-start',
-    marginTop: 10,
-    backgroundColor: GREEN,
-    borderRadius: 8,
-    paddingVertical: 6,
-    paddingHorizontal: 14,
+    backgroundColor: '#8BB94A',
+    borderRadius: 999,
+    paddingVertical: 7,
+    paddingHorizontal: 18,
   },
-  bannerBtnText: { color: '#FFFFFF', fontSize: 11, fontWeight: '700' },
+  bannerBtnText: { color: '#FFFFFF', fontSize: 11.5, fontWeight: '600' },
 
   // Kategori populer
   catRow: { flexDirection: 'row', justifyContent: 'space-between' },
@@ -731,38 +684,42 @@ const styles = StyleSheet.create({
 
   // Fitur Kami
   featureCard: {
-    backgroundColor: '#E6F0CF', // latar sementara kalau gambar belum masuk
+    backgroundColor: '#FDFBE6',
     borderRadius: 20,
-    overflow: 'hidden',
-    shadowColor: '#000',
-    shadowOpacity: 0.1,
-    shadowRadius: 8,
-    shadowOffset: { width: 0, height: 3 },
-    elevation: 3,
+    paddingHorizontal: 14,
+    paddingBottom: 16,
+    overflow: 'visible',
   },
-  featurePanel: {
-    position: 'absolute',
-    left: 0,
-    right: 0,
-    bottom: 0,
-    borderTopLeftRadius: 18,
-    borderTopRightRadius: 18,
-    overflow: 'hidden',
-    paddingHorizontal: 12,
-    paddingTop: 10,
-    alignItems: 'center',
+  featureImg: {
+    width: '100%',
+    height: 155,
+    marginTop: -28,
+    overflow: 'visible',
   },
-  featureTitle: { fontSize: 13, fontWeight: '800', color: '#111111', textAlign: 'center' },
-  featureDetail: { marginTop: 4, alignItems: 'center' },
-  featureDesc: { fontSize: 10.5, lineHeight: 14, color: '#222222', textAlign: 'center' },
+  featureTitle: {
+    fontSize: 16,
+    fontWeight: '700',
+    color: '#5E9C3C',
+    textAlign: 'center',
+    marginTop: 8,
+    marginBottom: 6,
+  },
+  featureDesc: {
+    fontSize: 12,
+    lineHeight: 17,
+    color: '#3F3F46',
+    textAlign: 'left',
+    marginBottom: 14,
+  },
   featureBtn: {
-    marginTop: 7,
-    backgroundColor: GREEN,
-    borderRadius: 10,
-    paddingVertical: 6,
-    paddingHorizontal: 18,
+    marginTop: 'auto',
+    alignSelf: 'center',
+    backgroundColor: '#8BB94A',
+    borderRadius: 999,
+    paddingVertical: 9,
+    paddingHorizontal: 26,
   },
-  featureBtnText: { color: '#FFFFFF', fontSize: 12, fontWeight: '700' },
+  featureBtnText: { color: '#FFFFFF', fontSize: 12.5, fontWeight: '600' },
 
   // Resep tersimpan — kartu utama
   savedMain: {
